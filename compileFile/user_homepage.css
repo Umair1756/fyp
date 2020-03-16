@@ -1,0 +1,14 @@
+.nav-link{
+    cursor: pointer;
+  }
+  .nav-item{
+    border: 1px solid #ffc107;
+  }
+  .nav-item:hover{
+    background: none !important;
+    border: 1px solid #fff;
+    transition: 0.2s ease-in-out;
+  }
+  .input_search:focus{
+    width: 350px;
+  }

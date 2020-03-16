@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="../bootstrap-4.3.1-dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../fontawesome-free-5.8.1-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index Styling.css" />
+    <link rel="stylesheet" href="user_homepage.css" />
+    <title>Project Demo</title>
+  </head>
+  <body>
+    <!-- Haeder Section -->
+    <header class="user_header_section fixed-top position-fixed">
+      <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav text-center w-100">
+          <li class="nav-item bg-warning pl-1 pr-1 rounded">
+            <a class="nav-link text-white"
+              ><i class="fas fa-house-damage"></i
+            ></a>
+          </li>
+          <li class="nav-item rounded ml-2 border-0 mr-auto">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control border-0 input_search"
+                placeholder="Search"
+              />
+              <i
+                class="fas fa-search text-dark rounded-right bg-white nav-link"
+              ></i>
+            </div>
+          </li>
+          <li class="nav-item m-auto border-0">
+            <a class="nav-link" href="#">
+              <span class="first_part_logo">PRO</span
+              ><span class="secong_part_logo text-white">MAG</span></a
+            >
+          </li>
+          <li class="nav-item rounded ml-auto bg-warning pl-1 pr-1 mr-2">
+            <a class="nav-link text-white"> <i class="far fa-bell"></i></a>
+          </li>
+          <li class="nav-item rounded bg-warning pl-1 pr-1">
+            <a class="nav-link text-white"
+              ><i class="fas fa-user"></i></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Header Section -->
+
+    <div class="container bg-secondary penal_area">
+      <div class="row">
+        <div class="col-3">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
