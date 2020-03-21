@@ -43,6 +43,12 @@
   font-family: "TradeWinds";
   src: url(../fonts/Trade_Winds/TradeWinds-Regular.ttf);
 }
+body{
+  position: relative;
+  margin: auto;
+  height: auto;
+  width: auto;
+}
 .first_part_log {
   font-size: 70px !important;
   font-family: "Faster One" !important;
@@ -418,7 +424,4 @@ input[type="password"].password_input {
   border-bottom-color: #e7e7e7;
   outline: 1;
   box-shadow: 0 0 0 1px #ffffff;
-}
-.penal_area{
-  margin-top: 150px;
 }
