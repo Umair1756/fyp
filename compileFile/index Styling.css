@@ -28,10 +28,6 @@
   src: url(../fonts/Merienda_One/MeriendaOne-Regular.ttf);
 }
 @font-face {
-  font-family: "TradeWinds";
-  src: url(../fonts/Trade_Winds/TradeWinds-Regular.ttf);
-}
-@font-face {
   font-family: "BungeeInline";
   src: url(../fonts/Bungee_Inline/BungeeInline-Regular.ttf);
 }
@@ -43,7 +39,7 @@
   font-family: "TradeWinds";
   src: url(../fonts/Trade_Winds/TradeWinds-Regular.ttf);
 }
-body{
+body {
   position: relative;
   margin: auto;
   height: auto;
@@ -60,12 +56,14 @@ body{
 }
 .first_part_logo {
   font-size: 35px !important;
-  font-family: "Faster One" !important;
-  color: #ffc107 !important;
+  font-family: "LimeLight" !important;
+  color: #69d2e7 !important;
+  font-weight: bold;
 }
 .secong_part_logo {
-  font-size: 15px !important;
-  font-family: "BungeeInline" !important;
+  font-size: 35px !important;
+  font-family: "LimeLight" !important;
+  font-weight: bold;
 }
 
 * {
@@ -88,10 +86,8 @@ body {
   width: 100%;
   line-height: 40px !important;
 }
-.user_header_section{
-  box-shadow: 0 0 22px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #0000001a !important;
-  background: #1b1b1d;
+.user_header_section {
+  background: #2B2B52;
   width: 100%;
   line-height: 0px !important;
 }
@@ -244,20 +240,6 @@ p.leads {
   margin-top: 0;
   padding: 0;
 }
-.about-portfolio-left .btn-filled {
-  border: 2px solid #745cf9;
-  background: #745cf9;
-  line-height: 24px;
-  min-width: 200px;
-  font-size: 12px;
-  text-transform: uppercase;
-  padding-bottom: 13px;
-  padding-top: 13px;
-  color: #ffffff;
-  margin-top: 20px;
-  border-radius: 0%;
-  font-weight: bold;
-}
 #parallax-section {
   background: url(../img/trellians-2x-2.png);
   background-position: center;
@@ -291,67 +273,6 @@ p.leads {
   margin-bottom: 24px;
   margin-top: 0;
   padding: 0;
-}
-.slider-costumer .text-center {
-  color: #fff;
-  margin: 0px 0px 20px 0px;
-}
-.carousel-caption p {
-  color: #fff;
-  letter-spacing: 1px;
-}
-.carousel-item img {
-  border-radius: 50% !important;
-  width: 9% !important;
-  height: 9% !important;
-}
-.carousel-item h5 {
-  margin-top: 100px;
-}
-.slider-icons {
-  background: #fff;
-  padding: 96px 0px;
-}
-.text-center h3 {
-  color: #000000;
-  margin: 50px;
-}
-marquee {
-}
-marquee img {
-  padding: 5px;
-  margin-left: 100px;
-  opacity: 0.5;
-  width: 10%;
-  height: 10%;
-}
-marquee img {
-  border-radius: 0% !important;
-}
-marquee img:hover {
-  opacity: 1 !important;
-  cursor: pointer;
-  transition: 0.5s;
-}
-#download-section {
-  background: #f5f5f5;
-  padding: 96px 0px;
-}
-.about-download-left h4 {
-  color: #000000;
-  font-weight: bold;
-}
-.about-download-right {
-  padding-bottom: 30px;
-}
-.about-download-right .cfa-button {
-  background: #745cf9;
-  color: #ffffff;
-  width: 70%;
-  line-height: 24px;
-  padding-bottom: 13px;
-  padding-top: 13px;
-  letter-spacing: 1px;
 }
 #footer-section {
   background: #0e1015;
