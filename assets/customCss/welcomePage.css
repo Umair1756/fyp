@@ -1,0 +1,348 @@
+@font-face {
+  font-family: PT Sans;
+  src: url(../fonts/PT_Sans/PTSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: PT Sans Bold;
+  src: url(../fonts/PT_Sans/PTSans-Bold.ttf);
+}
+@font-face {
+  font-family: "Faster One";
+  src: url(../fonts/Faster_One/FasterOne-Regular.ttf);
+}
+@font-face {
+  font-family: "Wallpoet";
+  src: url(../fonts/Wallpoet/Wallpoet-Regular.ttf);
+}
+@font-face {
+  font-family: "TitanOne";
+  src: url(../fonts/Titan_One/TitanOne-Regular.ttf);
+}
+@font-face {
+  font-family: "LimeLight";
+  src: url(../fonts/Limelight/Limelight-Regular.ttf);
+}
+@font-face {
+  font-family: "MeriendanOne";
+  src: url(../fonts/Merienda_One/MeriendaOne-Regular.ttf);
+}
+@font-face {
+  font-family: "BungeeInline";
+  src: url(../fonts/Bungee_Inline/BungeeInline-Regular.ttf);
+}
+@font-face {
+  font-family: "Frijole";
+  src: url(../fonts/Frijole/Frijole-Regular.ttf);
+}
+@font-face {
+  font-family: "TradeWinds";
+  src: url(../fonts/Trade_Winds/TradeWinds-Regular.ttf);
+}
+body {
+  position: relative;
+  margin: auto;
+  height: auto;
+  width: auto;
+}
+.first_part_log {
+  font-size: 70px !important;
+  font-family: "Faster One" !important;
+  color: #ffc107 !important;
+}
+.secong_part_log {
+  font-size: 30px !important;
+  font-family: "BungeeInline" !important;
+}
+.first_part_logo {
+  font-size: 35px !important;
+  font-family: "LimeLight" !important;
+  color: #69d2e7 !important;
+  font-weight: bold;
+}
+.secong_part_logo {
+  font-size: 35px !important;
+  font-family: "LimeLight" !important;
+  font-weight: bold;
+}
+
+* {
+  font-family: "PT Sans";
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Charlie Text", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #172b4d;
+  text-align: left;
+  background-color: #fff;
+}
+.header-section {
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #0000001a !important;
+  background: #1b1b1d;
+  width: 100%;
+  line-height: 40px !important;
+}
+.user_header_section {
+  background: #2B2B52;
+  width: 100%;
+  line-height: 0px !important;
+}
+#navigation #logo-section {
+  text-decoration: none;
+}
+#navigation #logo-section span {
+  font-size: 24px;
+  line-height: 52px;
+  color: white;
+  transition: all 0.3s ease;
+}
+#navigation-1 li a {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: white;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+#navigation-1 li a.login-link:hover {
+  text-decoration: underline;
+}
+#navigation-1 li.signup-item {
+  background: #ffc107;
+}
+#navigation-1 li a.signup-link {
+  color: white;
+}
+#navigation-1 li a.signup-link:hover {
+  text-decoration: none !important;
+}
+#theme-section {
+  background: #1b1b1d;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.container .theme-area {
+  color: #ffffff;
+  margin-top: 170px;
+}
+.theme-area h1 {
+  font-family: "PT Sans Bold";
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 66px;
+  color: inherit;
+  margin-top: 21px;
+}
+
+.img-area {
+  margin-top: 138px;
+}
+
+.leads {
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 45px;
+}
+
+p.leads {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.signup-section {
+  margin-top: 20px;
+  padding-bottom: 100px;
+}
+
+.input-email {
+  width: 336px !important;
+}
+
+.input-signup {
+  font-size: 30px;
+  color: black !important;
+}
+
+.signup-btn {
+  width: 300px !important;
+}
+
+.signup-btn > button {
+  color: white;
+  font-size: 30px !important;
+}
+.theme-area .btn-white {
+  color: #fff;
+  border: 2px solid #fff;
+  line-height: 24px;
+  min-width: 200px;
+  padding-bottom: 13px;
+  padding-top: 13px;
+  margin-top: 20px;
+}
+.theme-area .btn-white:hover {
+  background: #fff;
+  color: #000000;
+  font-weight: 900 !important;
+  transition: 0.5s;
+}
+#seo-section {
+  padding: 96px 0;
+}
+.right-side h1 {
+  font-family: "PT Sans Bold";
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 66px;
+  color: inherit;
+  margin-top: 21px;
+}
+
+.right-side .btn-filled {
+  letter-spacing: 1px;
+  background: #a8acad;
+  border: 2px solid #a8acad;
+  line-height: 24px;
+  min-width: 200px;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding-bottom: 13px;
+  padding-top: 13px;
+  color: #ffffff;
+  margin-top: 20px;
+  border-radius: 0%;
+  font-weight: bold;
+}
+.right-side .btn-filled:hover {
+  background: #1b1b1d;
+  border: 2px solid #1b1b1d;
+  transition: 0.5s;
+}
+#portfolio-section-section {
+  padding: 96px 0;
+  position: relative;
+  overflow: hidden;
+}
+.about-portfolio-left h1 {
+  font-family: "PT Sans Bold";
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 66px;
+  color: inherit;
+  margin-top: 21px;
+}
+.about-portfolio-left p {
+  margin: 0 0 10px;
+  margin-bottom: 24px;
+  margin-top: 0;
+  padding: 0;
+}
+#parallax-section {
+  background: url(../img/trellians-2x-2.png);
+  background-position: center;
+  background-size: contain;
+  padding: 70px 0;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+#parallax-area h1 {
+  font-family: "PT Sans Bold";
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 66px;
+  color: inherit;
+  margin-top: 21px;
+}
+#limitless-section {
+  padding-bottom: 0 !important;
+  background: #f5f5f5;
+  padding: 96px 0;
+  text-align: center;
+}
+#limitless-area {
+  padding: 20px 0px;
+}
+#limitless-area h3 {
+  font-size: 30px;
+  line-height: 33px;
+  font-weight: 400;
+  color: #0e1015;
+  margin-bottom: 24px;
+  margin-top: 0;
+  padding: 0;
+}
+#footer-section {
+  background: #0e1015;
+  padding: 96px 0px;
+}
+#footer-section .left-side p {
+  font-size: 14px;
+  color: #fff;
+}
+#footer-section .left-side p a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+#footer-section .left-side p a:hover {
+  color: #5d47d7 !important;
+  transition: 0.5s;
+}
+#footer-section .right-side {
+  padding: 10px 0px 0px 0px;
+}
+#footer-section .right-side ul li {
+  display: inline-block;
+  padding: 10px;
+}
+#footer-section .right-side ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+#footer-section .right-side ul li a .fa-arrow-up {
+  border: 1px solid #fff;
+  padding: 7px;
+}
+#footer-section .right-side ul li a .fa-arrow-up:hover {
+  color: #fff !important;
+}
+#footer-section .right-side ul .last-arrow-anchor {
+  float: right;
+  margin-right: 10px;
+}
+.login-shadow {
+  box-shadow: 1px 1px 10px 0px #a6a39e;
+}
+input[type="email"].email_input:focus {
+  border-bottom-color: #f8f8f8;
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  border-left-color: #ffffff;
+  outline: 1;
+  box-shadow: 0px 0px 3px 2px #e2e5e9;
+  transition: 0.3s ease-in-out;
+}
+input[type="email"].email_input {
+  border-color: #ffffff;
+  border-bottom-color: #e7e7e7;
+  outline: 1;
+  box-shadow: 0 0 0 1px #ffffff;
+}
+input[type="password"].password_input:focus {
+  border-bottom-color: #f8f8f8;
+  border-top-color: #ffffff;
+  border-right-color: #ffffff;
+  border-left-color: #ffffff;
+  outline: 1;
+  box-shadow: 0px 0px 3px 2px #e2e5e9;
+  transition: 0.3s ease-in-out;
+}
+input[type="password"].password_input {
+  border-color: #ffffff;
+  border-bottom-color: #e7e7e7;
+  outline: 1;
+  box-shadow: 0 0 0 1px #ffffff;
+}
