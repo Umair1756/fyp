@@ -30,7 +30,9 @@
     <div class="row">
         <div class="col-lg-3 cl-md-3 d-lg-block d-md-block d-none">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link p-0 pl-3 pt-1 pb-1 anchor_adj" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fab fa-flipboard"></i> Boards</a>
+                <div class="nav-link p-0 pl-3 pt-1 pb-1 rounded-pill anchor_adj" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <a><i class="fab fa-flipboard"></i> Boards</a>
+                </div>
                 <a class="nav-link p-0 pl-3 pt-1 pb-1 mt-2 anchor_adj" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-poll"></i> Templates</a>
                 <a class="nav-link p-0 pl-3 pt-1 pb-1 mt-2 anchor_adj" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-500px"></i> Home</a>
                 <p class="mt-3 ml-3">TEAMS</p>
@@ -53,13 +55,13 @@
                     </p>
                     <div class="container">
                         <div class="row">
-                            <a class="nav-link text-center col-md-5 col-sm-6  p-4 m-1 rounded anchor_adj">
+                            <a class="nav-link text-center col-md-5 col-sm-6  p-4 m-1 rounded-0 p_anchor_adj">
                                 <i class="fas fa-plus"></i> Create new board
                             </a>
-                            <a class="nav-link text-center col-lg-3 col-md-5 col-sm-6 p-4 ml-4 m-1 rounded anchor_adj">
+                            <a class="nav-link text-center col-lg-3 col-md-5 col-sm-6 p-4 ml-4 m-1 rounded-0 p_anchor_adj">
                                 Board 1 here
                             </a>
-                            <a class="nav-link text-center col-lg-3 col-md-5 col-sm-6 p-4 ml-4 m-1 rounded anchor_adj">
+                            <a class="nav-link text-center col-lg-3 col-md-5 col-sm-6 p-4 ml-4 m-1 rounded-0 p_anchor_adj">
                                 Board 2 here
                             </a>
                         </div>

@@ -1,11 +1,11 @@
  <!-- Login Section -->
- <section class="pt-5 pb-5">
+ <section class="bg_pic">
      <div class="container">
          <div class="row">
              <div class="col-lg-12 m-auto">
                  <form>
                      <div class="row">
-                         <div class="col-lg-4 m-auto pt-5 pb-5 pl-4 pr-4 bg-white rounded login-shadow">
+                         <div class="col-lg-4 m-auto pt-5 pb-5 pl-4 pr-4 bg-white rounded login_adj">
                              <div class="h5 text-center font-weight-bold mb-3 border-0">Login with ProMag</div>
                              <input type="email" class="form-control mb-3 email_input" placeholder="Enter Email" />
                              <input type="password" class="form-control mb-3 password_input" placeholder="Enter password" />
