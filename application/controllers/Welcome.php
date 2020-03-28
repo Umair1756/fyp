@@ -58,15 +58,15 @@ class Welcome extends CI_Controller
 	}
 	public function login()
 	{
-		$this->load->view('welcome/welcomeHeader');
+		$this->load->view('welcome/loginHeader');
 		$this->load->view('welcome/login');
-		$this->load->view('welcome/welcomeFooter');
+		$this->load->view('welcome/loginFooter');
 	}
 	public function signup()
 	{
-		$this->load->view('welcome/welcomeHeader');
+		$this->load->view('welcome/signupHeader');
 		$this->load->view('welcome/signup');
-		$this->load->view('welcome/welcomeFooter');
+		$this->load->view('welcome/signupFooter');
 	}
 	public function userhomepage()
 	{

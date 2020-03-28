@@ -315,43 +315,110 @@ p.leads {
 }
 
 .bg_pic {
-	background: url(../img/trellians-2x-2.png);
-	background-position: bottom;
-  background-repeat: no-repeat;
-  background-clip: border-box;
-  background-size: contain;
-	padding: 100px 0px 0px 0px !important;
+	padding: 0px !important;
+	margin: 0px !important;
 }
-.login_adj {
-	box-shadow: 1px 1px 10px 0px #a6a39e;
+.login_adj:hover {
+	background: #69d2e7;
+	color: #2b2b52;
+	box-shadow: 6px 6px 2px -1px #2b2b52;
+	cursor: ;
+	transition: background-color 2s ease-out;
 }
-input[type="email"].email_input:focus {
-	border-bottom-color: #f8f8f8;
-	border-top-color: #ffffff;
-	border-right-color: #ffffff;
-	border-left-color: #ffffff;
-	outline: 1;
-	box-shadow: 0px 0px 3px 2px #e2e5e9;
-	transition: 0.3s ease-in-out;
+input.email_input,
+input.password_input {
+	background: #e6e6e6 !important;
+}
+i.fa-envelope,
+i.fa-key {
+	color: #2b2b52 !important;
+}
+.email_input::-webkit-input-placeholder,
+.password_input::-webkit-input-placeholder {
+	color: #2b2b52 !important;
 }
 input[type="email"].email_input {
-	border-color: #ffffff;
-	border-bottom-color: #e7e7e7;
+	border: 2px solid #e6e6e6 !important;
+	border-bottom-color: #e6e6e6 !important;
 	outline: 1;
-	box-shadow: 0 0 0 1px #ffffff;
+	box-shadow: none;
+	padding-left: 40px;
 }
-input[type="password"].password_input:focus {
-	border-bottom-color: #f8f8f8;
-	border-top-color: #ffffff;
-	border-right-color: #ffffff;
-	border-left-color: #ffffff;
+input[type="email"].email_input:focus {
+	background: #ffffff !important;
+	border-bottom: 2px solid #2b2b52 !important;
+	border-top-color: #ffffff !important;
+	border-right-color: #ffffff !important;
+	border-left-color: #ffffff !important;
+	z-index: 0 !important;
 	outline: 1;
-	box-shadow: 0px 0px 3px 2px #e2e5e9;
-	transition: 0.3s ease-in-out;
+	box-shadow: none;
+	transition: 0.5s ease-in-out;
 }
 input[type="password"].password_input {
-	border-color: #ffffff;
-	border-bottom-color: #e7e7e7;
+	border: 2px solid #e6e6e6 !important;
+	border-bottom-color: #e6e6e6 !important;
 	outline: 1;
-	box-shadow: 0 0 0 1px #ffffff;
+	box-shadow: none;
+	padding-left: 40px;
+}
+input[type="password"].password_input:focus {
+	background: #ffffff !important;
+	border-bottom: 2px solid #2b2b52 !important;
+	border-top-color: #ffffff !important;
+	border-right-color: #ffffff !important;
+	border-left-color: #ffffff !important;
+	z-index: 0 !important;
+	outline: 1;
+	box-shadow: none;
+	transition: 0.5s ease-in-out;
+}
+.btn_login_adj {
+	background: #172b4d;
+	color: #fff;
+	font-weight: bold;
+}
+.btn_login_adj:hover {
+	background: #fff;
+	color: #172b4d;
+	transition: 0.5s ease-in-out;
+}
+.btn_google_adj {
+	background: #fff;
+	color: #172b4d;
+}
+.btn_google_adj:hover {
+	background: #dc3545;
+	color: #fff;
+	transition: 0.5s ease-in-out;
+}
+.btn_google_adj:hover > i.fa-google {
+	color: #fff !important;
+	transition: 0.5s ease-in-out;
+}
+i.fa-google:hover {
+	color: #fff !important;
+}
+.btn_signup_adj {
+	background: #fff;
+	color: #172b4d;
+	transition: 0.5s ease-in-out;
+}
+.btn_signup_adj:hover{
+	background: #007bff;
+	color: #fff;
+	transition: 0.5s ease-in-out;
+}
+.btn_signup_adj:hover > i.fa-user-plus {
+	color: #fff !important;
+	transition: 0.5s ease-in-out;
+}
+.btn_signin_adj{
+	background: none;
+	color: #172b4d;
+}
+.btn_signin_adj:hover{
+	background: none;
+	text-decoration: underline;
+	transition: 0.3s ease-in-out;
 }
