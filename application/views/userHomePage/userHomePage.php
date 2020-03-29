@@ -1,6 +1,6 @@
 <!-- Haeder Section -->
 <header class="user_header_section fixed-top position-fixed">
-    <nav class="navbar navbar-expand-lg navbar_res">
+    <nav class="navbar navbar-expand-lg nav_res">
         <ul class="navbar-nav text-center w-100 navbar_res">
             <li class="nav-item pl-1 pr-1 rounded-circle">
                 <a class="nav-link text-white"><i class="fas fa-house-damage"></i></a>
