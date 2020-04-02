@@ -116,6 +116,11 @@ body {
 #navigation-1 li a.login-link:hover {
 	text-decoration: underline;
 }
+.login_adj{
+	background: none !important;
+	box-shadow: none !important;
+	border: none !important;
+}
 #navigation-1 li.signup-item {
 	background: #ffc107;
 }

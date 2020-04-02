@@ -1,5 +1,5 @@
     <!-- Haeder Section -->
-    <header class="header-section fixed-top position-fixed">
+    <header class="header-section fixed-top">
         <div class="container">
             <nav id="navigation" class="navbar navbar-expand-lg">
                 <a id="logo-section" class="navbar-item" href="#">
@@ -7,7 +7,7 @@
                 <div class="ml-auto" id="navbarSupportedContent">
                     <ul id="navigation-1" class="navbar-nav">
                         <li class="login-item">
-                            <button class="btn btn-link text-white">Log In</button>
+                            <button class="btn btn-link text-white login_adj">Log In</button>
                         </li>
                         <li class="pl-3 pr-3 rounded">
                             <button class="btn btn-warning text-white">Sign Up</button>

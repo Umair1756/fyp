@@ -32,6 +32,40 @@
     <script>
         var base_url = '<?php echo base_url(); ?>';
     </script>
+    <style>
+        /* Using Jquery affects Navbar */
+        .changeScrollBoxOnTop {
+            max-width: 100% !important;
+            top: 0px !important;
+            background: none;
+            box-shadow: 0px 0px 20px 2px #1b1b1d !important;
+            border: none !important;
+            opacity: 0.5;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.5s, opacity 0.5s linear;
+            transition: 1s ease-in-out !important;
+        }
+
+        .fLogoOnScroll {
+            color: #1b1b1d !important;
+            transition: 1s ease-in-out !important;
+        }
+
+        .sLogoOnScroll {
+            color: #ffc107 !important;
+            transition: 1s ease-in-out !important;
+        }
+
+        .loginAdjOnScroll {
+            color: #1b1b1d !important;
+            font-weight: bold;
+            background: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            transition: 1s ease-in-out !important;
+        }
+    </style>
 </head>
 
 <!-- <body style="background: #368EE0;"> -->

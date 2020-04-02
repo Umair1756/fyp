@@ -5,8 +5,8 @@
             <li class="nav-item pl-1 pr-1 rounded-circle">
                 <a class="nav-link text-white"><i class="fas fa-house-damage"></i></a>
             </li>
-            <li class="nav-item rounded ml-2 border-0 li_mr mr-auto input_adj">
-                <div class="input-group position-relative">
+            <li class="nav-item rounded ml-2 border-0 mr-auto nav_input">
+                <div class="input-group input_adj">
                     <input type="text" class="form-control rounded-pill input_search border-0" placeholder="Search" />
                     <i class="fas fa-search rounded-pill position-absolute text-white nav-link"></i>
                 </div>
@@ -15,8 +15,14 @@
                 <a class="nav-link" href="#">
                     <span class="first_part_logo">PRO</span><span class="secong_part_logo text-white">MAG</span></a>
             </li>
-            <li class="nav-item rounded-pill ml-auto pl-1 pr-1 mr-2">
-                <a class="nav-link text-white"><i class="far fa-bell"></i></a>
+            <li class="nav-item dropdown rounded-pill ml-auto pl-1 pr-1 mr-2">
+                <a class="nav-link text-white" href="#" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false"><i class="far fa-bell"></i></a>
+                <div class="dropdown-menu dropdown-menu-right bg-dark text-white pt-0 pb-0" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item pt-3 pb-3" href="#">Regular link</a>
+                    <a class="dropdown-item pt-3 pb-3" href="#">Active link</a>
+                    <a class="dropdown-item pt-3 pb-3" href="#">Another link</a>
+                </div>
+                <!-- dropdown-menu -->
             </li>
             <li class="nav-item rounded-pill pl-1 pr-1">
                 <a class="nav-link text-white"><i class="fas fa-user"></i></a>
