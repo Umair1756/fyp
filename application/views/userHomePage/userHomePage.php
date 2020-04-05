@@ -16,12 +16,19 @@
                     <span class="first_part_logo">PRO</span><span class="secong_part_logo text-white">MAG</span></a>
             </li>
             <li class="nav-item dropdown rounded-pill ml-auto pl-1 pr-1 mr-2">
-                <a class="nav-link text-white" href="#" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false"><i class="far fa-bell"></i></a>
-                <div class="dropdown-menu dropdown-menu-right bg-dark text-white pt-0 pb-0" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item pt-3 pb-3" href="#">Regular link</a>
-                    <a class="dropdown-item pt-3 pb-3" href="#">Active link</a>
-                    <a class="dropdown-item pt-3 pb-3" href="#">Another link</a>
-                </div>
+                <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-bell"></i></a>
+                <ul class="dropdown-menu slideIn animate dropdown-menu-right text-white drp_adj" role="menu" aria-labelledby="dropdownMenuLink">
+                    <button type="button" class="close text-white d-none" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <li class="text-center"><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">User Name</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Profile and Visiblity</a></li>
+                    <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Activity</a></li>
+                    <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Settings</a></li>
+                    <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Help</a></li>
+                    <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">log Out</a></li>
+                </ul>
                 <!-- dropdown-menu -->
             </li>
             <li class="nav-item rounded-pill pl-1 pr-1">
