@@ -16,18 +16,8 @@
 							?>"></script> -->
 		<!-- <script src="<?php //echo base_url('assets/js/app_modules/general.js'); 
 							?>"></script> -->
-		<!-- <script src='<?php //echo base_url('assets/js/app_modules/user/login.js'); 
-							?>'></script> -->
+		<script src='<?php echo base_url('assets/auth_files/index.js'); ?>'></script>
 		<script>
-			// $(window).scroll(function() {
-			// 	var header = $(document).scrollTop();
-			// 	var headerHeight = $(".header-section").outerHeight();
-			// 	if (header > 10) {
-			// 		$(".header-section").addClass("changeScrollBoxOnTop");
-			// 	} else {
-			// 		$(".header-section").removeClass("changeScrollBoxOnTop");
-			// 	}
-			// });
 			// changing headerColorOnScrolling and position
 			$(document).ready(function() {
 				$(document).scroll(function() {
@@ -45,6 +35,12 @@
 					}
 				});
 			});
+			//onPageLoad loader
+			var loader = $(".pageLoader");
+
+			setTimeout(function preLoaderFunction() {
+				loader[0].style.display = "none";
+			}, 4000);
 		</script>
 		</body>
 

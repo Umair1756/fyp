@@ -1,4 +1,7 @@
  <!-- Login Section -->
+ <div class="form_error">
+     <?php echo validation_errors(); ?>
+ </div>
  <section class="bg_pic">
      <div class="container">
          <div class="row">
@@ -8,7 +11,7 @@
                          <div class="col-lg-4 m-auto pt-5 pb-5 pl-4 pr-4 rounded login_adj">
                              <div class="h5 text-center font-weight-bold mb-5 border-0">Login with ProMag</div>
                              <div class="input-group position-relative">
-                                 <input type="email" class="form-control mb-3 email_input rounded" placeholder="Enter Email" /><i class="fas fa-envelope position-absolute nav-link"></i>
+                                 <input type="email" name="txtEmail" class="form-control mb-3 email_input rounded" value="<?php echo set_value('text_field'); ?>" placeholder="Enter Email" /><i class="fas fa-envelope position-absolute nav-link"></i>
                              </div>
                              <div class="input-group position-relative">
                                  <input type="password" class="form-control mb-3 password_input rounded" placeholder="Enter password" /><i class="fas fa-key position-absolute nav-link"></i>

@@ -48,26 +48,49 @@
         }
 
         .fLogoOnScroll {
-            color: #1b1b1d !important;
-            transition: 1s ease-in-out !important;
-        }
-
-        .sLogoOnScroll {
             color: #ffc107 !important;
             transition: 1s ease-in-out !important;
         }
 
-        .loginAdjOnScroll {
+        .sLogoOnScroll {
             color: #1b1b1d !important;
+            transition: 1s ease-in-out !important;
+        }
+
+        .loginAdjOnScroll {
+            color: #ffc107 !important;
             font-weight: bold;
             background: none !important;
             box-shadow: none !important;
             border: none !important;
             transition: 1s ease-in-out !important;
         }
+
+        /* Using Jquery affects Navbar */
+
+
+        /* pageLoader Start */
+        .pageLoader {
+            background: url(http://localhost/promag/assets/img/loading-9.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-color: #000; */
+            background-color: #ffff;
+            /* background-size: 50px !important; */
+            opacity: 0.9;
+            width: 100%;
+            transition: 10s ease-in-out;
+            position: fixed;
+            height: 100vh;
+            z-index: 9999;
+        }
+
+        /* pageLoader Start */
     </style>
 </head>
 
-<!-- <body style="background: #368EE0;"> -->
+<!-- <body onload="preLoaderFunction()"> -->
 
-<body>
+<body onload="preLoaderFunction()">
+    <div class="pageLoader">
+    </div>

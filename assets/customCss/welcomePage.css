@@ -39,11 +39,15 @@
 	font-family: "TradeWinds";
 	src: url(../fonts/Trade_Winds/TradeWinds-Regular.ttf);
 }
+*{
+	transition: 0.5s ease all !important;
+}
 body {
 	position: relative;
 	margin: auto;
 	height: auto;
 	width: auto;
+	transition: 0.5s ease all !important;
 }
 .logo_adj{
 	display:flex;
@@ -375,7 +379,7 @@ input[type="password"].password_input:focus {
 	font-weight: bold;
 }
 .btn_login_adj:hover {
-	background: #fff;
+	background: #e6e6e6;
 	color: #172b4d;
 	transition: 0.5s ease-in-out;
 }

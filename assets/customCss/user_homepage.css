@@ -12,7 +12,7 @@ ul.navbar_res li {
 .logo_adj {
 	background: none !important;
 }
-.logo_adj:hover{
+.logo_adj:hover {
 	box-shadow: none !important;
 }
 .input_adj {
@@ -107,19 +107,52 @@ input[type="text"].input_search:focus {
 	color: #2b2b52 !important;
 	transition: 0.4s ease-in-out;
 }
-.dropdown:hover > .dropdown-menu {
-	display: block;
+.btnClose_adj {
+	left: 370px;
+	padding: 5px !important;
+	vertical-align: middle !important;
+	box-shadow: none !important;
+	border: none !important;
+	outline: none !important;
 }
+.btnClose_adj1 {
+	left: 270px;
+	padding: 5px !important;
+	vertical-align: middle !important;
+	box-shadow: none !important;
+	border: none !important;
+	outline: none !important;
+}
+.drpHeader_adj {
+	font-size: large !important;
+}
+/* Note: Below code is used for dropdown onHover. To use this remove data-toggle attribute */
+/* .dropdown:hover > .dropdown-menu {
+	display: block;
+} */
+/* Note: Below code is used for dropdown onHover. To use this remove data-toggle attribute */
 .drp_adj {
+	width: 400px !important;
+	border: none;
+	padding: 5px !important;
+	background: #2b2b52;
+	position: absolute;
+	left: -301px !important;
+	top: 40px;
+}
+.drp_adj1 {
 	width: 300px !important;
 	border: none;
 	padding: 5px !important;
 	background: #2b2b52;
 	position: absolute;
-	left: -202px !important;
+	left: -255px !important;
 	top: 40px;
 }
 .drp_adj a {
+	color: #fff;
+}
+.drp_adj1 a {
 	color: #fff;
 }
 

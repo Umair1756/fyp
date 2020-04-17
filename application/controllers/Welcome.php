@@ -58,9 +58,18 @@ class Welcome extends CI_Controller
 	}
 	public function login()
 	{
-		$this->load->view('welcome/loginHeader');
-		$this->load->view('welcome/login');
-		$this->load->view('welcome/loginFooter');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|xss_clean');
+
+		if ($this->form_validation->run() == FALSE) {
+			$data['errors'] = isset($_POST['submit']) ? TRUE : FALSE;
+			$this->load->view('welcome/loginHeader');
+			$this->load->view('welcome/login', $data);
+			$this->load->view('welcome/loginFooter');
+		} else {
+			// load success template...
+			echo "It's all Good!";
+		}
+		// $this->load->view('welcome/login');
 	}
 	public function signup()
 	{

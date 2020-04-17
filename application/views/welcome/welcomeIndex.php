@@ -7,10 +7,10 @@
                 <div class="ml-auto" id="navbarSupportedContent">
                     <ul id="navigation-1" class="navbar-nav">
                         <li class="login-item">
-                            <button class="btn btn-link text-white login_adj">Log In</button>
+                            <button class="btn btn-link text-white login_adj btnLogIn">Log In</button>
                         </li>
                         <li class="pl-3 pr-3 rounded">
-                            <button class="btn btn-warning text-white">Sign Up</button>
+                            <button class="btn btn-warning text-white btnSignUp">Sign Up</button>
                         </li>
                     </ul>
                 </div>
@@ -41,7 +41,7 @@
                         <input type="text" class="form-control input-signup" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" />
                     </div>
                     <div class="input-group-prepend signup-btn">
-                        <button type="button" class="btn btn-warning rounded w-100 ml-1">
+                        <button type="button" class="btn btn-warning rounded w-100 ml-1 btnSignUp">
                             Sign Up <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
@@ -61,7 +61,7 @@
                         Whether it’s for work, a side project or even the next family
                         vacation, Trello helps your team stay organized.
                     </p>
-                    <button class="btn btn-lg btn-secondary rounded" href="#">Start doing →</>
+                    <button class="btn btn-lg btn-secondary rounded btnLogIn">Start doing →</button>
                 </div>
 
                 <div class="col-lg-6">
@@ -130,7 +130,7 @@
                         using Trello to get more done.
                     </p>
                     <div class="input-group-prepend m-auto signup-btn">
-                        <button type="button" class="btn btn-warning rounded w-100 ml-1">
+                        <button type="button" class="btn btn-warning rounded w-100 ml-1 btnSignUp">
                             Sign Up <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
