@@ -37,8 +37,7 @@
 			});
 			//onPageLoad loader
 			var loader = $(".pageLoader");
-
-			setTimeout(function preLoaderFunction() {
+			setTimeout(function() {
 				loader[0].style.display = "none";
 			}, 4000);
 		</script>

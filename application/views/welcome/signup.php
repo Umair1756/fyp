@@ -1,5 +1,5 @@
  <!-- Login Section -->
- <section class="pt-5 pb-5">
+ <section>
      <div class="container">
          <div class="row">
              <div class="col-lg-12 m-auto">
@@ -12,8 +12,8 @@
                              <div class="input-group position-relative">
                                  <input type="email" class="form-control mb-3 email_input rounded" placeholder="Enter Email" /><i class="far fa-envelope  position-absolute nav-link"></i>
                              </div>
-                             <input type="text" class="form-control mb-3 email_input d-none" placeholder="Enter full name" />
-                             <div class="input-group mb-3 d-none">
+                             <input type="text" class="form-control mb-3 email_input" placeholder="Enter full name" />
+                             <div class="input-group mb-3">
                                  <input type="password" class="form-control pwd rounded" />
                                  <div class="input-group-append">
                                      <button class="btn btn-outline-dark reveal" type="button">
@@ -30,7 +30,7 @@
                                  Google
                              </button>
                              <div class="p-4 border-top mt-2">
-                                 <button class="form-control border-0 btn_signin_adj">
+                                 <button class="form-control border-0 btn_signin_adj btnLogIn">
                                      Already have an account? Log In
                                  </button>
                              </div>

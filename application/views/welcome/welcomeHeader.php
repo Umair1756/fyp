@@ -88,9 +88,8 @@
         /* pageLoader Start */
     </style>
 </head>
-
 <!-- <body onload="preLoaderFunction()"> -->
 
-<body onload="preLoaderFunction()">
+<body>
     <div class="pageLoader">
     </div>

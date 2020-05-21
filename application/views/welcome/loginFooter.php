@@ -18,7 +18,7 @@
 							?>"></script> -->
 		<!-- <script src='<?php //echo base_url('assets/js/app_modules/user/login.js'); 
 							?>'></script> -->
-
+		<script src='<?php echo base_url('assets/auth_files/index.js'); ?>'></script>
 		</body>
 
 		</html>

@@ -2,7 +2,7 @@
     <header class="header-section fixed-top">
         <div class="container">
             <nav id="navigation" class="navbar navbar-expand-lg">
-                <a id="logo-section" class="navbar-item" href="#">
+                <a href="<?php echo base_url('index.php/welcome') ?>" id="logo-section" class="navbar-item" href="#">
                     <span class="first_part_log">PRO</span><span class="secong_part_log">MAG</span></a>
                 <div class="ml-auto" id="navbarSupportedContent">
                     <ul id="navigation-1" class="navbar-nav">
@@ -157,7 +157,7 @@
                                 <a class="nav-link text-white" href="#">Privacy</a>
                             </li>
                         </div>
-                        <li class="nav-item ml-auto border p-2 pl-3 pr-3">
+                        <li class="nav-item ml-auto border p-2">
                             <a href="#theme-section" class="btn-link text-white" title="Go Up!!!"><i class="fas fa-arrow-up"></i></a>
                         </li>
                     </ul>

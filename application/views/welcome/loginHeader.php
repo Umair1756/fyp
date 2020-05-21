@@ -34,6 +34,13 @@
     <script>
         var base_url = '<?php echo base_url(); ?>';
     </script>
+    <style>
+        p {
+            margin: 0px !important;
+            font-size: 15px !important;
+            font-weight: bold !important
+        }
+    </style>
 </head>
 
 <!-- <body style="background: #368EE0;"> -->
