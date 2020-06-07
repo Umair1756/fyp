@@ -32,13 +32,15 @@
                 <a class="nav-link text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
                 <ul class="dropdown-menu slideIn animate dropdown-menu-right text-white drp_adj1" role="menu" aria-labelledby="dropdownMenuLink">
                     <button type="button" class="close text-white position-absolute btnClose_adj1" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <li class="text-center dropdown-header p-3 text-white drpHeader_adj">User Name</li>
+                    <li class="text-center dropdown-header p-3 text-white drpHeader_adj">
+                        <?php echo $_SESSION['user']; ?>
+                    </li>
                     <div class="dropdown-divider"></div>
                     <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Profile and Visiblity</a></li>
                     <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Activity</a></li>
                     <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Settings</a></li>
                     <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Help</a></li>
-                    <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">log Out</a></li>
+                    <li><a class="dropdown-item rounded pt-3 pb-3" name="logout" href="<?php echo base_url('index.php/welcome/logout'); ?>">Log Out</a></li>
                 </ul>
             </li>
         </ul>
@@ -47,8 +49,22 @@
 <!-- Header Section -->
 
 <div class="container penal_area">
+    <div class="hoverAdj">
+        <?php if (isset($_SESSION['success'])) : ?>
+            <div class="col-lg-12 text-center">
+                <div class="row">
+                    <div class="col-lg-5 m-auto text-center">
+                        <div class="success successBox text-white rounded-pill pl-3 pr-3 pt-1 pb-1">
+                            <i class="fa fa-check-circle"></i>
+                            <?php echo $_SESSION['success'] ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
     <div class="row">
-        <div class="col-lg-3 cl-md-3 d-lg-block d-md-block d-none">
+        <div class="col-lg-3 col-md-3 d-lg-block d-md-block d-none">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <div class="nav-link p-0 pl-3 pt-1 pb-1 rounded-pill anchor_adj" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                     <a><i class="fab fa-flipboard"></i> Boards</a>

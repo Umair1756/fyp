@@ -39,10 +39,46 @@ var IntroPage = function () {
                 e.preventDefault();
                 window.location = base_url + 'index.php/welcome/login'
             });
+
             $('.btnSignUp').on('click', function (e) {
                 e.preventDefault();
                 window.location = base_url + 'index.php/welcome/signup'
             });
+
+            // Password eyeView in SignUp Page
+            $('#eyeView').on('click', function (e) {
+                var x = document.getElementById("pwd");
+                if (x.type === "password") {
+                    $(".fa-eye").addClass("fa-eye-slash");
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                    $(".fa-eye").removeClass("fa-eye-slash");
+                }
+            });
+
+            $(".dangerBox").fadeOut(10000);
+            $(".successBox").fadeOut(10000);
+            // $(".hoverAdj").hover(
+            //     function() {
+            //         $(this).find(".successBox").stop().fadeOut();
+            //         $(this).find(".successBox").fadeIn();
+            //     },
+            //     function() {
+            //         $(this).find(".successBox").fadeIn();
+            //         $(this).find(".successBox").stop().fadeOut();
+            //     }
+            // )
+            // $(".hoverAdj").hover(
+            //     function() {
+            //         $(this).find(".dangerBox").stop().fadeOut();
+            //         $(this).find(".dangerBox").fadeIn();
+            //     },
+            //     function() {
+            //         $(this).find(".dangerBox").fadeIn();
+            //         $(this).find(".dangerBox").stop().fadeOut();
+            //     }
+            // )
         },
 
         initSignIn: function () {
@@ -51,15 +87,15 @@ var IntroPage = function () {
 
             // if (errors.length == 0) {
 
-                var uname = $.trim($('#txtUsername').val());
-                var pass = $.trim($('#txtPassowrd').val());
-                var mob_code = $.trim($('#txtMobCode').val());
-                var fn_dropdown = $.trim($('#fn_dropdown').val());
-                var fn_name = $.trim($('#fn_dropdown').find('option:selected').text());
-                var fn_sdate = $.trim($('#fn_dropdown').find('option:selected').data('sdate'));
-                var fn_edate = $.trim($('#fn_dropdown').find('option:selected').data('edate'));
-                // var fn_name = $.trim($('#fn_dropdown').find('option:selected').text());
-                fetch(uname, pass, mob_code, fn_dropdown, fn_name, fn_sdate, fn_edate);
+            var uname = $.trim($('#txtUsername').val());
+            var pass = $.trim($('#txtPassowrd').val());
+            var mob_code = $.trim($('#txtMobCode').val());
+            var fn_dropdown = $.trim($('#fn_dropdown').val());
+            var fn_name = $.trim($('#fn_dropdown').find('option:selected').text());
+            var fn_sdate = $.trim($('#fn_dropdown').find('option:selected').data('sdate'));
+            var fn_edate = $.trim($('#fn_dropdown').find('option:selected').data('edate'));
+            // var fn_name = $.trim($('#fn_dropdown').find('option:selected').text());
+            fetch(uname, pass, mob_code, fn_dropdown, fn_name, fn_sdate, fn_edate);
             // } else {
             //     alert('Enter valid Username or Password or Financial Year');
             //     var spans = "";
@@ -74,6 +110,15 @@ var IntroPage = function () {
     }
 
 };
-
 var introPage = new IntroPage();
 introPage.init();
+// function myFunction() {
+//     alert("Called")
+//     var x = document.getElementById("eyeView");
+//     if (x.type === "password") {
+//         x.type = "text";
+//     } else {
+//         x.type = "password";
+//     }
+// }
+// myFunction();
