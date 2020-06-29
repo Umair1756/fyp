@@ -9,9 +9,9 @@
                             <div class="h5 text-center font-weight-bold mb-5 border-0">
                                 Sign up for your Account
                             </div>
-                            <div class="input-group">
+                            <div class="input-group d-block">
                                 <?php if (isset($_SESSION['success'])) : ?>
-                                    <div class="success successBox text-white rounded-pill pl-3 pr-3 pt-1 pb-1">
+                                    <div class="success successBox text-white rounded pl-3 pr-3 pt-1 pb-1">
                                         <i class="far fa-check-circle"></i>
                                         <?php echo $_SESSION['success'] ?>
                                     </div>
@@ -19,10 +19,10 @@
                                 <?php echo validation_errors("<div class='danger dangerBox text-white rounded pl-3 pr-3 pt-1 pb-1'><i class='fa fa-times-circle'></i> ", "</div>"); ?>
                             </div>
                             <div class="input-group position-relative">
-                                <input type="email" class="form-control mb-3 email_input" name="email" placeholder="Enter Email" /><i class="fas fa-envelope  position-absolute nav-link"></i>
+                                <input type="email" class="form-control mb-3 email_input rounded" name="email" placeholder="Enter Email" /><i class="fas fa-envelope  position-absolute nav-link"></i>
                             </div>
                             <div class="input-group position-relative">
-                                <input type="text" class="form-control mb-3 email_input" name="fname" placeholder="Enter full name" /><i class="fas fa-file-signature position-absolute nav-link" style="top: 2px"></i>
+                                <input type="text" class="form-control mb-3 email_input rounded" name="fname" placeholder="Enter full name" /><i class="fas fa-file-signature position-absolute nav-link" style="top: 2px"></i>
                             </div>
                             <div class="input-group mb-3">
                                 <input type="password" class="form-control pwd rounded" id="pwd" name="password" /><i class="fas fa-key position-absolute nav-link" style="top: 2px"></i>

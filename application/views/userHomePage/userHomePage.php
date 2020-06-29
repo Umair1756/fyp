@@ -54,7 +54,7 @@
             <div class="col-lg-12 text-center">
                 <div class="row">
                     <div class="col-lg-5 m-auto text-center">
-                        <div class="success successBox text-white rounded-pill pl-3 pr-3 pt-1 pb-1">
+                        <div class="success successBox text-white rounded pl-3 pr-3 pt-1 pb-1">
                             <i class="fa fa-check-circle"></i>
                             <?php echo $_SESSION['success'] ?>
                         </div>
