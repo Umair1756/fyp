@@ -22,7 +22,7 @@ class Welcome extends CI_Controller
 	{
 		if (isset($_POST['login'])) {
 			$this->form_validation->set_rules("email", "Email", "required");
-			$this->form_validation->set_rules("password", "Password", "required|min_length[5]");
+			$this->form_validation->set_rules("password", "Password", "required");
 		}
 		if ($this->form_validation->run() == TRUE) {
 			$email     = $_POST['email'];
@@ -46,9 +46,11 @@ class Welcome extends CI_Controller
 	public function signup()
 	{
 		if (isset($_POST['signup'])) {
-			$this->form_validation->set_rules("email", "Email", "required");
+			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.uemail]');
 			$this->form_validation->set_rules("fname", "Full name", "required");
-			$this->form_validation->set_rules("password", "Password", "required|min_length[5]");
+			$this->form_validation->set_rules("password", "Password", "required|min_length[8]");
+
+			$this->form_validation->set_message("is_unique", "{field} already exist");
 		}
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
@@ -64,6 +66,15 @@ class Welcome extends CI_Controller
 		$this->load->view('welcome/signup');
 		$this->load->view('welcome/signupFooter');
 	}
+	// public function password_check($str)
+	// {
+	// 	if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
+	// 		return TRUE;
+	// 	} else {
+	// 		$this->form_validation->set_message("password_check", "{field} field must be aplha_numeric");
+	// 		return FALSE;
+	// 	}
+	// }
 	public function logout()
 	{
 		$this->session->sess_destroy();

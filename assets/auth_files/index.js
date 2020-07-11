@@ -57,7 +57,7 @@ var IntroPage = function () {
                 }
             });
 
-            $(".dangerBox").fadeOut(10000);
+            // $(".dangerBox").fadeOut(10000);
             $(".successBox").fadeOut(10000);
             // $(".hoverAdj").hover(
             //     function() {

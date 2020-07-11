@@ -54,7 +54,7 @@
             <div class="col-lg-12 text-center">
                 <div class="row">
                     <div class="col-lg-5 m-auto text-center">
-                        <div class="success successBox text-white rounded-pill pl-3 pr-3 pt-1 pb-1">
+                        <div class="success successBox text-white rounded pl-3 pr-3 pt-1 pb-1">
                             <i class="fa fa-check-circle"></i>
                             <?php echo $_SESSION['success'] ?>
                         </div>
@@ -91,7 +91,7 @@
                     </p>
                     <div class="container">
                         <div class="row">
-                            <a class="nav-link text-center col-md-5 col-sm-6  p-4 m-1 rounded-0 p_anchor_adj">
+                            <a class="nav-link text-center col-md-5 col-sm-6  p-4 m-1 rounded-0 p_anchor_adj" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
                                 <i class="fas fa-plus"></i> Create new board
                             </a>
                             <a class="nav-link text-center col-lg-3 col-md-5 col-sm-6 p-4 ml-4 m-1 rounded-0 p_anchor_adj">
@@ -111,5 +111,27 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg mt-5" style="width: 30%;">
+                <div class="modal-content mt-5" style="background-color: transparent !important; border: none;">
+                    <div class="container">
+                        <div class="modal-body text-muted">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="" placeholder="Add a more detailed Description" style="background-color: rgba(9,30,66,.04)">
+                                        <button type="submit" class="btn btn-secondary mt-2">Create Board</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
