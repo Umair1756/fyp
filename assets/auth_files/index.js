@@ -58,7 +58,9 @@ var IntroPage = function () {
             });
 
             // $(".dangerBox").fadeOut(10000);
-            $(".successBox").fadeOut(10000);
+            $(".successBox").fadeOut(4000);
+            // $("#no-trans").stop().fadeOut();
+            // $("#no-trans").fadeIn();
             // $(".hoverAdj").hover(
             //     function() {
             //         $(this).find(".successBox").stop().fadeOut();

@@ -450,14 +450,28 @@ i.fa-google:hover {
 	background: linear-gradient(to left, #019031, #26ae60);
 }
 .success {
-	padding: 0.75rem 1.25rem;
-	margin-bottom: 1rem;
+	/* padding: 0.75rem 1.25rem; */
+	/* margin-bottom: 1rem; */
 	border-radius: 0.25rem;
-	font-size: 17px;
+	font-size: 16px;
+	padding: 10px;
+	box-shadow: 1px 1px 6px 0px black;
 }
 .form-control {
 	border: transparent !important;
 }
 .border-danger {
 	border: 1px solid #e44236 !important;
+}
+.board-alert {
+	/* width: 332px; */
+}
+.alert-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.main-wrapper-board {
+	position: relative;
+	min-height: 90vh;
 }

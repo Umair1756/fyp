@@ -33,6 +33,7 @@ class Welcome extends CI_Controller
 				$this->session->set_flashdata("success", "Login Successfull");
 				$_SESSION['user_logged'] = TRUE;
 				$_SESSION['user'] = $result['uname'];
+				$_SESSION['uid'] = $result['uid'];
 				redirect("userHome/");
 			} else {
 				$this->session->set_flashdata("error", "Email or Password Incorrect . . .");
