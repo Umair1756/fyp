@@ -85,11 +85,33 @@
             z-index: 9999;
         }
 
-        /* pageLoader Start */
+        /* pageLoader End */
+        
+        /* arrowUp*/
+        #arrow-up {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #00997b;
+  color: white;
+  cursor: pointer;
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+}
+
+#arrow-up:hover {
+  background-color: #fea203;
+}
+        /* arrowUp*/
     </style>
 </head>
 <!-- <body onload="preLoaderFunction()"> -->
 
 <body>
-    <div class="pageLoader">
-    </div>
+    <!-- <div class="pageLoader">
+    </div> -->

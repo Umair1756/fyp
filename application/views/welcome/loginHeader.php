@@ -45,4 +45,4 @@
 
 <!-- <body style="background: #368EE0;"> -->
 
-<body style="background: url(/promag/assets/img/trellians-2x-2.png) !important;background-position: bottom !important;background-repeat: no-repeat !important;background-size: contain !important;background-position: bottom !important;padding: 100px 0px 0px 0px !important;background-attachment: fixed !important">
+<body style="background-position: bottom !important;background-repeat: no-repeat !important;background-size: contain !important;padding: 100px 0px 0px 0px !important;background-attachment: fixed !important">
