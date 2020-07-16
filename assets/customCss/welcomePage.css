@@ -76,9 +76,9 @@ body {
 	font-weight: bold;
 }
 .header-section {
-	box-shadow: 0px 0px 2px 1px #1b1b1d;
-	border-bottom: 1px solid #1b1b1d !important;
-	background: #1b1b1d;
+	/* box-shadow: 0px 0px 2px 1px #1b1b1d; */
+	/* border-bottom: 1px solid #1b1b1d !important; */
+	background: #57c07e;
 	width: 100%;
 	line-height: 40px !important;
 	transition: 0.5s ease-in-out;
@@ -126,7 +126,7 @@ body {
 	text-decoration: none !important;
 }
 #theme-section {
-	background: #1b1b1d;
+	background: #2b4949;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
@@ -240,7 +240,7 @@ p.leads {
 	padding: 0;
 }
 #parallax-section {
-	background: url(../img/trellians-2x-2.png);
+
 	background-position: center;
 	background-size: contain;
 	padding: 70px 0;
@@ -274,8 +274,8 @@ p.leads {
 	padding: 0;
 }
 #footer-section {
-	background: #0e1015;
-	padding: 96px 0px;
+	background: #57c07e;
+	padding: 50px 0px;
 }
 #footer-section .left-side p {
 	font-size: 14px;
@@ -301,10 +301,7 @@ p.leads {
 	text-decoration: none;
 	color: #fff;
 }
-#footer-section ul li a i.fa-arrow-up:hover {
-	transform: scale(2) !important;
-	transition: 0.5s ease-in-out;
-}
+
 #footer-section .right-side ul .last-arrow-anchor {
 	float: right;
 	margin-right: 10px;
@@ -328,7 +325,7 @@ input.pwd {
 }
 i.fa-envelope,
 i.fa-key {
-	color: #2b2b52 !important;
+	color: #5abe7e !important;
 }
 .email_input::-webkit-input-placeholder,
 .password_input::-webkit-input-placeholder {
@@ -338,13 +335,14 @@ input[type="email"].email_input,
 input[type="text"].email_input {
 	outline: 1;
 	box-shadow: none;
-	padding-left: 40px;
+	padding-left: 50px;
 	border: 2px solid transparent;
 }
+
 input[type="email"].email_input:focus,
 input[type="text"].email_input:focus {
 	background: #ffffff !important;
-	border-bottom: 2px solid #2b2b52 !important;
+	border-bottom: 2px solid #00997b !important;
 	border-top-color: #ffffff !important;
 	border-right-color: #ffffff !important;
 	border-left-color: #ffffff !important;
@@ -353,15 +351,17 @@ input[type="text"].email_input:focus {
 	box-shadow: none;
 	transition: 0.5s ease-in-out;
 }
+
 input[type="password"].password_input {
 	outline: 1;
 	box-shadow: none;
-	padding-left: 40px;
+	padding-left: 50px;
 }
+
 input[type="password"].password_input:focus,
 input[type="password"].pwd:focus {
 	background: #ffffff !important;
-	border-bottom: 2px solid #2b2b52 !important;
+	border-bottom: 2px solid #00997b !important;
 	border-top-color: #ffffff !important;
 	border-right-color: #ffffff !important;
 	border-left-color: #ffffff !important;
@@ -370,14 +370,19 @@ input[type="password"].pwd:focus {
 	box-shadow: none;
 	transition: 0.5s ease-in-out;
 }
+
+.fa-inbox {
+	padding-top: 10px;
+	color: #5abe7e;
+}
+
 .btn_login_adj {
-	background: #172b4d;
+	background: #00997b;
 	color: #fff;
-	font-weight: bold;
 }
 .btn_login_adj:hover {
-	background: #e6e6e6;
-	color: #172b4d;
+	background: #fea203;
+	color: #fff;
 	transition: 0.5s ease-in-out;
 }
 .btn_google_adj {

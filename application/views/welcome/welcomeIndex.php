@@ -3,14 +3,15 @@
         <div class="container">
             <nav id="navigation" class="navbar navbar-expand-lg">
                 <a href="<?php echo base_url('index.php/welcome') ?>" id="logo-section" class="navbar-item" href="#">
-                    <span class="first_part_log">PRO</span><span class="secong_part_log">MAG</span></a>
+                    <img class="img-fluid" src="<?php echo base_url('assets/img/logo.png') ?>" alt="promag_collaboration" />
+                </a>
                 <div class="ml-auto" id="navbarSupportedContent">
                     <ul id="navigation-1" class="navbar-nav">
                         <li class="login-item">
                             <button class="btn btn-link text-white login_adj btnLogIn">Log In</button>
                         </li>
                         <li class="pl-3 pr-3 rounded">
-                            <button class="btn btn-warning text-white btnSignUp">Sign Up</button>
+                            <button class="btn btn_login_adj text-white btnSignUp">Sign Up</button>
                         </li>
                     </ul>
                 </div>
@@ -36,17 +37,21 @@
                 <div class="col-lg-6 img-area">
                     <img class="img-fluid" src="<?php echo base_url('assets/img/hero-a.svg') ?>" alt="promag_collaboration" />
                 </div>
-                <form action="" class="form-inline signup-section">
-                    <div class="input-group input-email p-1 ">
-                        <input type="text" class="form-control input-signup" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" />
-                    </div>
-                    <div class="input-group-prepend signup-btn">
-                        <button type="button" class="btn btn-warning rounded w-100 ml-1 btnSignUp">
-                            Sign Up <i class="fas fa-sign-in-alt"></i>
-                        </button>
-                    </div>
-                </form>
             </div>
+                    <div class="row">
+                    <div class="col-lg-12 pt-5">
+                    <form action="" class="form-inline signup-section">
+                        <div class="input-group input-email p-1 ">
+                            <input type="text" class="form-control input-signup" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" />
+                        </div>
+                                <div class="input-group-prepend signup-btn">
+                                    <button type="button" class="btn btn_login_adj rounded w-100 ml-1 btnSignUp">
+                                        Sign Up <i class="fas fa-sign-in-alt"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
         </div>
     </section>
     <!-- Team Collaoration Area -->
@@ -61,7 +66,7 @@
                         Whether it’s for work, a side project or even the next family
                         vacation, Trello helps your team stay organized.
                     </p>
-                    <button class="btn btn-lg btn-secondary rounded btnLogIn">Start doing →</button>
+                    <button class="btn btn-lg btn_login_adj rounded btnLogIn">Start doing →</button>
                 </div>
 
                 <div class="col-lg-6">
@@ -130,7 +135,7 @@
                         using Trello to get more done.
                     </p>
                     <div class="input-group-prepend m-auto signup-btn">
-                        <button type="button" class="btn btn-warning rounded w-100 ml-1 btnSignUp">
+                        <button type="button" class="btn btn_login_adj rounded w-100 ml-1 btnSignUp">
                             Sign Up <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
@@ -139,14 +144,15 @@
         </div>
     </section>
     <!-- Start Planning section -->
+    <button class="arrow_up_btn" onclick="topFunction()" id="arrow-up" title="Go to top"><i class="fa fa-angle-up"></i></button>
 
     <!-- Footer -->
-    <section id="footer-section" class="about-footer-area section-gap">
+    <!-- <section id="footer-section" class="about-footer-area section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="nav">
-                        <div class="nav col-lg-6 ml-auto">
+                        <div class="nav col-lg-3 ml-auto bg-">
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#">About</a>
                             </li>
@@ -164,5 +170,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Footer -->
