@@ -1,31 +1,5 @@
 var IntroPage = function () {
-    var fetch = function (uname, pass, mob_code, fn_dropdown, fn_name, fn_sdate, fn_edate) {
-        // alert(uname);
-        $.ajax({
-            url: base_url + 'index.php/welcome/login',
-            type: 'POST',
-            data: { uname: uname, pass: pass, mob_code: mob_code, fn_dropdown: fn_dropdown, fn_name: fn_name, fn_sdate: fn_sdate, fn_edate: fn_edate },
-            beforeSend: function () {
-                // console.log(this.data);
-            },
-            dataType: 'JSON',
-            success: function (data) {
-                // alert(data)
-                // console.log(data);
-                if (data == 'Blocked') {
-                    alert("User Has Been Blocked. Please Contact Administrator");
-                    var span = "<span class='login-error'>User Has Been Blocked.</span>";
-                    $(span).appendTo('.errors_section');
-                } else {
-                    // alert(fn_name);
-                    window.location = base_url + 'index.php/user/dashboard';
-                }
-            }, error: function (xhr, status, error) {
-                window.location = base_url + 'index.php/user/dashboard';
-                console.log(xhr.responseText);
-            }
-        });
-    }
+
     return {
 
         init: function () {
@@ -59,6 +33,19 @@ var IntroPage = function () {
 
             // $(".dangerBox").fadeOut(10000);
             $(".successBox").fadeOut(4000);
+                $("#click-add-list-btn").on("click", function(e){
+                    e.preventDefault(e);
+                    $("#add-list").fadeIn();
+                    $("#input-listname").fadeIn();
+                    $("#add-list-cancel").fadeIn();
+                    // alert("Clciked.....");
+                    $("#add-list").removeClass("d-none");
+                    $("#input-listname").removeClass("d-none");
+                    $("#add-list-cancel").removeClass("d-none");
+                    $("#click-add-list-btn").addClass("d-none");
+                    $("#click-add-list-btn").fadeOut();
+                    $("#input-listname").focus();
+                });
             // $("#no-trans").stop().fadeOut();
             // $("#no-trans").fadeIn();
             // $(".hoverAdj").hover(
