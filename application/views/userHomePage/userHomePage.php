@@ -16,12 +16,12 @@
     <div class="row">
         <div class="col-lg-3 col-md-3 d-lg-block d-md-block d-none">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <div class="nav-link p-0 pl-3 pt-1 pb-1 rounded-pill anchor_adj" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                    <a><i class="fab fa-flipboard pr-2"></i> Boards</a>
+                <div class="nav-link p-0 pl-3 pt-1 pb-1 anchor_adj" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <a><i class="fab fa-flipboard pr-2"></i> Home</a>
                 </div>
-                <a class="nav-link p-0 pl-3 pt-1 pb-1 mt-2 anchor_adj" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-500px pr-2"></i> Home</a>
+                <a class="nav-link p-0 pl-3 pt-1 pb-1 mt-2 anchor_adj" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-500px pr-2"></i> Boards</a>
                 <p class="mt-3 ml-3">TEAMS</p>
-                <a class="nav-link p-0 pl-3 pt-1 pb-1 anchor_create_adj" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fas fa-plus-circle pr-2"></i> Create a Team</a>
+                <a class="btn_login_adj nav-link p-0 pl-3 pt-1 pb-1 anchor_create_adj" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fas fa-plus-circle pr-2"></i> Create a Team</a>
             </div>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 r_tab_content">
