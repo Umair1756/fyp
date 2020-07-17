@@ -33,19 +33,26 @@ var IntroPage = function () {
 
             // $(".dangerBox").fadeOut(10000);
             $(".successBox").fadeOut(4000);
-                $("#click-add-list-btn").on("click", function(e){
-                    e.preventDefault(e);
-                    $("#add-list").fadeIn();
-                    $("#input-listname").fadeIn();
-                    $("#add-list-cancel").fadeIn();
-                    // alert("Clciked.....");
-                    $("#add-list").removeClass("d-none");
-                    $("#input-listname").removeClass("d-none");
-                    $("#add-list-cancel").removeClass("d-none");
-                    $("#click-add-list-btn").addClass("d-none");
-                    $("#click-add-list-btn").fadeOut();
-                    $("#input-listname").focus();
-                });
+            $("#click-add-list-btn").on("click", function (e) {
+                e.preventDefault(e);
+                $("#add-list").fadeIn();
+                $("#input-listname").fadeIn();
+                $("#add-list-cancel").fadeIn();
+                // alert("Clciked.....");
+                $("#add-list").removeClass("d-none");
+                $("#input-listname").removeClass("d-none");
+                $("#add-list-cancel").removeClass("d-none");
+                $("#click-add-list-btn").addClass("d-none");
+                $("#click-add-list-btn").fadeOut();
+                $("#input-listname").focus();
+            });
+            // $(".btnSignUp").on("click", function (e) {
+            //     e.preventDefault()
+            //     var signUpInput = $("#signUpInput").val();
+            //     window.location.href = base_url + "index.php/welcome/signup/" + signUpInput;
+            //     // $(".email_input").val(signUpInput);
+            //     console.log(signUpInput);
+            // });
             // $("#no-trans").stop().fadeOut();
             // $("#no-trans").fadeIn();
             // $(".hoverAdj").hover(

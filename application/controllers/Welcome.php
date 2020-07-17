@@ -46,6 +46,9 @@ class Welcome extends CI_Controller
 	}
 	public function signup()
 	{
+		if (isset($_GET)) {
+			$data['email'] = $this->input->get('email');
+		}
 		if (isset($_POST['signup'])) {
 			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.uemail]');
 			$this->form_validation->set_rules("fname", "Full name", "required");
@@ -64,7 +67,7 @@ class Welcome extends CI_Controller
 			redirect("welcome/signup");
 		}
 		$this->load->view('welcome/signupHeader');
-		$this->load->view('welcome/signup');
+		$this->load->view('welcome/signup', $data);
 		$this->load->view('welcome/signupFooter');
 	}
 	// public function password_check($str)
