@@ -145,30 +145,3 @@
     </section>
     <!-- Start Planning section -->
     <button class="arrow_up_btn" onclick="topFunction()" id="arrow-up" title="Go to top"><i class="fa fa-angle-up"></i></button>
-
-    <!-- Footer -->
-    <!-- <section id="footer-section" class="about-footer-area section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="nav">
-                        <div class="nav col-lg-3 ml-auto bg-">
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Help</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Privacy</a>
-                            </li>
-                        </div>
-                        <li class="nav-item ml-auto border p-2">
-                            <a href="#theme-section" class="btn-link text-white" title="Go Up!!!"><i class="fas fa-arrow-up"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Footer -->

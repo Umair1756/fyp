@@ -32,9 +32,6 @@
                              </div>
                              <button class="form-control btn mt-3 mb-3 btn_login_adj" name="login">Log In <i class="fas fa-sign-in-alt"></i></button>
                              <p class="text-center mb-3 border-0" style="color: #091a14 !important;">OR</p>
-                             <button class="form-control btn mb-3 btn_google_adj">
-                                 <i class="fab fa-google text-danger mr-1"></i> Log in with Google
-                             </button>
                              <button class="form-control btn btn_signup_adj btnSignUp">
                                  <i class="fas fa-user-plus text-primary mr-1"></i> Sign up for an account
                              </button>
