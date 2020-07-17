@@ -19,7 +19,7 @@
                                 <?php echo validation_errors("<div class='danger dangerBox text-white rounded pl-3 pr-3 pt-1 pb-1'><i class='fa fa-times-circle'></i> ", "</div>"); ?>
                             </div>
                             <div class="input-group position-relative">
-                                <input type="email" class="form-control mb-3 email_input rounded" name="email" placeholder="Enter Email" /><i class="fas fa-envelope  position-absolute nav-link"></i>
+                                <input type="email" class="form-control mb-3 email_input rounded" value="<?php echo $email ?>" id="txtEmail" name="email" placeholder="Enter Email" /><i class="fas fa-envelope  position-absolute nav-link"></i>
                             </div>
                             <div class="input-group position-relative">
                                 <input type="text" class="form-control mb-3 email_input rounded" name="fname" placeholder="Enter full name" /><i class="fas fa-file-signature position-absolute nav-link" style="top: 2px; color: #5abe7e;"></i>
@@ -36,9 +36,9 @@
                                 Continue <i class="fas fa-angle-double-right"></i>
                             </button>
                             <p class="text-center mb-3 border-0">OR</p>
-                                <button class="form-control border-0 btn_signin_adj btnLogIn">
-                                    Already have an account? Log In
-                                </button>
+                            <button class="form-control border-0 btn_signin_adj btnLogIn">
+                                Already have an account? Log In
+                            </button>
                         </div>
                     </div>
                 </form>

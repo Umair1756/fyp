@@ -38,20 +38,20 @@
                     <img class="img-fluid" src="<?php echo base_url('assets/img/hero-a.svg') ?>" alt="promag_collaboration" />
                 </div>
             </div>
-                    <div class="row">
-                    <div class="col-lg-12 pt-5">
-                    <form action="" class="form-inline signup-section">
+            <div class="row">
+                <div class="col-lg-12 pt-5">
+                    <form action="signup" method="GET" class="form-inline signup-section">
                         <div class="input-group input-email p-1 ">
-                            <input type="text" class="form-control input-signup" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" />
+                            <input type="email" class="form-control input-signup" id="signUpInput" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="email" />
                         </div>
-                                <div class="input-group-prepend signup-btn">
-                                    <button type="button" class="btn btn_login_adj rounded w-100 ml-1 btnSignUp">
-                                        Sign Up <i class="fas fa-sign-in-alt"></i>
-                                    </button>
-                                </div>
-                            </form>
-                            </div>
+                        <div class="input-group-prepend signup-btn">
+                            <button type="submit" class="btn btn_login_adj rounded w-100 ml-1">
+                                Sign Up <i class="fas fa-sign-in-alt"></i>
+                            </button>
                         </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Team Collaoration Area -->

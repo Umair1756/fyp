@@ -86,7 +86,7 @@
         }
 
         /* pageLoader End */
-        
+
         /* arrowUp*/
         #arrow-up {
             display: none;
@@ -105,8 +105,12 @@
         }
 
         #arrow-up:hover {
-            background-color: #fea203;
+            background: #fea203;
+            color: #fff;
+            transition: 0.5s ease-in-out;
         }
+
+
         /* arrowUp*/
     </style>
 </head>
