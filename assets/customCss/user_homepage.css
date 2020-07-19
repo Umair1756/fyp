@@ -99,7 +99,7 @@ a.nav-link {
 	/* opacity: 0.1; */
 }
 .penal_area {
-	margin-top: 90px;
+	margin-top: 105px;
 }
 .r_tab_content {
 	border-left: 1px dashed #2b2b52;
@@ -150,6 +150,10 @@ a.nav-link {
 	box-shadow: none !important;
 	border: none !important;
 	outline: none !important;
+}
+
+.text-2b4949 {
+	color: #2b4949;
 }
 .drpHeader_adj {
 	font-size: large !important;
