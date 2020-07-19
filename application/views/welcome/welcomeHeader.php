@@ -1,12 +1,3 @@
-<?php
-
-// $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-// $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
-// $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-// $this->output->set_header('Pragma: no-cache');
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +5,6 @@
     <meta charset="UTF-8">
     <title>ProMag</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-
     <!-- <link rel="shortcut icon" href="<?php // echo base_url('assets/img/favicon.png'); 
                                             ?>"> -->
 
@@ -119,3 +109,24 @@
 <body>
     <!-- <div class="pageLoader">
     </div> -->
+    <!-- Haeder Section -->
+    <header class="header-section fixed-top">
+        <div class="container">
+            <nav id="navigation" class="navbar navbar-expand-lg">
+                <a href="<?php echo base_url('index.php/welcome') ?>" id="logo-section" class="navbar-item" href="#">
+                    <img class="img-fluid" src="<?php echo base_url('assets/img/logo.png') ?>" alt="promag_collaboration" />
+                </a>
+                <div class="ml-auto" id="navbarSupportedContent">
+                    <ul id="navigation-1" class="navbar-nav">
+                        <li class="login-item">
+                            <button class="btn btn-link text-white login_adj btnLogIn">Log In</button>
+                        </li>
+                        <li class="pl-3 pr-3 rounded">
+                            <button class="btn btn_login_adj text-white btnSignUp">Sign Up</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header Section -->

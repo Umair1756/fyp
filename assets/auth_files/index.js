@@ -32,7 +32,7 @@ var IntroPage = function () {
             });
 
             // $(".dangerBox").fadeOut(10000);
-            $(".successBox").fadeOut(4000);
+            // $(".successBox").fadeOut(4000);
             $("#click-add-list-btn").on("click", function (e) {
                 e.preventDefault(e);
                 $("#add-list").fadeIn();

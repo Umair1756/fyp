@@ -193,6 +193,7 @@ p.leads {
 }
 .right-side h1 {
 	font-family: "PT Sans Bold";
+	/* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 	margin-bottom: 0.5rem;
 	font-weight: 500;
 	line-height: 66px;
