@@ -1,7 +1,6 @@
 
 <div class="penal_area">
-    <div class="row">
-        <div class="col-lg-12 col-md-3 d-lg-block d-md-block d-none" style="margin-left: 20px;">
+        <div class="col-lg-12 col-md-3 d-lg-block d-md-block d-none">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-flipboard pr-2"></i> Home</a>
@@ -78,7 +77,6 @@
                 </div>
             </form>
         </div>
-    </div>
 <?php if (isset($_SESSION['success'])) : ?>
     <div class="col-lg-12 text-left alert-content">
         <div class="row">
