@@ -1,32 +1,24 @@
-<div class="container penal_area">
-    <div class="hoverAdj">
-        <?php if (isset($_SESSION['success'])) : ?>
-            <div class="col-lg-12 text-center">
-                <div class="row">
-                    <div class="col-lg-5 m-auto text-center">
-                        <div class="success successBox text-white rounded pl-3 pr-3 pt-1 pb-1">
-                            <i class="fa fa-check-circle"></i>
-                            <?php echo $_SESSION['success'] ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>
-    </div>
-    <div class="row">
-        <div class="col-lg-3 col-md-3 d-lg-block d-md-block d-none">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+<div class="penal_area">
+        <div class="col-lg-12 col-md-3 d-lg-block d-md-block d-none">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-flipboard pr-2"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-500px pr-2"></i> Boards</a>
+                </li>
+            </ul>
+            <!-- <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <div class="nav-link p-0 pl-3 pt-1 pb-1 anchor_adj" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                     <a><i class="fab fa-flipboard pr-2"></i> Home</a>
                 </div>
                 <a class="nav-link p-0 pl-3 pt-1 pb-1 mt-2 anchor_adj" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fab fa-500px pr-2"></i> Boards</a>
-                <p class="mt-3 ml-3">TEAMS</p>
-                <a class="btn_login_adj nav-link p-0 pl-3 pt-1 pb-1 anchor_create_adj" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fas fa-plus-circle pr-2"></i> Create a Team</a>
-            </div>
+            </div> -->
         </div>
-        <div class="col-lg-9 col-md-9 col-sm-12 r_tab_content">
+        <!-- <div class="col-lg-9 col-md-9 col-sm-12 r_tab_content">
             <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="tab-pane fade show " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <p class="m-2"><i class="fas fa-history pr-2"></i> Recently Viewed</p>
                     <div class="container mb-5">
                         <div class="row">
@@ -59,7 +51,7 @@
                     Home
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <form action="<?php echo base_url('index.php/userHome/saveTitle'); ?>" method="POST">
                 <div class="modal-dialog modal-lg mt-5" style="width: 30%;">
@@ -85,4 +77,15 @@
                 </div>
             </form>
         </div>
+<?php if (isset($_SESSION['success'])) : ?>
+    <div class="col-lg-12 text-left alert-content">
+        <div class="row">
+            <div class="col-lg-3 ml-auto text-center">
+                <div class="success successBox text-white rounded board-alert">
+                    <i class="fa fa-check-circle"></i>
+                    <?php echo $_SESSION['success'] ?>
+                </div>
+            </div>
+        </div>
     </div>
+<?php endif; ?>

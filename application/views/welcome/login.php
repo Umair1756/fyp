@@ -6,8 +6,8 @@
                  <form method="POST">
                      <div class="row">
                          <div class="col-lg-4 m-auto pt-5 pb-5 pl-4 pr-4 rounded login_adj">
-                             <div class="h1 text-center font-weight-bold border-0 mb-5" style="color: #091a14">Login with ProMag</div>
-                             <div class=" input-group position-relative d-block mb-3">
+                             <div class="h1 text-center font-weight-bold border-0 mb-5" style="color: #091a14">Login with your ProMag account</div>
+                             <div class=" input-group position-relative d-block">
                                  <?php echo validation_errors("<div class='danger dangerBox text-white rounded pl-3 pr-3 pt-1 pb-1 ml-auto mr-auto'><i class='fa fa-times-circle'></i> ", "</div>"); ?>
                                  <?php if (isset($_SESSION['error'])) : ?>
                                      <div class="danger dangerBox text-white rounded pl-3 pr-3 pt-1 pb-1 ml-auto mr-auto">
