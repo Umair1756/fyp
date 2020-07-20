@@ -51,7 +51,7 @@ class Welcome extends CI_Controller
 			$data['email'] = $this->input->get('email');
 		}
 
-		// 
+		// click on signup btn and check validation
 		if (isset($_POST['signup'])) {
 			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.uemail]');
 			$this->form_validation->set_rules("fname", "Full name", "required");
@@ -60,34 +60,40 @@ class Welcome extends CI_Controller
 			$this->form_validation->set_message("is_unique", "{field} already exist");
 		}
 
-		// 
+		// if not error in form validation then save user record
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
 				'uemail'     => $_POST['email'],
 				'uname'     => $_POST['fname'],
 				'upassword'  => md5($_POST['password']),
 			);
+			// insert record
 			$this->db->insert('users', $data);
 			$this->session->set_flashdata("success", "Signup Successful! Login Now...");
 			redirect("welcome/signup");
 		}
 
-		// 
+		// loading view
 		$this->load->view('welcome/signupHeader');
 		$this->load->view('welcome/signup', $data);
 		$this->load->view('welcome/signupFooter');
 	}
+	// Reset Password using sendingEmail
 	public function authEmail($email, $subject, $msg, $token, $from)
 	{
+		// email configuration 
 		$config['protocol']    = 'smtp';
 		$config['smtp_host']    = 'ssl://smtp.gmail.com';
 		$config['smtp_port']    = '465';
 		$config['smtp_timeout'] = '60';
 
+		// user email use for sending mails to other users for rset password
 		$config['smtp_user']    = 'promag321347@gmail.com';  //Important
+
+		// password has been taken from google security provider i.e Two step verification
 		$config['smtp_pass']    = 'tkkfmbdhnhslensk';        //Important
 
-		$config['charset']    = 'utf-8';
+		$config['charset']    = 'utf-8'; 	//character set standard for message  
 		$config['newline']    = "\r\n";
 		$config['mailtype'] = 'html';                           // or html
 		$config['validation'] = TRUE;                           // bool whether to validate email or not
@@ -149,6 +155,7 @@ class Welcome extends CI_Controller
 		$this->session->set_flashdata("success", "Password has been reset...");
 		redirect("welcome/login");
 	}
+	// logout
 	public function logout()
 	{
 		$this->session->sess_destroy();
