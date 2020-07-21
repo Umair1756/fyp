@@ -79,28 +79,6 @@ var IntroPage = function () {
 
         initSignIn: function () {
 
-            // var errors = validateSignIn();
-
-            // if (errors.length == 0) {
-
-            var uname = $.trim($('#txtUsername').val());
-            var pass = $.trim($('#txtPassowrd').val());
-            var mob_code = $.trim($('#txtMobCode').val());
-            var fn_dropdown = $.trim($('#fn_dropdown').val());
-            var fn_name = $.trim($('#fn_dropdown').find('option:selected').text());
-            var fn_sdate = $.trim($('#fn_dropdown').find('option:selected').data('sdate'));
-            var fn_edate = $.trim($('#fn_dropdown').find('option:selected').data('edate'));
-            // var fn_name = $.trim($('#fn_dropdown').find('option:selected').text());
-            fetch(uname, pass, mob_code, fn_dropdown, fn_name, fn_sdate, fn_edate);
-            // } else {
-            //     alert('Enter valid Username or Password or Financial Year');
-            //     var spans = "";
-            //     $.each(errors, function (index, elem) {
-            //         spans += "<span class='login-error'>" + elem + "</span>";
-            //     });
-            //     // show the errors on the screen
-            //     $(spans).appendTo('.errors_section');
-            // }
         },
 
     }

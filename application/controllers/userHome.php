@@ -40,4 +40,10 @@ class Userhome extends CI_Controller
         $this->load->view('userHomePage/boardHome');
         $this->load->view('userHomePage/userHomePageFooter');
     }
+    public function userProfile()
+    {
+        $this->load->view('userHomePage/userHomePageHeader');
+        $this->load->view('userHomePage/userProfile');
+        $this->load->view('userHomePage/userHomePageFooter');
+    }
 }

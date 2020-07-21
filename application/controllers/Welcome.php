@@ -55,6 +55,7 @@ class Welcome extends CI_Controller
 		if (isset($_POST['signup'])) {
 			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.uemail]');
 			$this->form_validation->set_rules("fname", "Full name", "required");
+			$this->form_validation->set_rules("username", "Username", "required|is_unique[users.username]");
 			$this->form_validation->set_rules("password", "Password", "required|min_length[8]");
 
 			$this->form_validation->set_message("is_unique", "{field} already exist");
@@ -65,6 +66,7 @@ class Welcome extends CI_Controller
 			$data = array(
 				'uemail'     => $_POST['email'],
 				'uname'     => $_POST['fname'],
+				'username'     => $_POST['username'],
 				'upassword'  => md5($_POST['password']),
 			);
 			$this->db->insert('users', $data);
