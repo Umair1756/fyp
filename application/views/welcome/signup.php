@@ -16,7 +16,7 @@
                                         <?php echo $_SESSION['success'] ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php echo validation_errors("<div class='danger dangerBox text-white rounded pl-3 pr-3 pt-1 pb-1'><i class='fa fa-times-circle'></i> ", "</div>"); ?>
+                                <?php echo validation_errors("<div class='danger dangerBox text-white rounded pl-3 pr-3 pt-1 pb-1'><i class='fa fa-times-circle'></i>", "</div>"); ?>
                             </div>
                             <div class="input-group position-relative">
                                 <input type="email" class="form-control mb-3 email_input rounded" value="<?php echo $email ?>" id="txtEmail" name="email" placeholder="Enter Email" /><i class="fas fa-envelope  position-absolute nav-link"></i>
