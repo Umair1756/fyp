@@ -65,7 +65,7 @@
                             <?php echo $_SESSION['uid']; ?>
                         </li>
                         <div class="dropdown-divider"></div>
-                        <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Profile and Visiblity</a></li>
+                        <li><a class="dropdown-item rounded pt-3 pb-3" href="<?php echo base_url('index.php/userHome/userProfile'); ?>">Profile and Visiblity</a></li>
                         <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Settings</a></li>
                         <li><a class="dropdown-item rounded pt-3 pb-3" name="logout" href="<?php echo base_url('index.php/welcome/logout'); ?>">Log Out</a></li>
                     </ul>

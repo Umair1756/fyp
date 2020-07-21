@@ -196,6 +196,27 @@ a.nav-link {
     background-color: #fea203 !important;
 }
 
+/* UserProfile starts from Here */
+
+.header-area {
+	background-color: #2b4949;
+	margin-top: 79px;
+}
+
+.mt-adjust {
+	
+	padding-top: 50px;
+	padding-bottom: 50px;
+    background-color: #2b4949;
+}
+
+.smallHeading {
+	font-size: 14px !important;
+}
+
+/* Media Query Here */
+
+
 @media (min-width: 992px) {
 	.animate {
 		animation-duration: 0.3s;
