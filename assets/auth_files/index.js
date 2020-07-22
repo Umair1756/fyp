@@ -1,5 +1,24 @@
-var IntroPage = function () {
-
+var IndexJs = function () {
+    var saveTitle = function () {
+        $.ajax({
+            url: base_url + 'index.php/Userhome/saveTitle',
+            type: 'POST',
+            data: { 'txtTitle': $("#txtTitleName").val() },
+            dataType: 'JSON',
+        });
+    }
+    var validateTitle = function () {
+        var flag = false;
+        var txtTitleName = $("#txtTitleName").val();
+        if (txtTitleName == "") {
+            $("#txtTitleName").addClass("border-danger");
+            return flag = true;
+        }
+        else {
+            $("#txtTitleName").removeClass("border-danger");
+        }
+        return flag;
+    }
     return {
 
         init: function () {
@@ -11,13 +30,18 @@ var IntroPage = function () {
 
             $('.btnLogIn').on('click', function (e) {
                 e.preventDefault();
-                window.location = base_url + 'index.php/welcome/login'
+                window.location = base_url + 'index.php/welcome/login';
             });
 
             $('.btnSignUp').on('click', function (e) {
                 e.preventDefault();
-                window.location = base_url + 'index.php/welcome/signup'
+                window.location = base_url + 'index.php/welcome/signup';
             });
+
+            // $('#createBtn').on('click', function (e) {
+            //     e.preventDefault();
+            //     self.initSave();
+            // });
 
             // Password eyeView in SignUp Page
             $('#eyeView').on('click', function (e) {
@@ -77,22 +101,17 @@ var IntroPage = function () {
             // )
         },
 
-        initSignIn: function () {
+        initSave: function () {
 
+            var error = validateTitle();        // checks for the empty field
+
+            if (!error) {
+                saveTitle();
+            }
         },
 
     }
 
 };
-var introPage = new IntroPage();
-introPage.init();
-// function myFunction() {
-//     alert("Called")
-//     var x = document.getElementById("eyeView");
-//     if (x.type === "password") {
-//         x.type = "text";
-//     } else {
-//         x.type = "password";
-//     }
-// }
-// myFunction();
+var indexJs = new IndexJs();
+indexJs.init();

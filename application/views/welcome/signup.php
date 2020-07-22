@@ -28,10 +28,10 @@
                                 <input type="text" class="form-control mb-3 email_input rounded" name="username" placeholder="Enter Username" /><i class="fas fa-user-tag position-absolute nav-link" style="top: 2px; color: #5abe7e;"></i>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="password" class="form-control pwd rounded" id="pwd" name="password" placeholder="Enter Password"  /><i class="fas fa-key position-absolute nav-link" style="top: 2px"></i>
+                                <input type="password" class="form-control pwd rounded" id="pwd" name="password" placeholder="Enter Password" /><i class="fas fa-key position-absolute nav-link" style="top: 2px;z-index: 3!important;"></i>
                                 <div class="input-group-append">
                                     <button class="btn reveal position-absolute eyeView" id="eyeView" type="button">
-                                        <i class="fas fa-eye" style="color: #5abe7e;"></i>
+                                        <i class="fas fa-eye" style="color: #5abe7e;z-index: 3!important"></i>
                                     </button>
                                 </div>
                             </div>

@@ -14,8 +14,10 @@ class Userhome extends CI_Controller
 
     public function index()
     {
+        $data['ptitles'] = $this->userHomes->fetchLimitedBoards();
+        // die(print_r($data));
         $this->load->view('userHomePage/userHomePageHeader');
-        $this->load->view('userHomePage/userHomePage');
+        $this->load->view('userHomePage/userHomePage', $data);
         $this->load->view('userHomePage/userHomePageFooter');
     }
     public function saveTitle()
@@ -23,30 +25,35 @@ class Userhome extends CI_Controller
         if (isset($_POST['btnBoard'])) {
             $this->form_validation->set_rules("titlename", "Title name", "required|is_unique[projecttitle.ptname]");
         }
-
         if ($this->form_validation->run() == TRUE) {
             $data = array();
             $data = [
                 'ptname' => $this->input->post('titlename'),
                 'uid' => $_SESSION['uid']
             ];
-            // die(print_r($data));
 
             $result = $this->userHomes->insertTitle($data);
-            // return $result;
+
             if ($result) {
                 $data['msg'] = $this->session->set_flashdata("success", "Board is created, Now start your work");
                 redirect('userHome/boardBegin', $data);
             }
         } else {
-            $this->session->set_flashdata("error", "Board Name Can't be empty");
+            $this->session->set_flashdata("error", "Board name can't be <u>Empty</u> or <u>Same</u>");
             redirect('userHome/');
         }
     }
+    public function fetchLimitedBoards()
+    {
+        $data = $this->userHomes->fetchLimitedBoards();
+        redirect('userHome/', $data);
+    }
     public function boardBegin()
     {
+        $data['ptitles'] = $this->userHomes->fetchLimitedBoards();
+
         $this->load->view('userHomePage/userHomePageHeader');
-        $this->load->view('userHomePage/boardHome');
+        $this->load->view('userHomePage/boardHome', $data);
         $this->load->view('userHomePage/userHomePageFooter');
     }
     public function userProfile()

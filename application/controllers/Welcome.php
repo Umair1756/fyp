@@ -7,28 +7,34 @@ class Welcome extends CI_Controller
 		parent::__construct();
 	}
 
+	// defual page method when software start
 	function index()
 	{
 		redirect('welcome/intropage');
 	}
-
+	// redirect method take control there 
 	public function intropage()
 	{
 		$this->load->view('welcome/welcomeHeader');
 		$this->load->view('welcome/welcomeIndex');
 		$this->load->view('welcome/welcomeFooter');
 	}
+	// login method for validation and view loading
 	public function login()
 	{
+		//when click on login btn 
 		if (isset($_POST['login'])) {
+			// Ci "form_validation" library
 			$this->form_validation->set_rules("email", "Email", "required");
 			$this->form_validation->set_rules("password", "Password", "required");
 		}
+		// checking form_validation 
 		if ($this->form_validation->run() == TRUE) {
 			$email     = $_POST['email'];
 			$password  = md5($_POST['password']);
 			$query = $this->db->query("SELECT * FROM users WHERE uemail='" . $email . "' AND upassword='" . $password . "'");
 			$result = $query->row_array();
+			// checking email and password from db
 			if ($result['uemail'] && $result['upassword']) {
 				$this->session->set_flashdata("success", "Login Successfull");
 				$_SESSION['user_logged'] = TRUE;
@@ -40,10 +46,12 @@ class Welcome extends CI_Controller
 				redirect("welcome/login");
 			}
 		}
+		// loading view
 		$this->load->view('welcome/loginHeader');
 		$this->load->view('welcome/login');
 		$this->load->view('welcome/loginFooter');
 	}
+	// signup method for form_validation and loading view
 	public function signup()
 	{
 		// email get from url and post it in the "Email field"
@@ -80,7 +88,7 @@ class Welcome extends CI_Controller
 		$this->load->view('welcome/signup', $data);
 		$this->load->view('welcome/signupFooter');
 	}
-	// Reset Password using sendingEmail
+	// method for setting up email configuration for localhost
 	public function authEmail($email, $subject, $msg, $token, $from)
 	{
 		// email configuration 
@@ -90,12 +98,12 @@ class Welcome extends CI_Controller
 		$config['smtp_timeout'] = '60';
 
 		// user email use for sending mails to other users for rset password
-		$config['smtp_user']    = 'promag321347@gmail.com';  //Important
+		$config['smtp_user']    = 'promag321347@gmail.com';  	//Important
 
 		// password has been taken from google security provider i.e Two step verification
-		$config['smtp_pass']    = 'tkkfmbdhnhslensk';        //Important
+		$config['smtp_pass']    = 'tkkfmbdhnhslensk';        	//Important
 
-		$config['charset']    = 'utf-8'; 	//character set standard for message  
+		$config['charset']    = 'utf-8'; 						//character set standard for message  
 		$config['newline']    = "\r\n";
 		$config['mailtype'] = 'html';                           // or html
 		$config['validation'] = TRUE;                           // bool whether to validate email or not
@@ -113,18 +121,21 @@ class Welcome extends CI_Controller
 			show_error($this->email->print_debugger());
 		}
 	}
+	// method for loading "resetEmail" view
 	public function resetEmail()
 	{
 		$this->load->view('welcome/welcomeHeader');
 		$this->load->view('welcome/resetEmailPage');
 		$this->load->view('welcome/welcomeFooter');
 	}
+	// method generating msg for reset password
 	public function resetLink()
 	{
 		$email = $this->input->post('email');
 		$from = "promag321347@gmail.com";
 		$getEmail = $this->db->query("SELECT * FROM users WHERE uemail='" . $email . "'")->result_array();
 
+		// if found email from db
 		if (count($getEmail) > 0) {
 			$token = rand(1000, 9999);
 			$this->db->query("UPDATE users SET upassword=$token WHERE uemail='" . $email . "'");
@@ -140,6 +151,7 @@ class Welcome extends CI_Controller
 			return redirect("welcome/resetEmail");
 		}
 	}
+	// method for loading resetPassword view
 	public function reset()
 	{
 		$data['token'] = $this->input->get('tokenIs');
@@ -147,6 +159,7 @@ class Welcome extends CI_Controller
 
 		$this->load->view("welcome/resetPasswordPage");
 	}
+	// updatePassword checking password and return to login if successful
 	public function updatePassword()
 	{
 		$_SESSION['token'];
