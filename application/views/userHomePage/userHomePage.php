@@ -16,14 +16,16 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
-                            <?php if (isset($ptitles)) : ?>
-                                <?php foreach ($ptitles as $ptitle) : ?>
-                                    <div class="col-lg-4">
-                                        <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="nav-link text-center p-4 m-1 rounded-0 p_anchor_adj">
-                                            <i class="fas fa-star pr-2"></i> <?php echo $ptitle['ptname'] ?>
-                                        </a>
-                                    </div>
-                                <?php endforeach ?>
+                            <?php if (!empty($ptitles)) : ?>
+                                <?php if (isset($ptitles)) : ?>
+                                    <?php foreach ($ptitles as $ptitle) : ?>
+                                        <div class="col-lg-4">
+                                            <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="nav-link text-center p-4 m-1 rounded-0 p_anchor_adj">
+                                                <i class="fas fa-star pr-2"></i> <?php echo $ptitle['ptname'] ?>
+                                            </a>
+                                        </div>
+                                    <?php endforeach ?>
+                                <?php endif ?>
                             <?php endif ?>
                         </div>
                     </div>
@@ -35,14 +37,20 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
-                            <?php if (isset($ptitles)) : ?>
-                                <?php foreach ($ptitles as $ptitle) : ?>
-                                    <div class="col-lg-4">
-                                        <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="nav-link text-center p-4 m-1 rounded-0 p_anchor_adj">
-                                            <i class="fas fa-star pr-2"></i> <?php echo $ptitle['ptname'] ?>
-                                        </a>
-                                    </div>
-                                <?php endforeach ?>
+                            <?php if (!empty($uid)) : ?>
+                                <?php if ($uid === $users['uid']) :  ?>
+                                    <?php if (!empty($ptitles)) : ?>
+                                        <?php if (isset($ptitles)) : ?>
+                                            <?php foreach ($ptitles as $ptitle) : ?>
+                                                <div class="col-lg-4">
+                                                    <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="nav-link text-center p-4 m-1 rounded-0 p_anchor_adj">
+                                                        <i class="fas fa-star pr-2"></i> <?php echo $ptitle['ptname'] ?>
+                                                    </a>
+                                                </div>
+                                            <?php endforeach ?>
+                                        <?php endif ?>
+                                    <?php endif ?>
+                                <?php endif ?>
                             <?php endif ?>
                             <div class="col-lg-4">
                                 <a class="nav-link text-center p-4 m-1 rounded-0 p_anchor_adj" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">

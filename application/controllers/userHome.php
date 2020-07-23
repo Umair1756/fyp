@@ -14,8 +14,10 @@ class Userhome extends CI_Controller
 
     public function index()
     {
-        $data['ptitles'] = $this->userHomes->fetchLimitedBoards();
-        // die(print_r($data));
+        $data['uid'] = $_SESSION['uid'];
+        $data['users'] = $this->userHomes->fetchUsers($data);
+        $data['ptitles'] = $this->userHomes->fetchBoards();
+        // die(print_r($_SESSION['uid']));
         $this->load->view('userHomePage/userHomePageHeader');
         $this->load->view('userHomePage/userHomePage', $data);
         $this->load->view('userHomePage/userHomePageFooter');
@@ -43,14 +45,9 @@ class Userhome extends CI_Controller
             redirect('userHome/');
         }
     }
-    public function fetchLimitedBoards()
-    {
-        $data = $this->userHomes->fetchLimitedBoards();
-        redirect('userHome/', $data);
-    }
     public function boardBegin()
     {
-        $data['ptitles'] = $this->userHomes->fetchLimitedBoards();
+        $data['ptitles'] = $this->userHomes->fetchBoards();
 
         $this->load->view('userHomePage/userHomePageHeader');
         $this->load->view('userHomePage/boardHome', $data);

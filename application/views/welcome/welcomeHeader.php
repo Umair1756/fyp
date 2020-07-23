@@ -5,25 +5,18 @@
     <meta charset="UTF-8">
     <title>ProMag</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <!-- <link rel="shortcut icon" href="<?php // echo base_url('assets/img/favicon.png'); 
-                                            ?>"> -->
-
+    <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
     <!-- bootstrap framework -->
     <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet" media="screen">
     <link href="<?php echo base_url('assets/fontawesome/css/all.min.css'); ?>" rel="stylesheet" media="screen">
     <!-- custom css -->
-    <!-- <link href="<?php //echo base_url('assets/css/plugins/datepicker/datepicker.css'); 
-                        ?>" rel="stylesheet" media="screen"> -->
-
     <link href="<?php echo base_url('assets/customCss/welcomePage.css'); ?>" rel="stylesheet" media="screen">
-    <!-- <link href="<?php //echo base_url('assets/css/login.css') 
-                        ?>" rel="stylesheet"> -->
-
     <script>
         var base_url = '<?php echo base_url(); ?>';
     </script>
     <style>
         /* Using Jquery affects Navbar */
+        /* Navbar onScroll */
         .changeScrollBoxOnTop {
             max-width: 100% !important;
             top: 0px !important;
@@ -56,17 +49,14 @@
             transition: 1s ease-in-out !important;
         }
 
-        /* Using Jquery affects Navbar */
-
+        /* Navbar onScroll */
 
         /* pageLoader Start */
         .pageLoader {
             background: url(http://localhost/promag/assets/img/loading-9.gif);
             background-repeat: no-repeat;
             background-position: center;
-            /* background-color: #000; */
             background-color: #ffff;
-            /* background-size: 50px !important; */
             opacity: 0.9;
             width: 100%;
             transition: 10s ease-in-out;
@@ -100,15 +90,18 @@
             transition: 0.5s ease-in-out;
         }
 
-
         /* arrowUp*/
+        /* Using Jquery affects Navbar */
     </style>
 </head>
 <!-- <body onload="preLoaderFunction()"> -->
 
 <body>
+    <!-- PageLoager div -->
     <!-- <div class="pageLoader">
-    </div> -->
+        </div> -->
+    <!-- PageLoager div -->
+
     <!-- Haeder Section -->
     <header class="header-section fixed-top">
         <div class="container">
