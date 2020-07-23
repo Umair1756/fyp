@@ -12,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="recents mb-5 mt-5">
                     <div class="h5 p-2 mb-3">
-                        <i class='far fa-clock'></i> Recently Viewed
+                        <i class='far fa-clock pr-2'></i> Recently Viewed
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
@@ -29,7 +29,7 @@
 
                 <div class="recents mb-5 mt-5">
                     <div class="h5 p-2 mb-3">
-                        <i class='fa fa-user text-2b4949'></i> Personal Boards
+                        <i class='fa fa-user text-white pr-2'></i> Personal Boards
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
@@ -46,34 +46,14 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="recents">
-                    <div class="h5 p-2 mb-3">
-                        <i class='far fa-clock'></i> Team name
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
-                                Team 1
-                            </div>
-                            <div class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
-                                Team 2
-                            </div>
-                            <div class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
-                                Team 3
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <form action="<?php echo base_url('index.php/userHome/saveTitle'); ?>" method="POST">
-                <div class="modal-dialog modal-lg" style="width: 30%;margin-top: 79px!important;">
+                <div class="modal-dialog modal-lg" style="width: 30%;margin-top: 83px!important;">
                     <div class="modal-content mt-5" style="background-color: transparent !important; border: none;">
                         <div class="container">
-                            <div class="modal-body text-muted">
+                            <div class="modal-body text-muted modal-body-adjust rounded">
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="form-group">
@@ -81,7 +61,7 @@
                                             <button type="submit" class="btn sb-btn mt-2" id="createBtn" name="btnBoard">Create Board</button>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" style="width: 20% !important;">
                                         <button type="button" style="text-shadow: none !important; opacity: 1 !important;" class="close" data-dismiss="modal" aria-label="Close">
                                             <span class="cross-btn" aria-hidden="true">&times;</span>
                                         </button>

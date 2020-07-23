@@ -90,7 +90,7 @@ input:focus::-webkit-input-placeholder {
 	/* opacity: 0.1; */
 }
 .penal_area {
-	margin-top: 105px;
+	margin-top: 175px;
 }
 .r_tab_content {
 	border-left: 1px dashed #2b2b52;
@@ -382,6 +382,15 @@ a.boardBox {
 
 .b-card {
 	width: 250px;	
+}
+.recents .h5{
+		background: #67d77e;
+		color: white;
+		border-radius: 5px;
+		box-shadow: 0px 0px 3px 2px #00997b;
+}
+.modal-body-adjust{
+	background: rgba(0,0,0,0.6);
 }
 /* Board Area below header ends here */
 /* Media Query Here */
