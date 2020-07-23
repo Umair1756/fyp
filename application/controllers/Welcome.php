@@ -101,7 +101,7 @@ class Welcome extends CI_Controller
 		$config['smtp_user']    = 'promag321347@gmail.com';  	//Important
 
 		// password has been taken from google security provider i.e Two step verification
-		$config['smtp_pass']    = 'tkkfmbdhnhslensk';        	//Important
+		$config['smtp_pass']    = 'weymjgopklexawbq';        	//Important
 
 		$config['charset']    = 'utf-8'; 						//character set standard for message  
 		$config['newline']    = "\r\n";

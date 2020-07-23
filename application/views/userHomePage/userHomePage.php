@@ -77,13 +77,13 @@
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input class="form-control" type="text" id="txtTitleName" name="titlename" placeholder="Title name" style="background-color: #7B8788">
-                                                <button type="submit" class="btn btn-secondary mt-2" id="createBtn" name="btnBoard">Create Board</button>
+                                                <input class="form-control" type="text" id="txtTitleName" name="titlename" placeholder="Title name" style="background-color: #7B8788; color: white !important">
+                                                <button type="submit" class="btn sb-btn mt-2" id="createBtn" name="btnBoard">Create Board</button>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
-                                            <button type="button" style="text-shadow: none !important;" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
+                                            <button type="button" style="text-shadow: none !important; opacity: 1 !important;" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span class="cross-btn" aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                     </div>
