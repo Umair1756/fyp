@@ -47,7 +47,7 @@ class Userhome extends CI_Controller
     }
     public function boardBegin()
     {
-        $data['ptitles'] = $this->userHomes->fetchBoards();
+        $data['ptitles'] = $this->userHomes->fetchBoards(1);
 
         $this->load->view('boardHome/boardHomeHeader');
         $this->load->view('boardHome/boardHome', $data);
