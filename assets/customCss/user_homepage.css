@@ -31,15 +31,7 @@ a.nav-link {
 	border: 2px solid #2b2b52;
 	box-shadow: none;
 }
-/* .nav-item:hover {
-	background: none !important;
-	border: 2px solid #fff;
-	transition: 0.2s ease-in-out;
-	box-shadow: 0px 0px 4px 0px #ffffff;
-} */
-/* li.focus {
-	width: fit-content !important;
-} */
+
 
 .board-logo {
 	padding-left: 100px;
@@ -106,16 +98,6 @@ input:focus::-webkit-input-placeholder {
 .anchor_adj {
 	/* border-radius: 0px 20px 20px 0px !important; */
 	color: #2b2b52 !important;
-}
-.p_anchor_adj {	
-	background: #a7dbd8;
-	color: #2b2b52 !important;
-}
-.p_anchor_adj:hover {
-	background: #69d2e7;
-	color: #2b2b52 !important;
-	box-shadow: 4px 4px 1px -1px #2b2b52;
-	transition: 0.5s ease-in-out;
 }
 .anchor_adj:hover {
 	background: #fea203;
@@ -357,6 +339,51 @@ input:focus::-webkit-input-placeholder {
     color: #fff;
     transition: 0.5s ease-in-out;
 }
+
+.boardBox {
+	background-color: #00997b;
+	padding-bottom: 60px !important;
+}
+
+a.boardBox {
+	font-weight: 500;
+	text-decoration: none;
+	color: white;
+	
+}
+.boardBox:hover {
+	color: white;
+	background-color: #fea203;
+	transition: 0.5s ease-in-out;
+	text-decoration: none;
+}
+
+/* Board Area below header starts from here */
+/* To style navbar */
+
+.main-wrap {
+	
+	background-color: #67D77E;
+}
+
+.main-wrap .navbar-adj {
+	width: 90%;
+	margin: auto;
+}
+
+.main-wrap .navbar-adj a {
+	color: white !important;
+}
+
+.board_area {
+	background-color: #67D77E;
+	/* height: 100vh; */
+}
+
+.b-card {
+	width: 250px;	
+}
+/* Board Area below header ends here */
 /* Media Query Here */
 
 

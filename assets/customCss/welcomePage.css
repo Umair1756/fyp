@@ -486,3 +486,19 @@ i.fa-google:hover {
 	position: relative;
 	min-height: 90vh;
 }
+
+.sb-btn {
+	background: #00997b;
+	color: white;
+}
+
+.sb-btn:hover {
+	background: #ffa101;
+	color: white;
+}
+
+.cross-btn {
+	color: white;
+	font-size: 36px;
+	opacity: 1 !important;
+}

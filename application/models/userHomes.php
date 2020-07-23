@@ -18,7 +18,7 @@ class Userhomes extends CI_Model
     }
     function fetchBoards()
     {
-        $result = $this->db->query("SELECT * from projecttitle ORDER BY ptid DESC LIMIT 2");
+        $result = $this->db->query("SELECT * from projecttitle ORDER BY ptid DESC LIMIT 3");
         if ($result->num_rows() > 0) {
             return $result->result_array();
         } else {
