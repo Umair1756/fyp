@@ -16,13 +16,20 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
-                            <?php if (isset($ptitles)) : ?>
-                                <?php foreach ($ptitles as $ptitle) : ?>
-                                    <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
-                                        <i class="far fa-clipboard pl-1 pt-2"></i> <?php echo $ptitle['ptname'] ?>
-                                    </a>
-                                <?php endforeach ?>
-                            <?php endif ?>
+                            <?php if (!empty($ptitles)) { ?>
+                                <?php if (isset($ptitles)) : ?>
+                                    <?php foreach ($ptitles as $ptitle) : ?>
+                                        <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
+                                            <i class="far fa-clipboard pl-1 pt-2"></i> <?php echo $ptitle['ptname'] ?>
+                                        </a>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            <?php } else { ?>
+                                <h1 class="col-lg-8 offset-2">
+                                    You haven't visited any board yet.
+                                </h1>
+                            <?php } ?>
+
                         </div>
                     </div>
                 </div>
@@ -33,13 +40,19 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
-                            <?php if (isset($ptitles)) : ?>
-                                <?php foreach ($ptitles as $ptitle) : ?>
-                                    <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
-                                        <i class="far fa-clipboard pl-1 pt-2"></i> <?php echo $ptitle['ptname'] ?>
-                                    </a>
-                                <?php endforeach ?>
-                            <?php endif ?>
+                            <?php if (!empty($ptitles)) { ?>
+                                <?php if (isset($ptitles)) : ?>
+                                    <?php foreach ($ptitles as $ptitle) : ?>
+                                        <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
+                                            <i class="far fa-clipboard pl-1 pt-2"></i> <?php echo $ptitle['ptname'] ?>
+                                        </a>
+                                    <?php endforeach ?>
+                                <?php endif ?>
+                            <?php } else { ?>
+                                <h1 class="col-lg-8 offset-2">
+                                    You haven't created any board yet.
+                                </h1>
+                            <?php } ?>
                             <a class="col-lg-2 text-center rounded boardBox text-white text-white" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
                                 Create new board
                             </a>

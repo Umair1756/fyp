@@ -19,11 +19,14 @@
 </div>
 <div class="board_area">
     <div class="b-card ml-2">
-        <div class="elementsAppendHere">
-            <div class=" p-1">
+        <div class="elementsAppendHere bg-57c07e rounded">
+            <div class="p-1">
                 <div class="link-add-list">
-                    <input type="text" id="input-listname" placeholder="Enter list title..." class="form-control rounded-0 d-none">
-                    <a class="btn btn-sm btn-success text-white d-none" id="add-list"> Add to list</a>
+                    <input type="text" id="input-listname" placeholder="Enter list title..." class="form-control rounded d-none ">
+                    <a class="btn btn-sm btn-success text-white d-none btn-add" id="add-list"> Add to list</a>
+                    <button type="button" class="close btn-close d-none" id="add-list-cancel" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <a class="btn btn-default btn-light btn-block" id="click-add-list-btn"><i class="fa fa-plus"></i> Add a list</a>
                 </div>
             </div>

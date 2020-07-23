@@ -59,16 +59,32 @@ var IndexJs = function () {
             $(".successBox").fadeOut(4000);
             $("#click-add-list-btn").on("click", function (e) {
                 e.preventDefault(e);
-                $("#add-list").fadeIn();
-                $("#input-listname").fadeIn();
-                $("#add-list-cancel").fadeIn();
+
+                $("#add-list").fadeIn(500);
+                $("#input-listname").fadeIn(500);
+                $("#add-list-cancel").fadeIn(500);
                 // alert("Clciked.....");
+
                 $("#add-list").removeClass("d-none");
                 $("#input-listname").removeClass("d-none");
                 $("#add-list-cancel").removeClass("d-none");
                 $("#click-add-list-btn").addClass("d-none");
                 $("#click-add-list-btn").fadeOut();
                 $("#input-listname").focus();
+            });
+            $("#add-list-cancel").on("click", function (e) {
+                e.preventDefault(e);
+
+                $("#add-list").addClass("d-none");
+                $("#input-listname").addClass("d-none");
+                $("#add-list-cancel").addClass("d-none");
+                $("#click-add-list-btn").removeClass("d-none");
+                $("#click-add-list-btn").fadeIn();
+            });
+
+            $("#add-list").on("click",function () {
+                var divBox = document.createElement("Div");
+                divBox.id = "divBox";
             });
             // $(".btnSignUp").on("click", function (e) {
             //     e.preventDefault()

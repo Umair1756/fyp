@@ -14,9 +14,8 @@ class Userhome extends CI_Controller
 
     public function index()
     {
-        // $data['uid'] = $_SESSION['uid'];
-        // $data['users'] = $this->userHomes->fetchUsers($data);
-        $data['ptitles'] = $this->userHomes->fetchBoards();
+        $data['uid'] = $_SESSION['uid'];
+        $data['ptitles'] = $this->userHomes->fetchBoards($data);
         // die(print_r($_SESSION['uid']));
         $this->load->view('userHomePage/userHomePageHeader');
         $this->load->view('userHomePage/userHomePage', $data);
@@ -27,6 +26,7 @@ class Userhome extends CI_Controller
         if (isset($_POST['btnBoard'])) {
             $this->form_validation->set_rules("titlename", "Title name", "required|is_unique[projecttitle.ptname]");
         }
+
         if ($this->form_validation->run() == TRUE) {
             $data = array();
             $data = [
