@@ -18,7 +18,7 @@
     </nav>
 </div>
 <div class="board_area">
-    <div class="b-card">
+    <div class="b-card ml-2">
         <div class="elementsAppendHere">
             <div class=" p-1">
                 <div class="link-add-list">

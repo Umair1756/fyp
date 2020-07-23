@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ProMag</title>
+    <title>board|ProMag</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
     <!-- bootstrap framework -->
@@ -17,7 +17,7 @@
     </script>
 </head>
 
-<body>
+<body style="background: #67D77E;">
     <!-- Haeder Section -->
     <header class="user_header_section fixed-top position-fixed">
         <nav class="navbar navbar-expand-lg nav_res">

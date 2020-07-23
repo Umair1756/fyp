@@ -14,8 +14,8 @@ class Userhome extends CI_Controller
 
     public function index()
     {
-        $data['uid'] = $_SESSION['uid'];
-        $data['users'] = $this->userHomes->fetchUsers($data);
+        // $data['uid'] = $_SESSION['uid'];
+        // $data['users'] = $this->userHomes->fetchUsers($data);
         $data['ptitles'] = $this->userHomes->fetchBoards();
         // die(print_r($_SESSION['uid']));
         $this->load->view('userHomePage/userHomePageHeader');
@@ -49,9 +49,9 @@ class Userhome extends CI_Controller
     {
         $data['ptitles'] = $this->userHomes->fetchBoards();
 
-        $this->load->view('userHomePage/userHomePageHeader');
-        $this->load->view('userHomePage/boardHome', $data);
-        $this->load->view('userHomePage/userHomePageFooter');
+        $this->load->view('boardHome/boardHomeHeader');
+        $this->load->view('boardHome/boardHome', $data);
+        $this->load->view('boardHome/boardHomeFooter');
     }
     public function userProfile()
     {
