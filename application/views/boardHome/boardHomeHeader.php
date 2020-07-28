@@ -12,6 +12,14 @@
     <!-- custom css -->
     <link href="<?php echo base_url('assets/customCss/welcomePage.css'); ?>" rel="stylesheet" media="screen">
     <link href="<?php echo base_url('assets/customCss/user_homepage.css'); ?>" rel="stylesheet" media="screen">
+    <!-- selectize -->
+    <link href="<?php echo base_url('assets/selectize/selectize.default.css'); ?>" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url('assets/selectize/normalize.css'); ?>" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url('assets/selectize/stylesheet.css'); ?>" rel="stylesheet" media="screen">
+    <!-- selectize -->
+    <!-- datetimepicker -->
+    <link href="<?php echo base_url('assets/datetimepicker/bootstrap-datetimepicker.min.css'); ?>" rel="stylesheet" media="screen">
+    <!-- datetimepicker -->
     <script>
         var base_url = '<?php echo base_url(); ?>';
     </script>

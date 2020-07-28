@@ -16,11 +16,11 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
-                            <?php if (!empty($ptitles)) { ?>
-                                <?php if (isset($ptitles)) : ?>
-                                    <?php foreach ($ptitles as $ptitle) : ?>
-                                        <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
-                                            <i class="far fa-clipboard pl-1 pt-2"></i> <?php echo $ptitle['ptname'] ?>
+                            <?php if (!empty($recentBoards)) { ?>
+                                <?php if (isset($recentBoards)) : ?>
+                                    <?php foreach ($recentBoards as $recentBoard) : ?>
+                                        <a href="#" class="btnBoardTitleRecents col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2" data-boardtitleid="<?php echo $recentBoard['ptid']; ?>" data-boardtitle="<?php echo $recentBoard['ptname']; ?>">
+                                            <i class="far fa-clipboard pl-1 pt-2"></i> <?php echo $recentBoard['ptname'] ?>
                                         </a>
                                     <?php endforeach ?>
                                 <?php endif ?>
@@ -43,7 +43,8 @@
                             <?php if (!empty($ptitles)) { ?>
                                 <?php if (isset($ptitles)) : ?>
                                     <?php foreach ($ptitles as $ptitle) : ?>
-                                        <a href="<?php echo base_url('index.php/userHome/boardBegin') ?>" class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2">
+                                        <a href="#" class="btnBoardTitle col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2" data-boardtitleid="<?php echo $ptitle['ptid']; ?>" data-boardtitle="<?php echo $ptitle['ptname']; ?>">
+                                            <input type="hidden" class="boardTitleId" value="<?php echo $ptitle['ptid']; ?>">
                                             <i class="far fa-clipboard pl-1 pt-2"></i> <?php echo $ptitle['ptname'] ?>
                                         </a>
                                     <?php endforeach ?>
@@ -63,20 +64,20 @@
         </div>
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <form action="<?php echo base_url('index.php/userHome/saveTitle'); ?>" method="POST">
-                <div class="modal-dialog modal-lg" style="width: 30%;margin-top: 83px!important;">
+                <div class="modal-dialog modal-lg bg-white rounded" style="width: 30%;margin-top: 83px!important;box-shadow: 0px 0px 5px 1px #000216;">
                     <div class="modal-content mt-5" style="background-color: transparent !important; border: none;">
                         <div class="container">
-                            <div class="modal-body text-muted modal-body-adjust rounded">
+                            <div class="modal-body text-muted rounded">
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="form-group">
                                             <input class="form-control" type="text" id="txtTitleName" name="titlename" placeholder="Title name" style="background-color: #7B8788; color: white !important">
-                                            <button type="submit" class="btn sb-btn mt-2" id="createBtn" name="btnBoard">Create Board</button>
+                                            <button type="submit" class="btn sb-btn mt-2" id="createBtn" name="btnBoard"><i class="far fa-credit-card"></i> Create Board</button>
                                         </div>
                                     </div>
                                     <div class="col-md-3" style="width: 20% !important;">
-                                        <button type="button" style="text-shadow: none !important; opacity: 1 !important;" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span class="cross-btn" aria-hidden="true">&times;</span>
+                                        <button type="button" style="text-shadow: none !important; opacity: 1 !important;" class="close " data-dismiss="modal" aria-label="Close">
+                                            <span class="cross-btn text-dark" aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                 </div>

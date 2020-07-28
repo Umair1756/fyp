@@ -1,28 +1,72 @@
 var IndexJs = function () {
-    var saveTitle = function () {
+    var saveList = function (data, currentBtnClicked) {
         $.ajax({
-            url: base_url + 'index.php/Userhome/saveTitle',
+            url: base_url + 'index.php/userhome/saveListName',
             type: 'POST',
-            data: { 'txtTitle': $("#txtTitleName").val() },
-            dataType: 'JSON',
+            dataType: 'json',
+            data: data,
+            beforeSend: function (data) {
+                console.log(data)
+            },
+            success: function (data) {
+                console.log(data);
+                // alert("Success Here....");
+                $(currentBtnClicked).closest(".listArea").before(
+                    '<div class="col-lg-3 listArea" data-list_id="' + data.id + '">' +
+                    '<div class="panel panel-default">' +
+                    '<div class="panel-heading" style="border-bottom: 0px; ">' +
+                    '<div class="row">' +
+                    '<div class="col-lg-10">' +
+                    '<h3 class="panel-title board-panel-title editable editable-click" data-pk="' + data.id + '">' + data.list_name + '</h3>' +
+                    '</div>' +
+                    '<div class="col-lg-2">' +
+                    '<span data-listid="' + data.id + '" class="glyphicon glyphicon-trash delete-list" aria-hidden="true" style="cursor: pointer;"></span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="panel-body card-list-con frame">' +
+                    '<ul class="list-group">' +
+                    '<div class="card-con ui-sortable" data-listid="' + data.id + '">' +
+                    '</div>' +
+                    '</ul>' +
+                    '<a href="#" class="show-input-field">Add a card...</a>' +
+                    '<form action="" method="POST" role="form" style="display: none;">' +
+                    '<div class="form-group" id="dynamic-board-input-con" style="margin-bottom: 8px;">' +
+                    '<textarea name="card-title" class="form-control" rows="3"></textarea>' +
+                    '<input type="hidden" name="list_id" value="' + data.id + '">' +
+                    '<input type="hidden" name="board_id" value="' + data.boardtitle_id + '">' +
+                    '</div>' +
+                    '<div class="form-group" style="margin-bottom: 0px;">' +
+                    '<button type="submit" class="btn btn-primary" id="saveCard">Save</button> <span class="glyphicon glyphicon-remove close-input-field" aria-hidden="true"></span>' +
+                    '</div>' +
+                    '</form>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
+                );
+                $('#add-list').show();
+                $('.add-list-form').hide();
+                $('.add-list-form').find('input[type="text"]').val('');
+            }
         });
     }
-    var validateTitle = function () {
+    var validateSaveList = function () {
         var flag = false;
-        var txtTitleName = $("#txtTitleName").val();
-        if (txtTitleName == "") {
-            $("#txtTitleName").addClass("border-danger");
+        var inputListName = $("#input-listname").val();
+        if (inputListName === "") {
+            $("#input-listname").addClass("border-danger");
             return flag = true;
-        }
-        else {
-            $("#txtTitleName").removeClass("border-danger");
+        } else {
+            $("#input-listname").removeClass("border-danger");
+            return flag = false;
         }
         return flag;
     }
+
     return {
 
         init: function () {
-            this.bindUI();
+            this.bindUI();           
         },
 
         bindUI: function () {
@@ -38,10 +82,19 @@ var IndexJs = function () {
                 window.location = base_url + 'index.php/welcome/signup';
             });
 
-            // $('#createBtn').on('click', function (e) {
-            //     e.preventDefault();
-            //     self.initSave();
-            // });
+            $('.btnBoardTitle').on('click', function (e) {
+                e.preventDefault();
+                var boardtitleid = $(this).data("boardtitleid");
+
+                window.location = base_url + 'index.php/userHome/boardBegin/' + boardtitleid;
+            });
+
+            $('.btnBoardTitleRecents').on('click', function (e) {
+                e.preventDefault();
+                var boardtitleid = $(this).data("boardtitleid");
+
+                window.location = base_url + 'index.php/userHome/boardBegin/' + boardtitleid;
+            });
 
             // Password eyeView in SignUp Page
             $('#eyeView').on('click', function (e) {
@@ -57,72 +110,55 @@ var IndexJs = function () {
 
             // $(".dangerBox").fadeOut(10000);
             $(".successBox").fadeOut(4000);
-            $("#click-add-list-btn").on("click", function (e) {
+
+            //add-listdBtn 
+            $(document).on('click', '#add-list', function (e) {
                 e.preventDefault(e);
 
-                $("#add-list").fadeIn(500);
-                $("#input-listname").fadeIn(500);
-                $("#add-list-cancel").fadeIn(500);
-                // alert("Clciked.....");
-
-                $("#add-list").removeClass("d-none");
-                $("#input-listname").removeClass("d-none");
-                $("#add-list-cancel").removeClass("d-none");
-                $("#click-add-list-btn").addClass("d-none");
-                $("#click-add-list-btn").fadeOut();
-                $("#input-listname").focus();
+                $(this).hide();
+                $(this).closest('.box-list').find('.list-form').show();
+                $(this).closest('.box-list').find('#list-cancel').show();
             });
-            $("#add-list-cancel").on("click", function (e) {
+            // cancelBtn X
+            $(document).on('click', '#list-cancel', function (e) {
                 e.preventDefault(e);
 
-                $("#add-list").addClass("d-none");
-                $("#input-listname").addClass("d-none");
-                $("#add-list-cancel").addClass("d-none");
-                $("#click-add-list-btn").removeClass("d-none");
-                $("#click-add-list-btn").fadeIn();
+                $(this).hide();
+                $(this).closest('.box-list').find('#add-list').show();
+                $(this).closest('.box-list').find('.list-form').hide();
             });
 
-            $("#add-list").on("click",function () {
-                var divBox = document.createElement("Div");
-                divBox.id = "divBox";
+            //add-cardBtn 
+            $(document).on('click', '#add-card', function (e) {
+                e.preventDefault(e);
+
+                $(this).hide();
+                $(this).closest('.box-card').find('.card-form').show();
+                $(this).closest('.box-card').find('#card-cancel').show();
             });
-            // $(".btnSignUp").on("click", function (e) {
-            //     e.preventDefault()
-            //     var signUpInput = $("#signUpInput").val();
-            //     window.location.href = base_url + "index.php/welcome/signup/" + signUpInput;
-            //     // $(".email_input").val(signUpInput);
-            //     console.log(signUpInput);
-            // });
-            // $("#no-trans").stop().fadeOut();
-            // $("#no-trans").fadeIn();
-            // $(".hoverAdj").hover(
-            //     function() {
-            //         $(this).find(".successBox").stop().fadeOut();
-            //         $(this).find(".successBox").fadeIn();
-            //     },
-            //     function() {
-            //         $(this).find(".successBox").fadeIn();
-            //         $(this).find(".successBox").stop().fadeOut();
-            //     }
-            // )
-            // $(".hoverAdj").hover(
-            //     function() {
-            //         $(this).find(".dangerBox").stop().fadeOut();
-            //         $(this).find(".dangerBox").fadeIn();
-            //     },
-            //     function() {
-            //         $(this).find(".dangerBox").fadeIn();
-            //         $(this).find(".dangerBox").stop().fadeOut();
-            //     }
-            // )
+            // cancelBtn X
+            $(document).on('click', '#card-cancel', function (e) {
+                e.preventDefault(e);
+
+                $(this).hide();
+                $(this).closest('.box-card').find('#add-card').show();
+                $(this).closest('.box-card').find('.card-form').hide();
+            });
+
+            $('#save-add-list').on('click', function (e) {
+                e.preventDefault();
+                self.initSaveList($(this).closest('.box-add-list').find('form').serialize(), this);
+            });
+
         },
 
-        initSave: function () {
+        initSaveList: function (data, currentBtnClicked) {
 
-            var error = validateTitle();        // checks for the empty field
+            // console.log(saveList());
+            var error = validateSaveList();     // checks for the empty field
 
             if (!error) {
-                saveTitle();
+                saveList(data, currentBtnClicked);
             }
         },
 

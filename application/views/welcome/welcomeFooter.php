@@ -6,7 +6,6 @@
 			// changing headerColorOnScrolling and position
 			$(document).ready(function() {
 				$(document).scroll(function() {
-					// console.log($(this).scrollTop())
 					if ($(this).scrollTop() > 740) {
 						$(".header-section").addClass("changeScrollBoxOnTop");
 						$(".first_part_log").addClass("fLogoOnScroll");
@@ -20,11 +19,12 @@
 					}
 				});
 			});
+
 			//onPageLoad loader
-			var loader = $(".pageLoader");
-			setTimeout(function() {
-				loader[0].style.display = "none";
-			}, 4000);
+			// var loader = $(".pageLoader");
+			// setTimeout(function() {
+			// 	loader[0].style.display = "none";
+			// }, 4000);
 
 			var arrow = $("#arrow-up");
 
