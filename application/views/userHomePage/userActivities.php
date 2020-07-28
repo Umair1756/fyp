@@ -1,5 +1,5 @@
 <!-- Login Section -->
-    <section class="header-area" style="margin-top: 79px;">
+<section class="header-area" style="margin-top: 79px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 m-auto">
@@ -18,7 +18,7 @@
                             <div class="header-area col-lg-12  ">
                                     <div class="row">
                                         <div class="btnProfile text-center text-white m-auto ">
-                                            Profile and Visibility
+                                            Profile And Password Management
                                         </div>
                                     </div>
                             </div>
@@ -55,8 +55,14 @@
                     </div>
 
                     <button class="save-btn">Save</button>
+                
+                    <h3 class="m-password">Manage your password</h3>
+                <hr class="m-hr">
+                
+                <button class="change-pwd mt-2">Change Password!</button>
                 </div>
-
+                
+                
                 
             </form>
         </div>

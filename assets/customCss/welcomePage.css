@@ -341,7 +341,9 @@ input[type="text"].email_input {
 }
 
 input[type="email"].email_input:focus,
-input[type="text"].email_input:focus {
+input[type="text"].email_input:focus, 
+input[type="password"].email_input:focus,
+input[type="username"].email_input:focus {
 	background: #ffffff !important;
 	border-bottom: 2px solid #00997b !important;
 	border-top-color: #ffffff !important;
