@@ -1,9 +1,9 @@
 <div class="main-wrap pb-1 pt-1" style="margin-top: 79px !important">
     <nav class="navbar-adj navbar navbar-expand-lg">
-        <ul class="navbar-nav text-center w-100 board_nav">
+        <ul class="navbar-nav text-center pr-0 w-100 board_nav">
             <li class="nav-item mr-1">
-                <a class="nav-link text-white rounded"><?php echo $boards['ptname']; ?>
-                    <input type="hidden" value="<?php echo $boards['ptid']; ?>" id="boardtitleid">
+                <a class="nav-link text-white rounded"><?php echo $boards['name']; ?>
+                    <input type="hidden" value="<?php echo $boards['id']; ?>" id="boardid">
                 </a>
             </li>
             <li class="nav-item mr-1">
@@ -19,67 +19,92 @@
         </ul>
     </nav>
 </div>
+<!-- alert for board title name -->
 <div class="board_area pt-2 pb-2">
-    <div class="col-lg-12">
-        <?php if (isset($_SESSION['error'])) : ?>
-            <div class="danger dangerBox text-white rounded text-center pl-3 pr-3 pt-1 pb-1 ml-auto mr-auto">
-                <i class="fa fa-times-circle"></i>
-                <?php echo $_SESSION['error'] ?>
-            </div>
-        <?php endif; ?>
-        <div class="row ml-1">
-            <div class="col-lg-3 box-card bg-57c07e rounded pl-1 pr-1">
-                <div class="row p-1">
-                    <div class="col-lg-10">
-                        <div id="demotooltip" data-toggle="popover" title="Some Title" content="Some Content" class="list-title-adjust"><u>Raided Box</u></div>
+    <?php if (isset($_SESSION['error'])) : ?>
+        <div class="danger dangerBox text-white rounded text-center pl-3 pr-3 pt-1 pb-1 ml-auto mr-auto">
+            <i class="fa fa-times-circle"></i>
+            <?php echo $_SESSION['error'] ?>
+        </div>
+    <?php endif; ?>
+    <!-- alert for board title name -->
+    <div class="d-inline-flex plr-adjust">
+        <?php if (!empty($lists)) { ?>
+            <?php if (isset($lists)) : ?>
+                <?php foreach ($lists as $list) : ?>
+                    <!-- all lists and boards -->
+                    <div class="box-card bg-57c07e rounded pl-1 pr-1 w-adjust mr-2" data-list_id="<?php echo $list['id'] ?>">
+                        <div class="row pt-1 pb-1 ">
+                            <div class="col-lg-10">
+                                <div class="list-title-adjust" style="width:215px" data-list_id="<?php echo $list['id'] ?>">
+                                    <?php echo $list['list_name'] ?>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 pr-2 pl-1">
+                                <div class="btn-delete text-center pr-1" data-list_id="<?php echo $list['id'] ?>"><i class="fa fa-trash-alt text-white" style="font-size:26px!important;cursor: pointer;"></i></div>
+                            </div>
+                        </div>
+                        <div id="card-body-content">
+                            <div class="list-group sort-cards-list" data-list_id="<?php echo $list['id'] ?>">
+                                <?php if (!empty($cards)) { ?>
+                                    <?php if (isset($cards)) : ?>
+                                        <?php foreach ($cards as $card) : ?>
+                                            <?php if ($card['list_id'] === $list['id']) : ?>
+                                                <ul class="list-group">
+                                                    <li class="list-group-item text-white p-1 bg-67d77e mb-1" type="button" data-toggle="modal" data-target=".modal-list-description" id="list-detail">
+                                                        <div class="col-lg-12 d-inline-flex p-0">
+                                                            <p class="card-title mr-auto mt-auto mb-auto pl-2">
+                                                                <?php echo $card['card_name']; ?>
+                                                            </p>
+                                                            <ul class="list-group text-center" style="display: contents!important;">
+                                                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
+                                                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
+                                                                <li class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                <?php };  ?>
+                            </div>
+                            <div class="p-0 mb-1 card-box">
+                                <button class="btn btn-link text-white p-1" id="add-card" style="margin-top: 75px!important;"><i class="far fa-calendar-plus"></i> Add a card</button>
+                                <form action="" method="POST" class="card-form" style="display: none">
+                                    <textarea class="form-control form-textarea" placeholder="Enter card title..." name="cardtitle" id="cardtitle" cols="3" rows="3"></textarea>
+                                    <input type="hidden" name="list_id" value="<?php echo $list['id']; ?>" data-list_id="<?php echo $list['id'] ?>">
+                                    <input type="hidden" name="board_id" value="<?php echo $boards['id']; ?>" data-board_id="<?php echo $boards['id']; ?>">
+                                    <div class="form-group mb-0 mt-1">
+                                        <a class=" btn btn-sm btn-success text-white btn-add save-add-card" id="save-add-card"><i class="fas fa-cloud-download-alt"></i> Add to list</a>
+                                        <button type="button" class="close btn-close" id="card-cancel" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-2 p-1">
-                        <div class="btn-delete text-center"><i class="fa fa-trash-alt text-white" style="font-size:25px!important;cursor: pointer;"></i></div>
-                    </div>
-                </div>
-                <div class="list-group sort-lists">
-                    <ul class="list-group">
-                        <li class="list-group-item text-white p-1 bg-67d77e" type="button" data-toggle="modal" data-target=".modal-list-description" id="list-detail">Listed Text</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 p-0 mb-1">
-                    <button class="btn btn-link text-white p-1" id="add-card" style="margin-top: 75px!important;"><i class="far fa-calendar-plus"></i> Add a card</button>
-                    <form action="" method="POST" class="card-form" style="display: none">
-                        <textarea class="form-control" placeholder="Enter card title..." name="card-title" id="card-title" cols="3" rows="3"></textarea>
-                        <a class="btn btn-sm btn-success text-white btn-add" id="save-add-card"><i class="fas fa-cloud-download-alt"></i> Add to list</a>
-                        <button type="button" class="close btn-close" id="card-cancel" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="box-list bg-57c07e p-1 rounded">
-                    <button class="btn btn-link text-white p-1" id="add-list"><i class="fas fa-plus-circle text-white"></i> Add a list</button>
-                    <form action="" method="POST" class="list-form" style="display: none">
-                        <input type="text" name="input_list_name" id="input-listname" placeholder="Enter list title..." class="form-control rounded">
-                        <input type="hidden" value="<?php echo $boards['ptid']; ?>" name="board_id" id="boardid">
+                <?php endforeach; ?>
+            <?php endif; ?>
+        <?php } ?>
+        <!-- all lists and boards -->
+        <!-- list add section -->
+        <div class="list-section p-0">
+            <div class="box-list bg-57c07e p-1 rounded w-adjust">
+                <button class="btn btn-link text-white p-0 pl-2" id="add-list"><i class="fas fa-plus-circle text-white"></i> Add a list</button>
+                <form action="" method="POST" class="list-form" style="display: none">
+                    <input type="text" name="list_name" id="listname" placeholder="Enter list title..." class="form-control rounded">
+                    <input type="hidden" value="<?php echo $boards['id']; ?>" name="board_id" id="boardid">
+                    <div class="form-group mb-0 mt-1">
                         <a class="btn btn-sm btn-success text-white btn-add" type="submit" id="save-add-list"><i class="fas fa-cloud-download-alt"></i> Add to list</a>
                         <button type="button" class="close btn-close" id="list-cancel" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </form>
-                </div>
-            </div>
-            <!-- <div class="col-lg-3 pl-0">
-                <div class="box-card bg-57c07e p-1 rounded">
-                    <div class="col-lg-12 p-0">
-                        <button class="btn btn-link text-white p-1" id="add-card"><i class="far fa-calendar-plus"></i> Add a card</button>
-                        <form action="" method="POST" class="card-form" style="display: none">
-                            <textarea class="form-control" placeholder="Enter card title..." name="card-title" id="card-title" cols="3" rows="3"></textarea>
-                            <a class="btn btn-sm btn-success text-white btn-add" id="save-add-card"><i class="fas fa-cloud-download-alt"></i> Add to list</a>
-                            <button type="button" class="close btn-close" id="card-cancel" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </form>
                     </div>
-                </div>
-            </div> -->
+                </form>
+            </div>
+            <!-- list add section -->
         </div>
     </div>
 </div>

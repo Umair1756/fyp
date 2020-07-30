@@ -14,12 +14,22 @@ $(document).ready(function () {
         $('#txtDateStart').datetimepicker();
         $('#txtDateEnd').datetimepicker();
     });
-    // tooltip
-    // $(function () {
-    //     $('#demotooltip').tooltip()
-    // })
     // popovers
-    $(function () {
-        $('#demotooltip').popover()
-    })
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover({
+            placement : 'right',
+            html : true,
+            //content: function() {
+              //  return $('.popoverTest').html();
+              //}
+              content: function() {
+                var content = $(this).attr("data-popover-content");
+                return $(content).children(".popover-body").html();
+              },
+              title: function() {
+                var title = $(this).attr("data-popover-content");
+                return $(title).children(".popover-heading").html();
+              }
+        });
+    });
 });

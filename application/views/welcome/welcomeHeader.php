@@ -15,6 +15,25 @@
         var base_url = '<?php echo base_url(); ?>';
     </script>
     <style>
+        /* Scrollbar Design */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px !important;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #57c07e;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px !important;
+            background: #d0f0c0;
+        }
+
+        /* Scrollbar Design */
+
         /* Using Jquery affects Navbar */
         /* Navbar onScroll */
         .changeScrollBoxOnTop {

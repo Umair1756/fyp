@@ -23,10 +23,31 @@
     <script>
         var base_url = '<?php echo base_url(); ?>';
     </script>
+    <style>
+        /* Scrollbar Design */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 5px !important;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #57c07e;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px !important;
+            background: #d0f0c0;
+        }
+
+        /* Scrollbar Design */
+    </style>
 </head>
 
 <body style="background: #67D77E;">
-    <!-- Haeder Section -->
+    <!-- Haeder Section 
+        -->
     <header class="user_header_section fixed-top position-fixed">
         <nav class="navbar navbar-expand-lg nav_res">
             <ul class="navbar-nav text-center w-100 navbar_res">

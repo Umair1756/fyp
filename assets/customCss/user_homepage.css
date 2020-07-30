@@ -371,7 +371,7 @@ a.boardBox {
 }
 
 .main-wrap .navbar-adj {
-	width: 90%;
+	width: 85%;
 	margin: auto;
 }
 
@@ -386,24 +386,17 @@ a.boardBox {
 	background: #57c07e;
 }
 .board_area .box-list .btn-close,
-.board_area .box-card .btn-close,
+.board_area .card-box .btn-close,
 .board_area .box-add-card .btn-close {
-	margin-right: 100px;
-	margin-top: -2px;
 	font-size: 35px;
 	text-shadow: none;
 	opacity: 1;
 	color: white;
 }
 .board_area .box-list .btn-close:focus,
-.board_area .box-card .btn-close:focus,
+.board_area .card-box .btn-close:focus,
 .board_area .box-add-card .btn-close:focus {
 	outline: none !important;
-}
-.board_area .box-add-card .btn-add,
-.board_area .box-list .btn-add,
-.board_area .box-card .btn-add {
-	margin-left: 65px;
 }
 .recents .h5 {
 	background: #67d77e;
@@ -439,6 +432,17 @@ a.boardBox {
 .board_nav li a.nav-link:hover {
 	background: #57c07e;
 	transition: 0.3s ease-in-out;
+}
+.w-adjust {
+	width: 252px !important;
+}
+.plr-adjust {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.form-textarea{
+	overflow-y: auto !important;
+	max-height: 450px !important;
 }
 /* Board Area below header ends here */
 /* Media Query Here */

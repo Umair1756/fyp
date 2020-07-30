@@ -72,10 +72,12 @@ class Welcome extends CI_Controller
 		// if not error in form validation then save user record
 		if ($this->form_validation->run() == TRUE) {
 			$data = array(
-				'uemail'     => $_POST['email'],
-				'uname'     => $_POST['fname'],
-				'username'     => $_POST['username'],
-				'upassword'  => md5($_POST['password']),
+				'uemail'     	=> $_POST['email'],
+				'uname'     	=> $_POST['fname'],
+				'username'     	=> $_POST['username'],
+				'upassword'  	=> md5($_POST['password']),
+				'created_at' 	=>  date('Y-m-d H:i:s'),
+				'updated_at' 	=>  date('Y-m-d H:i:s')
 			);
 			// insert record
 			$this->db->insert('users', $data);
