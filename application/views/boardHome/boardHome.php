@@ -57,9 +57,9 @@
                                                                 <?php echo $card['card_name']; ?>
                                                             </p>
                                                             <ul class="list-group text-center" style="display: contents!important;">
-                                                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
-                                                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
-                                                                <li class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="Description" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="Sub Tasks" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="Comments" class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
                                                             </ul>
                                                         </div>
                                                     </li>

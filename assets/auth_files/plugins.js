@@ -14,6 +14,10 @@ $(document).ready(function () {
         $('#txtDateStart').datetimepicker();
         $('#txtDateEnd').datetimepicker();
     });
+    // tooltip
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      })
     // popovers
     $(document).ready(function(){
         $('[data-toggle="popover"]').popover({
