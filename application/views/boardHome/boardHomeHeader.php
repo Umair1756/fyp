@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>board|ProMag</title>
+    <title>Board | ProMag</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
     <!-- bootstrap framework -->
@@ -66,7 +66,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown pl-1 pr-1">
-                    <a class="nav-link text-white mt-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+                    <a class="nav-link text-white mt-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-cog"></i></a>
                     <ul class="dropdown-menu slideIn animate dropdown-menu-right text-white drp_adj1" role="menu" aria-labelledby="dropdownMenuLink">
                         <button type="button" class="close text-white position-absolute btnClose_adj1" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <li class="text-center dropdown-header p-3 text-white drpHeader_adj">
@@ -76,8 +76,8 @@
                             <?php echo $_SESSION['uid']; ?>
                         </li>
                         <div class="dropdown-divider"></div>
-                        <li><a class="dropdown-item rounded pt-3 pb-3" href="<?php echo base_url('index.php/userHome/userProfile'); ?>">Profile and Visiblity</a></li>
-                        <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#">Settings</a></li>
+                        <li><a class="dropdown-item rounded pt-3 pb-3" href="<?php echo base_url('index.php/userHome/userProfile'); ?>">Manage Profile And Password</a></li>
+                        <li><a class="dropdown-item rounded pt-3 pb-3" href="<?php echo base_url('index.php/userHome/userActivities'); ?>">View Activities</a></li>
                         <li><a class="dropdown-item rounded pt-3 pb-3" name="logout" href="<?php echo base_url('index.php/welcome/logout'); ?>">Log Out</a></li>
                     </ul>
                 </li>

@@ -32,6 +32,10 @@ a.nav-link {
 	box-shadow: none;
 }
 
+.nav-item:hover{
+	border: none;
+}
+
 .board-logo {
 	padding-left: 100px;
 }
@@ -41,7 +45,7 @@ a.nav-link {
 }
 
 .fa-bell,
-.fa-user {
+.fa-user-cog {
 	font-size: 26px;
 	color: white;
 }
@@ -201,16 +205,15 @@ input:focus::-webkit-input-placeholder {
 }
 
 .btnProfile {
-	background: white;
-	color: black !important;
+	background: #ffffff;
 	padding: 8px 20px;
-	color: black !important;
-	background-color: white;
-	border: 1px solid #dfe1e6;
-	border-bottom: 0;
+	color: #2b4949 !important;
 	border-radius: 3px 3px 0 0;
-	display: inline-block;
-	font-weight: 700;
+	font-weight: 600;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -2px !important;
 }
 
 .dogImg {
@@ -259,8 +262,16 @@ input:focus::-webkit-input-placeholder {
 	font-size: 20px;
 	font-weight: 600 !important;
 	letter-spacing: -0.008em;
-	/* line-height: 24px;
-    margin-top: 28px; */
+	font-weight: 500;
+	line-height: 26px;
+	margin-top: 40px;
+}
+
+.m-password {
+	color: #172b4d;
+	font-size: 20px;
+	font-weight: 600 !important;
+	letter-spacing: -0.008em;
 	font-weight: 500;
 	line-height: 26px;
 	margin-top: 40px;
@@ -334,13 +345,32 @@ input:focus::-webkit-input-placeholder {
 	background: #838686;
 	color: #fff;
 	width: 100%;
-	padding: 4px;
+	padding: 8px 30px;
 	border: none;
 	border-radius: 3px;
 	font-size: 15px;
 }
 
 .save-btn:hover {
+	background: #fea203;
+	color: #fff;
+	transition: 0.5s ease-in-out;
+}
+
+.change-pwd {
+	/* margin-top: 40px; */
+	font-size: 15px;
+    padding: 8px 30px;
+	background: #838686;
+	color: #fff;
+	/* width: 100%; */
+	/* padding: 4px; */
+	border: none;
+	border-radius: 3px;
+	font-size: 15px;
+}
+
+.change-pwd:hover	 {
 	background: #fea203;
 	color: #fff;
 	transition: 0.5s ease-in-out;
@@ -361,6 +391,14 @@ a.boardBox {
 	background-color: #fea203;
 	transition: 0.5s ease-in-out;
 	text-decoration: none;
+}
+
+.m-active {
+	background-color: #fff;
+    border-color: #dfe1e6;
+    cursor: default;
+    margin-bottom: -1px;
+    padding-bottom: 9px;
 }
 
 /* Board Area below header starts from here */
@@ -388,15 +426,22 @@ a.boardBox {
 .board_area .box-list .btn-close,
 .board_area .card-box .btn-close,
 .board_area .box-add-card .btn-close {
-	font-size: 35px;
-	text-shadow: none;
-	opacity: 1;
-	color: white;
+	margin-right: 19px;
+    margin-top: -6px;
+    font-size: 43px;
+    text-shadow: none;
+    opacity: 1;
+    color: white;
 }
 .board_area .box-list .btn-close:focus,
 .board_area .card-box .btn-close:focus,
 .board_area .box-add-card .btn-close:focus {
 	outline: none !important;
+}
+.board_area .box-add-card .btn-add,
+.board_area .box-list .btn-add,
+.board_area .box-card .btn-add {
+	/* margin-left: 65px; */
 }
 .recents .h5 {
 	background: #67d77e;
@@ -445,6 +490,32 @@ a.boardBox {
 	max-height: 450px !important;
 }
 /* Board Area below header ends here */
+.navbarPanel a.nav-link{
+	color: none !important;
+	border: none !important;
+}
+.navbarPanel a.btnActivity{
+color: #fff !important;
+}
+.navbarPanel a.btnActivity:hover,
+.navbarPanel a.btnProfile:hover{
+	border: none !important;
+}
+.btnProfile::after{
+	color: #ffffff !important;
+}
+
+.card-form {
+	margin-right: 5px;
+    margin-bottom: 10px;
+}
+.form-tarea {
+	margin-top: 10px;
+
+    margin-bottom: 10px;
+}
+
+
 /* Media Query Here */
 
 @media (min-width: 992px) {
