@@ -33,7 +33,7 @@
             <?php if (isset($lists)) : ?>
                 <?php foreach ($lists as $list) : ?>
                     <!-- all lists and boards -->
-                    <div class="box-card bg-57c07e rounded pl-1 pr-1 w-adjust mr-2" data-list_id="<?php echo $list['id'] ?>">
+                    <div class="box-card bg-57c07e rounded pl-1 pr-1 w-adjust mr-2" style="height: fit-content;" data-list_id="<?php echo $list['id'] ?>">
                         <div class="row pt-1 pb-1 ">
                             <div class="col-lg-10">
                                 <div class="list-title-adjust" style="width:215px" data-list_id="<?php echo $list['id'] ?>">
@@ -70,7 +70,7 @@
                                 <?php };  ?>
                             </div>
                             <div class="p-0 mb-1 card-box">
-                                <button class="btn btn-link text-white p-1" id="add-card" style="margin-top: 75px!important;"><i class="far fa-calendar-plus"></i> Add a card</button>
+                                <button class="btn btn-link text-white p-1 add-card" id="add-card" style="margin-top: 75px!important;"><i class="far fa-calendar-plus"></i> Add a card</button>
                                 <form action="" method="POST" class="card-form" style="display: none">
                                     <textarea class="form-control form-textarea" placeholder="Enter card title..." name="cardtitle" id="cardtitle" cols="3" rows="3"></textarea>
                                     <input type="hidden" name="list_id" value="<?php echo $list['id']; ?>" data-list_id="<?php echo $list['id'] ?>">
