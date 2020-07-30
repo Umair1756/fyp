@@ -87,9 +87,9 @@ var IndexJs = function () {
         return flag;
     }
     // validate card name when it is empty
-    var validateSaveCard = function () {
+    var validateSaveCard = function (currentBtnClicked) {
         var flag = false;
-        var txtCard = $("#cardtitle").val();
+        var txtCard = $(currentBtnClicked).closest('form').find("#cardtitle").val();
         if (txtCard === "") {
             $("#cardtitle").addClass("border-danger");
             return flag = true;
@@ -194,7 +194,6 @@ var IndexJs = function () {
             // save-add-card btn working
             $('.save-add-card').on('click', function (e) {
                 e.preventDefault();
-                console.log("ÖK");
                 self.initSaveCard($(this).closest('.card-box').find('.card-form').serialize(), this);
             });
         },
@@ -209,7 +208,7 @@ var IndexJs = function () {
         },
         initSaveCard: function (data, currentBtnClicked) {
             // checks for the empty field
-            var error = validateSaveCard();
+            var error = validateSaveCard(currentBtnClicked);
 
             if (!error) {
                 saveCard(data, currentBtnClicked);
