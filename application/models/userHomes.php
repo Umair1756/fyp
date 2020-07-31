@@ -4,6 +4,11 @@ class Userhomes extends CI_Model
 
     function __construct()
     {
+        parent::__construct();
+        if (!isset($_SESSION['user_logged'])) {
+            $this->session->set_flashdata("error", "You are no longer log in .!! Login Again");
+            redirect("welcome/login", "refresh");
+        }
     }
 
     function insertBoard($boards)

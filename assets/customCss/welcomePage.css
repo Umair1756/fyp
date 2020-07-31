@@ -241,7 +241,6 @@ p.leads {
 	padding: 0;
 }
 #parallax-section {
-
 	background-position: center;
 	background-size: contain;
 	padding: 70px 0;
@@ -341,7 +340,7 @@ input[type="text"].email_input {
 }
 
 input[type="email"].email_input:focus,
-input[type="text"].email_input:focus, 
+input[type="text"].email_input:focus,
 input[type="password"].email_input:focus,
 input[type="username"].email_input:focus {
 	background: #ffffff !important;
@@ -503,4 +502,76 @@ i.fa-google:hover {
 	color: white;
 	font-size: 36px;
 	opacity: 1 !important;
+}
+.dropdown:hover > .dropdown-menu {
+	display: block;
+}
+#navigation-1 .drpHeader_adj {
+	font-size: large !important;
+}
+#navigation-1 ul.drp_adj1 {
+	font-weight: normal !important;
+	width: 300px !important;
+	border: none;
+	padding: 5px !important;
+	background: #2b4949;
+	position: absolute;
+	top: 60px;
+	right: 10px;
+}
+#navigation-1 .drp_adj1 a {
+	color: #fff;
+	font-size: 1rem;
+	font-weight: normal;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	letter-spacing: 0px;
+}
+#navigation-1 .drp_adj1 a:hover {
+	color: #000000;
+}
+/* Media Query Here */
+
+@media (min-width: 992px) {
+	.animate {
+		animation-duration: 0.3s;
+		-webkit-animation-duration: 0.3s;
+		animation-fill-mode: both;
+		-webkit-animation-fill-mode: both;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0rem);
+		opacity: 1;
+	}
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes slideIn {
+	0% {
+		-webkit-transform: transform;
+		-webkit-opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		-webkit-opacity: 1;
+	}
+	0% {
+		-webkit-transform: translateY(1rem);
+		-webkit-opacity: 0;
+	}
+}
+
+.slideIn {
+	-webkit-animation-name: slideIn;
+	animation-name: slideIn;
 }

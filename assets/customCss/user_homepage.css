@@ -149,10 +149,9 @@ input:focus::-webkit-input-placeholder {
 	font-size: large !important;
 }
 /* Note: Below code is used for dropdown onHover. To use this remove data-toggle attribute */
-/* .dropdown:hover > .dropdown-menu {
+.dropdown:hover > .dropdown-menu {
 	display: block;
-} */
-/* Note: Below code is used for dropdown onHover. To use this remove data-toggle attribute */
+}
 .drp_adj {
 	width: 400px !important;
 	border: none;
@@ -177,10 +176,6 @@ input:focus::-webkit-input-placeholder {
 .drp_adj1 a {
 	color: #fff;
 }
-.dropdown:hover > .dropdown-menu {
-	display: block;
-}
-
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
 	color: #fff;
@@ -426,22 +421,15 @@ a.boardBox {
 .board_area .box-list .btn-close,
 .board_area .card-box .btn-close,
 .board_area .box-add-card .btn-close {
-	margin-right: 19px;
-    margin-top: -6px;
-    font-size: 43px;
-    text-shadow: none;
-    opacity: 1;
-    color: white;
+	font-size: 35px;
+	text-shadow: none;
+	opacity: 1;
+	color: white;
 }
 .board_area .box-list .btn-close:focus,
 .board_area .card-box .btn-close:focus,
 .board_area .box-add-card .btn-close:focus {
 	outline: none !important;
-}
-.board_area .box-add-card .btn-add,
-.board_area .box-list .btn-add,
-.board_area .box-card .btn-add {
-	/* margin-left: 65px; */
 }
 .recents .h5 {
 	background: #67d77e;
@@ -514,7 +502,12 @@ color: #fff !important;
 
     margin-bottom: 10px;
 }
-
+ul.drp_adj1 a:visited {
+    color: #fff !important;
+}
+ul.drp_adj1 a:hover {
+    color: #000000 !important;
+}
 
 /* Media Query Here */
 

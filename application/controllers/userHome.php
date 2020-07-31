@@ -67,6 +67,12 @@ class Userhome extends CI_Controller
         $this->load->view('userHomePage/userProfile');
         $this->load->view('userHomePage/userHomePageFooter');
     }
+    public function userActivity()
+    {
+        $this->load->view('userHomePage/userHomePageHeader');
+        $this->load->view('userHomePage/userActivity');
+        $this->load->view('userHomePage/userHomePageFooter');
+    }
     public function saveList()
     {
         if (isset($_POST)) {

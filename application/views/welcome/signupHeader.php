@@ -1,12 +1,3 @@
-<?php
-
-// $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-// $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
-// $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-// $this->output->set_header('Pragma: no-cache');
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -14,23 +5,12 @@
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-
-    <!-- <link rel="shortcut icon" href="<?php // echo base_url('assets/img/favicon.png'); 
-                                            ?>"> -->
-
+    <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
     <!-- bootstrap framework -->
     <link href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet" media="screen">
     <link href="<?php echo base_url('assets/fontawesome/css/all.min.css'); ?>" rel="stylesheet" media="screen">
     <!-- custom css -->
-    <!-- <link href="<?php //echo base_url('assets/css/plugins/datepicker/datepicker.css'); 
-                        ?>" rel="stylesheet" media="screen"> -->
-
     <link href="<?php echo base_url('assets/customCss/welcomePage.css'); ?>" rel="stylesheet" media="screen">
-    <!-- <link href="<?php //echo base_url('assets/customCss/user_homepage.css'); 
-                        ?>" rel="stylesheet" media="screen"> -->
-    <!-- <link href="<?php //echo base_url('assets/css/login.css') 
-                        ?>" rel="stylesheet"> -->
-
     <script>
         var base_url = '<?php echo base_url(); ?>';
     </script>

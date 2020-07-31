@@ -59,7 +59,6 @@
                 <li class="nav-item dropdown ml-auto pl-1 pr-1 mr-2">
                     <a class="nav-link text-white mt-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-bell"></i></a>
                     <ul class="dropdown-menu slideIn animate dropdown-menu-right text-white drp_adj" role="menu" aria-labelledby="dropdownMenuLink">
-                        <button type="button" class="close text-white position-absolute btnClose_adj" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <li class="text-center dropdown-header p-3 text-white drpHeader_adj">Notifications</li>
                         <div class="dropdown-divider"></div>
                         <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#"></a></li>
@@ -68,7 +67,6 @@
                 <li class="nav-item dropdown pl-1 pr-1">
                     <a class="nav-link text-white mt-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-cog"></i></a>
                     <ul class="dropdown-menu slideIn animate dropdown-menu-right text-white drp_adj1" role="menu" aria-labelledby="dropdownMenuLink">
-                        <button type="button" class="close text-white position-absolute btnClose_adj1" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <li class="text-center dropdown-header p-3 text-white drpHeader_adj">
                             <?php echo $_SESSION['user']; ?>
                         </li>

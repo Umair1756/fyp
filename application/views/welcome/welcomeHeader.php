@@ -130,12 +130,30 @@
                 </a>
                 <div class="ml-auto" id="navbarSupportedContent">
                     <ul id="navigation-1" class="navbar-nav">
-                        <li class="login-item">
-                            <button class="btn btn-link text-white login_adj btnLogIn">Log In</button>
-                        </li>
-                        <li class="pl-3 pr-3 rounded">
-                            <button class="btn btn_login_adj text-white btnSignUp">Sign Up</button>
-                        </li>
+                        <?php if (isset($_SESSION['user_logged'])) { ?>
+                            <li class="nav-item dropdown pl-1 pr-1">
+                                <a class="nav-link text-white mt-3" href="#" style="font-size: 26px;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-cog"></i></a>
+                                <ul class="dropdown-menu slideIn animate dropdown-menu-right text-white drp_adj1" role="menu" aria-labelledby="dropdownMenuLink">
+                                    <li class="text-center dropdown-header text-white drpHeader_adj p-0">
+                                        <?php echo $_SESSION['user']; ?>
+                                    </li>
+                                    <li class="text-center d-none">
+                                        <?php echo $_SESSION['uid']; ?>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a class="dropdown-item rounded pl-3 pr-3" href="<?php echo base_url('index.php/userHome/userProfile'); ?>">Manage Profile And Password</a></li>
+                                    <li><a class="dropdown-item rounded pl-3 pr-3" href="<?php echo base_url('index.php/userHome/userActivity'); ?>">View Activities</a></li>
+                                    <li><a class="dropdown-item rounded pl-3 pr-3" name="logout" href="<?php echo base_url('index.php/welcome/logout'); ?>">Log Out</a></li>
+                                </ul>
+                            </li>
+                        <?php } else { ?>
+                            <li class="login-item">
+                                <button class="btn btn-link text-white login_adj btnLogIn">Log In</button>
+                            </li>
+                            <li class="pl-3 pr-3 rounded">
+                                <button class="btn btn_login_adj text-white btnSignUp">Sign Up</button>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </nav>

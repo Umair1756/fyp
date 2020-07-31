@@ -53,13 +53,13 @@
                                                 <ul class="list-group">
                                                     <li class="list-group-item text-white p-1 bg-67d77e mb-1" type="button" data-toggle="modal" data-target=".modal-list-description" id="list-detail">
                                                         <div class="col-lg-12 d-inline-flex p-0">
-                                                            <p class="card-title mr-auto mt-auto mb-auto pl-2">
+                                                            <p class="card-title mr-auto mt-auto mb-auto pl-2" style="width: 100px; word-wrap: break-word;">
                                                                 <?php echo $card['card_name']; ?>
                                                             </p>
                                                             <ul class="list-group text-center" style="display: contents!important;">
-                                                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
-                                                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
-                                                                <li class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="Description" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="Sub Tasks" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="Comments" class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
                                                             </ul>
                                                         </div>
                                                     </li>
@@ -85,42 +85,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2">
-                        <div class="btn-delete text-center "><i class="fa fa-trash-alt text-white" style="font-size:25px!important; cursor: pointer; margin-right: 25px !important; margin-top: 4px;"></i></div>
-                    </div>
-                </div>
-                <div class="list-group sort-lists">
-                    <ul class="list-group" style="margin-right: 5px;">
-                        <li class="list-group-item text-white p-1 bg-67d77e" style="font-weight: 500; padding-left: 11px !important; font-size: 20px; " type="button" data-toggle="modal" data-target=".modal-list-description" id="list-detail">Listed Text</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 p-0 mb-1">
-                    <button class="btn btn-link text-white p-1" id="add-card" style="margin-top: 75px!important;"><i class="far fa-calendar-plus"></i> Add a card</button>
-                    <form action="" method="POST" class="card-form" style="display: none">
-                        <textarea class="form-control form-tarea mr-2" placeholder="Enter card title..." name="card-title" id="card-title" cols="3" rows="3"></textarea>
-
-                        <div class="form-group text-left">
-                            <a class="btn btn-sm btn-success text-white btn-add" id="save-add-card"><i class="fas fa-cloud-download-alt"></i> Add to list</a>
-                            <button type="button" class="close btn-close" id="card-cancel" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="box-list bg-57c07e p-1 rounded">
-                    <button class="btn btn-link text-white p-1" id="add-list"><i class="fas fa-plus-circle text-white"></i> Add a list</button>
-                    <form action="" method="POST" class="list-form" style="display: none">
-                        <input type="text" name="input_list_name" id="input-listname" placeholder="Enter list title..." class="form-control rounded">
-                        <input type="hidden" value="<?php echo $boards['ptid']; ?>" name="board_id" id="boardid">
+                <?php endforeach; ?>
+            <?php endif; ?>
+        <?php } ?>
+        <!-- all lists and boards -->
+        <!-- list add section -->
+        <div class="list-section p-0">
+            <div class="box-list bg-57c07e p-1 rounded w-adjust">
+                <button class="btn btn-link text-white p-0 pl-2" id="add-list"><i class="fas fa-plus-circle text-white"></i> Add a list</button>
+                <form action="" method="POST" class="list-form" style="display: none">
+                    <input type="text" name="list_name" id="listname" placeholder="Enter list title..." class="form-control rounded">
+                    <input type="hidden" value="<?php echo $boards['id']; ?>" name="board_id" id="boardid">
+                    <div class="form-group mb-0 mt-1">
                         <a class="btn btn-sm btn-success text-white btn-add" type="submit" id="save-add-list"><i class="fas fa-cloud-download-alt"></i> Add to list</a>
                         <button type="button" class="close btn-close" id="list-cancel" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
             <!-- list add section -->
         </div>

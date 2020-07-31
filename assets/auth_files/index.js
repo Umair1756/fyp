@@ -55,21 +55,22 @@ var IndexJs = function () {
             },
             success: function (data) {
                 console.log(data);
-                console.log(data.card_name);
-                $("#card-body-content").find(".sort-cards-list").append(
-                    '<ul class="list-group">' +
-                    '<li class="list-group-item text-white p-1 bg-67d77e" type="button" data-toggle="modal" data-target=".modal-list-description" id="list-detail">' +
-                    '<div class="col-lg-12 d-inline-flex p-0">' +
-                    '<p class="card-title mr-auto mt-auto mb-auto pl-2">' + data.card_name + '</p>' +
-                    '<ul class="list-group text-center" style="display: contents!important;">' +
-                    '</ul>' +
-                    '</div>' +
-                    '</li>' +
-                    '</ul>'
+                const cardBodyContentElm = $(currentBtnClicked).closest("#card-body-content");
+                cardBodyContentElm.find(".sort-cards-list").append(
+                    `<li class="list-group-item text-white p-1 bg-67d77e mb-1" type="button" data-toggle="modal" data-target=".                 modal-list-description" id="list-detail">
+                        <div class="col-lg-12 d-inline-flex p-0">
+                            <p class="card-title mr-auto mt-auto mb-auto pl-2" style="width: 100px; word-wrap: break-word;">${data.card_name}</p>                                                          </p>
+                            <ul class="list-group text-center" style="display: contents!important;">
+                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
+                                <li style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
+                                <li class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
+                            </ul>
+                        </div>
+                    </li>`
                 );
-                $('.card-form').hide();
-                $('.card-box').find('#cardtitle').val('');
-                $('#add-card').show();
+                cardBodyContentElm.find('.card-form').hide();
+                cardBodyContentElm.find('.card-box').find('#cardtitle').val('');
+                cardBodyContentElm.find('#add-card').show();
             }
         });
     }

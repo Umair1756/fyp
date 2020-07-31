@@ -64,7 +64,7 @@ class Welcome extends CI_Controller
 			$this->form_validation->set_rules('email', 'Email', 'required|is_unique[users.uemail]');
 			$this->form_validation->set_rules("fname", "Full name", "required");
 			$this->form_validation->set_rules("username", "Username", "required|is_unique[users.username]");
-			$this->form_validation->set_rules("password", "Password", "required|min_length[8]");
+			$this->form_validation->set_rules("password", "Password", "required|min_length[5]");
 
 			$this->form_validation->set_message("is_unique", "{field} already exist");
 		}
@@ -82,7 +82,7 @@ class Welcome extends CI_Controller
 			// insert record
 			$this->db->insert('users', $data);
 			$this->session->set_flashdata("success", "Signup Successful! Login Now...");
-			redirect("welcome/signup");
+			redirect("welcome/login");
 		}
 
 		// loading view
