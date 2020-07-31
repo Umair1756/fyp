@@ -35,6 +35,13 @@ a.nav-link {
 .nav-item:hover{
 	border: none;
 }
+.card-navtabs .nav-item:hover{
+	border-top: 1px solid #dee2e6 !important;
+	border-left: 1px solid #dee2e6 !important;
+	border-right: 1px solid #dee2e6 !important;
+	border-bottom: 1px solid #ffffff !important;
+	margin-bottom: -1px !important;
+}
 
 .board-logo {
 	padding-left: 100px;
