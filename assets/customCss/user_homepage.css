@@ -32,10 +32,10 @@ a.nav-link {
 	box-shadow: none;
 }
 
-.nav-item:hover{
+.nav-item:hover {
 	border: none;
 }
-.card-navtabs .nav-item:hover{
+.card-navtabs .nav-item:hover {
 	border-top: 1px solid #dee2e6 !important;
 	border-left: 1px solid #dee2e6 !important;
 	border-right: 1px solid #dee2e6 !important;
@@ -215,7 +215,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 .nav-tabs .nav-item {
-    margin-bottom: -2px !important;
+	margin-bottom: -2px !important;
+}
+.nav-tabs .nav-item:hover {
+	margin-bottom: -2px !important;
 }
 
 .dogImg {
@@ -362,7 +365,7 @@ input:focus::-webkit-input-placeholder {
 .change-pwd {
 	/* margin-top: 40px; */
 	font-size: 15px;
-    padding: 8px 30px;
+	padding: 8px 30px;
 	background: #838686;
 	color: #fff;
 	/* width: 100%; */
@@ -372,7 +375,7 @@ input:focus::-webkit-input-placeholder {
 	font-size: 15px;
 }
 
-.change-pwd:hover	 {
+.change-pwd:hover {
 	background: #fea203;
 	color: #fff;
 	transition: 0.5s ease-in-out;
@@ -397,10 +400,10 @@ a.boardBox {
 
 .m-active {
 	background-color: #fff;
-    border-color: #dfe1e6;
-    cursor: default;
-    margin-bottom: -1px;
-    padding-bottom: 9px;
+	border-color: #dfe1e6;
+	cursor: default;
+	margin-bottom: -1px;
+	padding-bottom: 9px;
 }
 
 /* Board Area below header starts from here */
@@ -421,6 +424,21 @@ a.boardBox {
 
 .board_area {
 	background-color: #67d77e;
+}
+#card-body-content{
+	max-height: 450px !important;
+	overflow-y: scroll !important;
+}
+.commented-box{
+	max-height: 150px !important;
+	overflow: auto !important;
+}
+.user-comment-img{
+	width: 150px;
+	height: 120px;
+}
+.user-commented{
+	padding-top: 20px !important;
 }
 .bg-57c07e {
 	background: #57c07e;
@@ -480,40 +498,50 @@ a.boardBox {
 	padding-right: 10px;
 	padding-left: 10px;
 }
-.form-textarea{
+.form-textarea {
 	overflow-y: auto !important;
 	max-height: 450px !important;
 }
 /* Board Area below header ends here */
-.navbarPanel a.nav-link{
+.navbarPanel a.nav-link {
 	color: none !important;
 	border: none !important;
 }
-.navbarPanel a.btnActivity{
-color: #fff !important;
+.navbarPanel a.btnActivity {
+	color: #fff !important;
 }
 .navbarPanel a.btnActivity:hover,
-.navbarPanel a.btnProfile:hover{
+.navbarPanel a.btnProfile:hover {
 	border: none !important;
 }
-.btnProfile::after{
+.btnProfile::after {
 	color: #ffffff !important;
 }
 
 .card-form {
 	margin-right: 5px;
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 .form-tarea {
 	margin-top: 10px;
 
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 ul.drp_adj1 a:visited {
-    color: #fff !important;
+	color: #fff !important;
 }
 ul.drp_adj1 a:hover {
-    color: #000000 !important;
+	color: #000000 !important;
+}
+.f-22{
+	font-size:22px
+}
+.fa-user-edit-adjust {
+	font-size: 100px;
+	color: #57c07e;
+}
+.bg-e9ecef{
+	background: #e9ecef;
 }
 
 /* Media Query Here */

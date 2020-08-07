@@ -45,7 +45,7 @@
     </style>
 </head>
 
-<body style="background: #67D77E;">
+<body style="background: #67D77E;margin: 0px !important;">
     <!-- Haeder Section 
         -->
     <header class="user_header_section fixed-top position-fixed">

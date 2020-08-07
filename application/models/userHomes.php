@@ -13,8 +13,7 @@ class Userhomes extends CI_Model
 
     function insertBoard($boards)
     {
-        $query = $this->db->insert('board', $boards);
-        return $query;
+        return $this->db->insert('board', $boards);
     }
     function fetchBoards($userId)
     {
@@ -83,5 +82,78 @@ class Userhomes extends CI_Model
         $id = $this->db->insert_id();
         $query = $this->db->get_where('board_card', array('id' => $id));
         return $query->row_array();
+    }
+    function getCard($card_id)
+    {
+        $query = $this->db->get_where('board_card', array('id' => $card_id));
+        return $query->row_array();
+    }
+    function saveComment($comments)
+    {
+        $this->db->insert("comment", $comments);
+        $id = $this->db->insert_id();
+        $query = $this->db->get_where('comment', array('id' => $id));
+        return $query->row_array();
+    }
+    function getComment($comments)
+    {
+        $query = $this->db->query("SELECT comment.*, users.uname FROM comment 
+        INNER JOIN users ON comment.uid=users.uid 
+        WHERE comment.id='" . $comments['id'] . "'");
+        return $query->row_array();
+    }
+    function getCardComments($card_id)
+    {
+        $query = $this->db->query("SELECT comment.*, users.uname FROM comment 
+        INNER JOIN users ON comment.uid=users.uid 
+        WHERE comment.card_id='" . $card_id . "' ORDER BY comment.id DESC");
+        return $query->result_array();
+    }
+    function saveSubTask($subtasks)
+    {
+        return $this->db->insert("card_task", $subtasks);
+    }
+    function getSubgTasks($card_id)
+    {
+        $query = $this->db->query("SELECT * FROM card_task WHERE card_id =$card_id ORDER BY card_task.id DESC");
+        return $query->result_array();
+    }
+    function totalTasks($card_id)
+    {
+        $query = $this->db->get_where('card_task', array('card_id' => $card_id));
+        return $query->num_rows();
+    }
+    function totalTasksCompleted($card_id)
+    {
+        $query = $this->db->get_where('card_task', array('card_id' => $card_id, 'is_completed' => 1));
+        return $query->num_rows();
+    }
+    function saveCardTag($tagData)
+    {
+        $tagSeperate = explode(",", $tagData['tag_title']);
+        foreach ($tagSeperate as $tags) {
+            $this->db->insert('card_tag', [
+                "card_id"       => $tagData['card_id'],
+                "tag_title"    => $tags,
+                "created_at"    => $tagData['created_at'],
+                "updated_at"    => $tagData['updated_at'],
+            ]);
+        }
+        return true;
+    }
+    function getCardTag($card_id)
+    {
+        $query = $this->db->get_where('card_tag', array('card_id' => $card_id));
+        return $query->result_array();
+    }
+    function deleteCardTag($card_id)
+    {
+        return $this->db->delete('card_tag', array('card_id' => $card_id));
+    }
+    function updateCardData($data)
+    {
+        $this->db->query("UPDATE board_card SET card_name='" . $data[1] . "', description='" . $data[2] . "',color='" . $data[3] . "',due_date='" . date("Y-m-d H:i:s", strtotime($data[4])) . "' 
+        WHERE board_card.id='" . $data[0] . "'");
+        return true;
     }
 }

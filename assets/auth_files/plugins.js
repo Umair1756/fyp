@@ -1,4 +1,5 @@
-$(document).ready(function () {
+// $(document).ready(function () {
+function jqueryPlugins() {
     // selectize initialise
     $('#select-beast-empty').selectize({
         allowEmptyOption: true,
@@ -12,7 +13,7 @@ $(document).ready(function () {
     // datetimepicker
     $(function () {
         $('#txtDateStart').datetimepicker();
-        $('#txtDateEnd').datetimepicker();
+        $('#txtDueDate').datetimepicker();
     });
     // tooltip
     $(function () {
@@ -23,4 +24,6 @@ $(document).ready(function () {
         $('[data-toggle="popover"]').popover({
         });
     });
-});
+}
+    // });
+    jqueryPlugins();
