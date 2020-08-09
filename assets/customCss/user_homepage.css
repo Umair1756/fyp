@@ -425,19 +425,19 @@ a.boardBox {
 .board_area {
 	background-color: #67d77e;
 }
-#card-body-content{
+#card-body-content {
 	max-height: 450px !important;
 	overflow-y: scroll !important;
 }
-.commented-box{
+.commented-box {
 	max-height: 150px !important;
 	overflow: auto !important;
 }
-.user-comment-img{
+.user-comment-img {
 	width: 150px;
 	height: 120px;
 }
-.user-commented{
+.user-commented {
 	padding-top: 20px !important;
 }
 .bg-57c07e {
@@ -472,6 +472,7 @@ a.boardBox {
 	background-color: white;
 	border-radius: 3px;
 	font-weight: 700;
+	cursor: pointer;
 }
 .bg-67d77e {
 	background: #67d77e;
@@ -533,17 +534,24 @@ ul.drp_adj1 a:visited {
 ul.drp_adj1 a:hover {
 	color: #000000 !important;
 }
-.f-22{
-	font-size:22px
+.f-22 {
+	font-size: 22px;
 }
 .fa-user-edit-adjust {
 	font-size: 100px;
 	color: #57c07e;
 }
-.bg-e9ecef{
+.bg-e9ecef {
 	background: #e9ecef;
 }
-
+.form-control-popover {
+	border: 1px solid #dedede !important;
+	box-shadow: none !important;
+	height: 31px !important;
+}
+.list-delete{
+	cursor: pointer;
+}
 /* Media Query Here */
 
 @media (min-width: 992px) {

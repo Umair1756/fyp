@@ -76,6 +76,17 @@ class Userhomes extends CI_Model
         $query = $this->db->get_where('board_list', array('id' => $id));
         return $query->row_array();
     }
+    function updateListName($data)
+    {
+        $query = $this->db->query("UPDATE board_list SET list_name='" . $data['list_name'] . "', board_id='" . $data['board_id'] . "',uid='" . $data['uid'] . "',created_at='" . date("Y-m-d H:i:s") . "',updated_at='" . date("Y-m-d H:i:s") . "' 
+        WHERE id='" . $data['list_id'] . "'");
+        return $data;
+    }
+    function deleteList($list_id)
+    {
+        $this->db->delete('board_list', array('id' => $list_id));
+        return true;
+    }
     function saveCard($cardData)
     {
         $this->db->insert("board_card", $cardData);
@@ -87,6 +98,11 @@ class Userhomes extends CI_Model
     {
         $query = $this->db->get_where('board_card', array('id' => $card_id));
         return $query->row_array();
+    }
+    function deleteCard($card_id)
+    {
+        $this->db->delete('board_card', array('id' => $card_id));
+        return true;
     }
     function saveComment($comments)
     {

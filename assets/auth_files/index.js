@@ -48,6 +48,25 @@ var IndexJs = function () {
             }
         });
     }
+    var updateListName = function (list_id, board_id, txtListName) {
+        $.ajax({
+            url: base_url + 'index.php/userhome/updateListName',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                list_id, txtListName, board_id
+            },
+            beforeSend: function (data) {
+                console.log(data)
+            },
+            success: function (data) {
+                console.log(data);
+                $(document).find('.list-title-adjust').data(data.id);
+                $(document).find('.list-title-adjust').text(data.list_name);
+                $('[data-toggle="popover"]').popover('hide');
+            }
+        });
+    }
     var saveCard = function (data, currentBtnClicked) {
         $.ajax({
             url: base_url + 'index.php/userhome/saveCard',
@@ -65,9 +84,9 @@ var IndexJs = function () {
                     <div class="col-lg-12 d-inline-flex p-0">
                     <p class="card-title mr-auto mt-auto mb-auto pl-2" style="width: max-content;width: max-content;overflow: auto;max-height: 66px !important;">${data.card_name}</p>                                                 
                     <ul class="list-group text-center" style="display: contents!important;">
-                    <li data-toggle="tooltip" data-placement="bottom" title="Description" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
-                    <li data-toggle="tooltip" data-placement="bottom" title="Sub Tasks" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
-                    <li data-toggle="tooltip" data-placement="bottom" title="Comments" class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="This card has Description" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-align-center"></i></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="This card has SubTasks" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-network-wired"></i></li>
+                    <li data-toggle="tooltip" data-placement="bottom" title="This card has Comment" class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
                     </ul>
                     </div>
                     </li>`
@@ -77,6 +96,63 @@ var IndexJs = function () {
                 path.find('.add-card').show();
                 jqueryPlugins();
             }
+        });
+    }
+    var deleteCard = function (card_id) {
+        $.ajax({
+            url: base_url + 'index.php/userhome/deleteCard',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                card_id: card_id
+            },
+            beforeSend: function (data) {
+                console.log(data)
+            },
+            success: function (data) {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this card with details!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes, delete it!",
+                    closeOnConfirm: false
+                }, function (card_id) {
+                    console.log(data);
+                    swal("Deleted!", "Card successfully deleted!", "success");
+
+                    $("#card-detail").modal("hide");
+                });
+            }
+        });
+    }
+    var deleteList = function (list_id) {
+        swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this List with details!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: false
+        }, function () {
+            $.ajax({
+                url: base_url + 'index.php/userhome/deleteList',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    list_id: list_id
+                },
+                beforeSend: function (data) {
+                    console.log(data)
+                },
+                success: function (data) {
+                    console.log(data);
+                    swal("Deleted!", "List successfully deleted!", "success");
+                    $("#card-detail").modal("hide");
+                }
+            });
         });
     }
     var saveComment = function (txtComment, card_id) {
@@ -188,10 +264,10 @@ var IndexJs = function () {
                     console.log(selectize.options)
 
                     //$(opt).each(function (index, lalbe) {
-                       // label = $.trim(lalbe);
-                     //   selectize.addOption({ value: label, text: label });
-                     //   selectize.addItem(label);
-                   // });
+                    // label = $.trim(lalbe);
+                    //   selectize.addOption({ value: label, text: label });
+                    //   selectize.addItem(label);
+                    // });
                 }
                 // comments panel data retrieved
                 var commentBox = "";
@@ -307,7 +383,6 @@ var IndexJs = function () {
 
         init: function () {
             this.bindUI();
-            // jqueryPlugins();
         },
 
         bindUI: function () {
@@ -315,11 +390,15 @@ var IndexJs = function () {
 
             $('#card-detail').on('hidden.bs.modal', function () {
                 // Reset form
-               // console.log($("#card-detail").find(".form-list-description"));
-                //$("#card-detail").find(".form-list-description").get(0).reset();
+                // console.log($("#card-detail").find(".form-list-description"));
+                // $("#card-detail").find("form").get(0).reset();
                 // Clear all previous card details
             });
-
+            // closeBtn popover
+            $(document).on('click', '.close-popover', function (e) {
+                e.preventDefault();
+                $('[data-toggle="popover"]').popover('hide');
+            });
             // loginBtn landing page
             $('.btnLogIn').on('click', function (e) {
                 e.preventDefault();
@@ -405,7 +484,20 @@ var IndexJs = function () {
                 console.log('Remove Btn clicked');
                 $(this).closest('tr').remove();
             });
-
+            // list-title-adjust working
+            $(document).on('click', '.list-title-adjust', function (e) {
+                e.preventDefault();
+                var list_id = $(this).data("list_id");
+                $(document).find('#list-name-popover').attr("data-list_id", list_id);
+            });
+            // update-list-name btn working
+            $(document).on('click', '.update-list-name', function (e) {
+                e.preventDefault();
+                var list_id = $(document).find('#list-name-popover').data("list_id");
+                var board_id = $(document).find('.list-title-adjust').data("board_id");
+                var txtListName = $(document).find('#list-name-popover').val();
+                self.initUpdateListName(list_id, board_id, txtListName)
+            });
 
             // save-add-list btn working
             $('#save-add-list').on('click', function (e) {
@@ -443,6 +535,7 @@ var IndexJs = function () {
                 var card_id = $(this).attr('card_id');
 
                 $('.modal-list-description').attr('data-card_id', card_id);
+                $('.modal-list-description').find('.card-delete').attr('data-card_id', card_id);
                 $('.modal-list-description').modal('show');
 
                 self.initGetCardDetail(card_id);
@@ -458,9 +551,27 @@ var IndexJs = function () {
 
                 self.initUpdateCardData(card_id);
             });
+            // card-detail-delete btn working
+            $(document).on('click', 'button.card-delete', function () {
+                console.log("Clicked")
+                var card_id = $(this).data('card_id');
+                // var cardIdData = $(document).find("li.card-list-des").filter("data-card_id", card_id);
+                // var cardIdData = $(document).find("li.card-list-des").data("card_id");
+                console.log(card_id);
+                self.initDeleteCard(card_id);
+            });
+            // card-list-delete btn working
+            $(document).on('click', '.list-delete', function () {
+                console.log("Clicked")
+                var list_id = $(this).data('list_id');
+                // var cardIdData = $(document).find("li.card-list-des").filter("data-card_id", card_id);
+                // var cardIdData = $(document).find("li.card-list-des").data("card_id");
+                console.log(list_id);
+                self.initDeleteList(list_id);
+            });
         },
 
-
+        // saveList
         initSaveList: function (data, currentBtnClicked) {
             // checks for the empty field
             var error = validateSaveList();
@@ -468,6 +579,10 @@ var IndexJs = function () {
             if (!error) {
                 saveList(data, currentBtnClicked);
             }
+        },
+        // updateListName
+        initUpdateListName: function (list_id, board_id, txtListName) {
+            updateListName(list_id, board_id, txtListName);
         },
         // cardSave
         initSaveCard: function (data, currentBtnClicked) {
@@ -493,6 +608,16 @@ var IndexJs = function () {
         // saveChanges updating cardDetailData
         initUpdateCardData: function (card_id) {
             updateCardData(card_id);
+        },
+        // selected-card-delete 
+        initDeleteCard: function (card_id) {
+            console.log(card_id);
+            deleteCard(card_id);
+        },
+        // selected-card-delete 
+        initDeleteList: function (list_id) {
+            console.log(list_id);
+            deleteList(list_id);
         },
 
     }

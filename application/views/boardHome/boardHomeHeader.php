@@ -20,6 +20,7 @@
     <!-- datetimepicker -->
     <link href="<?php echo base_url('assets/datetimepicker/bootstrap-datetimepicker.min.css'); ?>" rel="stylesheet" media="screen">
     <!-- datetimepicker -->
+    <link href="<?php echo base_url('assets/sweetalerts/sweetalert.css'); ?>" rel="stylesheet" media="screen">
     <script>
         var base_url = '<?php echo base_url(); ?>';
     </script>

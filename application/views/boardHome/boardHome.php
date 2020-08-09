@@ -33,15 +33,16 @@
             <?php if (isset($lists)) : ?>
                 <?php foreach ($lists as $list) : ?>
                     <!-- all lists and boards -->
-                    <div class="box-card bg-57c07e rounded pl-1 pr-1 w-adjust mr-2" style="height: fit-content;" data-list_id="<?php echo $list['id'] ?>">
+                    <div class="box-card bg-57c07e rounded pl-1 pr-1 w-adjust mr-2" style="height: fit-content;" data-list_id="<?php echo $list['id'] ?>" data-board_id="<?php echo $boards['id']; ?>">
                         <div class="row pt-1 pb-1">
                             <div class="col-lg-10">
-                                <div class="list-title-adjust" style="width:215px" data-list_id="<?php echo $list['id'] ?>">
+                                <div class="list-title-adjust" data-toggle="popover" title="Edit List Name" data-container="body" style="width:215px" data-board_id="<?php echo $boards['id']; ?>" data-list_id="<?php echo $list['id'] ?>">
                                     <?php echo $list['list_name'] ?>
                                 </div>
                             </div>
+
                             <div class="col-lg-2 pr-2 pl-1">
-                                <div class="btn-delete text-center pr-1" data-list_id="<?php echo $list['id'] ?>"><i class="fa fa-trash-alt text-white" style="font-size:26px!important;cursor: pointer;"></i></div>
+                                <div class="btn-delete list-delete text-center pr-1" data-list_id="<?php echo $list['id'] ?>"><i class="fa fa-trash-alt text-white" style="font-size:26px!important;cursor: pointer;"></i></div>
                             </div>
                         </div>
                         <div id="card-body-content">
@@ -59,8 +60,8 @@
                                                                 <?php echo $card['card_name']; ?>
                                                             </p>
                                                             <ul class=" list-group text-center" style="display: contents!important;">
-                                                                <li data-toggle="tooltip" data-placement="bottom" title="This card has Description" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-prescription-bottle"></i></li>
-                                                                <li data-toggle="tooltip" data-placement="bottom" title="This card has SubTasks" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-tasks"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="This card has Description" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0 mr-2"><i class="fas fa-align-center"></i></li>
+                                                                <li data-toggle="tooltip" data-placement="bottom" title="This card has SubTasks" style="background: transparent !important" class="list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-network-wired"></i></li>
                                                                 <li data-toggle="tooltip" data-placement="bottom" title="This card has Comment" class="list-group-item m-0 p-1 border-0 rounded-0" style="background: transparent !important"><i class="far fa-comment-dots"></i></li>
                                                             </ul>
                                                         </div>
@@ -77,7 +78,7 @@
                                     <textarea class="form-control form-textarea" placeholder="Enter card title..." name="cardtitle" id="cardtitle" cols="3" rows="3"></textarea>
                                     <input type="hidden" name="list_id" value="<?php echo $list['id']; ?>" data-list_id="<?php echo $list['id'] ?>">
                                     <input type="hidden" name="board_id" value="<?php echo $boards['id']; ?>" data-board_id="<?php echo $boards['id']; ?>">
-                                    <div class="form-group mb-0 mt-1">
+                                    <div class="form-group mb-0 mt-1 card-box">
                                         <a class=" btn btn-sm btn-success text-white btn-add" id="save-add-card"><i class="fas fa-cloud-download-alt"></i> Add to list</a>
                                         <button type="button" class="close btn-close" id="card-cancel" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -112,7 +113,7 @@
 </div>
 <!-- modal for list edit description -->
 <div id="card-detail" class="modal fade modal-list-description" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <form action="" method="POST">
+    <form action="" method="POST" class="card-detail-form">
         <div class="modal-dialog modal-lg bg-white  rounded" style="width: 50%;margin-top: 48px!important;box-shadow: 0px 0px 5px 1px #000216;">
             <div class="modal-content mt-5" style="background-color: transparent !important; border: none;">
                 <div class="container">
@@ -147,7 +148,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="Labels" class="text-dark">Labels</label>
-                                            <input type="text" placeholder="Enter Labels for the list" class="form-control-adjust card-tags">
+                                            <input type="text" placeholder="Enter Labels for the list" class="form-control-adjust card-tags input-sortable">
                                             <small id="labelsMsg" class="form-text text-muted"></small>
                                         </div>
                                         <div class="form-group">
@@ -237,7 +238,7 @@
                     <div class="modal-footer border-0">
                         <form method="POST" class="w-100">
                             <button type="button" class="btn btn-primary save-click-modal"><i class="far fa-calendar-check text-white"></i> Save changes</button>
-                            <button type="button" class="btn btn-danger"><i class="far fa-calendar-times text-white"></i> Delete selected card</button>
+                            <button type="button" class="btn btn-danger card-delete"><i class="far fa-calendar-times text-white"></i> Delete selected card</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="far fa-times-circle text-white"></i> Close</button>
                         </form>
                     </div>
@@ -259,3 +260,14 @@
         </div>
     </div>
 <?php endif; ?>
+<!-- popover for list_name -->
+<div id="popover-content" class="d-none">
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <input class="form-control mr-1 form-control-popover" id="list-name-popover" name="list-name-popover" type="text" placeholder="List Name" />
+            <button type="button" class="btn btn-primary mr-1 btn-sm update-list-name"><i class="fa fa-check-circle text-white"></i> Save</button>
+            <button type="button" class="btn btn-secondary btn-sm close-popover"><i class="far fa-times-circle text-white"></i> Close</button>
+        </div>
+    </form>
+</div>
+<!-- popover for list_name -->

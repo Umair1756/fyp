@@ -18,12 +18,17 @@ function jqueryPlugins() {
     // tooltip
     $(function () {
         $('[data-toggle="tooltip"]').tooltip();
-      })
+    })
     // popovers
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('[data-toggle="popover"]').popover({
+            html: true,
+            content: function () {
+                return $('#popover-content').removeClass('d-none');
+            },
+
         });
     });
 }
-    // });
-    jqueryPlugins();
+// });
+jqueryPlugins();

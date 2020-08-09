@@ -23,7 +23,7 @@ class Userhome extends CI_Controller
         $this->load->view('userHomePage/userHomePage', $data);
         $this->load->view('userHomePage/userHomePageFooter');
     }
-
+    // boards save operation
     public function saveBoard()
     {
         if (isset($_POST['btnBoard'])) {
@@ -50,6 +50,7 @@ class Userhome extends CI_Controller
             redirect('userHome/');
         }
     }
+    // board next window manage after creation 
     public function boardBegin($boardid)
     {
         // board detail e.g: boards, lists and cards
@@ -62,6 +63,7 @@ class Userhome extends CI_Controller
         $this->load->view('boardHome/boardHome', $data);
         $this->load->view('boardHome/boardHomeFooter');
     }
+    // save list
     public function saveList()
     {
         if (isset($_POST)) {
@@ -78,6 +80,37 @@ class Userhome extends CI_Controller
                 ->set_output(json_encode($result));
         }
     }
+    // update list_name
+    public function updateListName()
+    {
+        if (isset($_POST)) {
+            $data = [
+                "list_id"           => $this->input->post('list_id'),
+                "board_id"          => $this->input->post('board_id'),
+                "list_name"         => $this->input->post('txtListName'),
+                "created_at"        =>  date('Y-m-d H:i:s'),
+                "updated_at"        =>  date('Y-m-d H:i:s'),
+                "uid"               => $_SESSION['uid']
+            ];
+            // die(print_r($data));
+            $result = $this->userHomes->updateListName($data);
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($result));
+        }
+    }
+    // delete list forever
+    public function deleteList()
+    {
+        if (isset($_POST)) {
+            $list_id = $this->input->post('list_id');
+            $result = $this->userHomes->deleteList($list_id);
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($result));
+        }
+    }
+    // save card
     public function saveCard()
     {
         if (isset($_POST)) {
@@ -96,6 +129,7 @@ class Userhome extends CI_Controller
                 ->set_output(json_encode($result));
         }
     }
+    // comments create and save
     public function saveComment()
     {
         if (isset($_POST)) {
@@ -113,6 +147,7 @@ class Userhome extends CI_Controller
                 ->set_output(json_encode($result));
         }
     }
+    // subtask save
     public function saveSubTask()
     {
         if (isset($_POST)) {
@@ -128,12 +163,13 @@ class Userhome extends CI_Controller
                 'totalSubTasks'     => $this->userHomes->totalTasks($data['card_id']),
                 'completeSubTasks'  => $this->userHomes->totalTasksCompleted($data['card_id']),
             ];
-            die(print_r($responseData));
+            // die(print_r($responseData));
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode($responseData));
         }
     }
+    // card detail in modal
     public function getCardDetail()
     {
         if (isset($_POST)) {
@@ -149,6 +185,18 @@ class Userhome extends CI_Controller
                 ->set_output(json_encode($data));
         }
     }
+    // delete card
+    public function deleteCard()
+    {
+        if (isset($_POST)) {
+            $card_id = $this->input->post('card_id');
+            $result = $this->userHomes->deleteCard($card_id);
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($result));
+        }
+    }
+    // update card data
     public function updateCardData()
     {
         if (isset($_POST)) {
@@ -170,12 +218,14 @@ class Userhome extends CI_Controller
                 ->set_output(json_encode($data));
         }
     }
+    // user profile
     public function userProfile()
     {
         $this->load->view('userHomePage/userHomePageHeader');
         $this->load->view('userHomePage/userProfile');
         $this->load->view('userHomePage/userHomePageFooter');
     }
+    // user activties
     public function userActivity()
     {
         $this->load->view('userHomePage/userHomePageHeader');
