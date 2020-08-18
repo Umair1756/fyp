@@ -62,7 +62,24 @@ class Userhomes extends CI_Model
     }
     function getAllCards($boardid)
     {
-        $result = $this->db->query("SELECT * from board_card WHERE board_id=$boardid;");
+        $result = $this->db->query("SELECT COUNT(comment.id) AS totalComments, board_card.*,users.uname
+        FROM board_card
+        INNER JOIN users ON board_card.uid=users.uid
+        LEFT JOIN comment ON comment.card_id=board_card.id
+        GROUP BY board_card.id");
+        if ($result->num_rows() > 0) {
+            return $result->result_array();
+        } else {
+            return false;
+        }
+    }
+    function getTotalTasks()
+    {
+        $result = $this->db->query("SELECT COUNT(card_task.id) AS totalTasks, board_card.*,users.uname
+        FROM board_card
+        INNER   JOIN users      ON board_card.uid   = users.uid
+        LEFT    JOIN card_task  ON board_card.id    = card_task.card_id
+        GROUP BY board_card.id");
         if ($result->num_rows() > 0) {
             return $result->result_array();
         } else {
@@ -80,7 +97,7 @@ class Userhomes extends CI_Model
     {
         $query = $this->db->query("UPDATE board_list SET list_name='" . $data['list_name'] . "', board_id='" . $data['board_id'] . "',uid='" . $data['uid'] . "',created_at='" . date("Y-m-d H:i:s") . "',updated_at='" . date("Y-m-d H:i:s") . "' 
         WHERE id='" . $data['list_id'] . "'");
-        return $data;
+        return $query;
     }
     function deleteList($list_id)
     {
@@ -104,6 +121,11 @@ class Userhomes extends CI_Model
         $this->db->delete('board_card', array('id' => $card_id));
         return true;
     }
+    function deleteTask($task_id)
+    {
+        $this->db->delete('card_task', array('id' => $task_id));
+        return true;
+    }
     function saveComment($comments)
     {
         $this->db->insert("comment", $comments);
@@ -125,9 +147,20 @@ class Userhomes extends CI_Model
         WHERE comment.card_id='" . $card_id . "' ORDER BY comment.id DESC");
         return $query->result_array();
     }
+    function totalComments($id)
+    {
+        $query = $this->db->query("SELECT comment.*,COUNT(comment.id) AS totalComments, users.uname FROM comment 
+        INNER JOIN users ON comment.uid=users.uid 
+        LEFT JOIN board_card ON comment.card_id=board_card.id
+        WHERE comment.card_id='" . $id . "'");
+        return $query->result_array();
+    }
     function saveSubTask($subtasks)
     {
-        return $this->db->insert("card_task", $subtasks);
+        $this->db->insert("card_task", $subtasks);
+        $id = $this->db->insert_id();
+        $query = $this->db->get_where('card_task', array('id' => $id));
+        return $query->row_array();
     }
     function getSubgTasks($card_id)
     {
@@ -168,8 +201,57 @@ class Userhomes extends CI_Model
     }
     function updateCardData($data)
     {
-        $this->db->query("UPDATE board_card SET card_name='" . $data[1] . "', description='" . $data[2] . "',color='" . $data[3] . "',due_date='" . date("Y-m-d H:i:s", strtotime($data[4])) . "' 
+        return $this->db->query("UPDATE board_card SET card_name='" . $data[1] . "', description='" . $data[2] . "',color='" . $data[3] . "',due_date='" . date("Y-m-d H:i:s", strtotime($data[4])) . "' 
         WHERE board_card.id='" . $data[0] . "'");
+    }
+    function updateTask($data)
+    {
+        $this->db->query("UPDATE card_task SET card_id='" . $data['card_id'] . "', is_completed='" . $data['isCompleted'] . "',updated_at='" . DATE("Y-m-d H:i:s") . "' 
+        WHERE id='" . $data['task_id'] . "'");
+        return true;
+    }
+    function cardDragable($data)
+    {
+        $this->db->query("UPDATE board_card SET list_id='" . $data['list_id'] . "',updated_at='" . DATE("Y-m-d H:i:s") . "' 
+        WHERE id='" . $data['card_id'] . "'");
+        return true;
+    }
+    function createActivity($data)
+    {
+        $this->db->insert("user_activity", $data);
+        $id = $this->db->insert_id();
+        $query = $this->db->get_where('user_activity', array('id' => $id));
+        return $query->row_array();
+    }
+    function getUserActivity($uid)
+    {
+        $query = $this->db->query("SELECT user_activity.*, users.uname FROM user_activity 
+        INNER JOIN users ON user_activity.uid=users.uid 
+        WHERE user_activity.uid='" . $uid . "'");
+        return $query->result_array();
+    }
+    function getCurrentUser($user)
+    {
+        $query = $this->db->get_where('users', array('uid' => $user));
+        return $query->row_array();
+    }
+    function updateUserProfile($data)
+    {
+        $this->db->query("UPDATE users SET uname='" . $data['uname'] . "',username='" . $data['username'] . "',updated_at='" . $data['updated_at'] . "' 
+        WHERE uid='" . $data['uid'] . "'");
+        return true;
+    }
+    function getCurrentPwd($uid)
+    {
+        $query = $this->db->query("SELECT upassword FROM users
+        WHERE uid='" . $uid . "'");
+        return $query->row_array();
+        // return true;
+    }
+    function updatePwd($data)
+    {
+        $this->db->query("UPDATE users SET upassword='" . $data['reTypePwd'] . "',updated_at='" . $data['updated_at'] . "' 
+        WHERE uid='" . $data['uid'] . "'");
         return true;
     }
 }

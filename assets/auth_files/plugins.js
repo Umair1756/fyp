@@ -17,16 +17,19 @@ function jqueryPlugins() {
     });
     // tooltip
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
+        $("body").tooltip({ selector: '[data-toggle=tooltip]', placement: 'bottom' });
+        // $('[data-toggle="tooltip"]').tooltip();
     })
     // popovers
     $(document).ready(function () {
         $('[data-toggle="popover"]').popover({
             html: true,
+            container: 'body',
+            container: 'body',
             content: function () {
                 return $('#popover-content').removeClass('d-none');
             },
-
+            
         });
     });
 }

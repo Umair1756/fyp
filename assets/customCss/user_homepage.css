@@ -147,7 +147,7 @@ input:focus::-webkit-input-placeholder {
 	outline: none !important;
 }
 .border-danger {
-	border: 1px solid #ff3e4d !important;
+	border: 2px solid #ff3e4d !important;
 }
 .text-2b4949 {
 	color: #2b4949;
@@ -193,57 +193,19 @@ input:focus::-webkit-input-placeholder {
 
 .header-area {
 	background-color: #2b4949;
-
-	padding-top: 60px;
-	/* padding-bottom: 50px; */
-}
-
-.mt-adjust {
-	background-color: #2b4949;
-}
-
-.smallHeading {
-	font-size: 14px !important;
-}
-
-.btnProfile {
-	background: #ffffff;
-	padding: 8px 20px;
-	color: #2b4949 !important;
-	border-radius: 3px 3px 0 0;
-	font-weight: 600;
-}
-
-.nav-tabs .nav-item {
-	margin-bottom: -2px !important;
-}
-.nav-tabs .nav-item:hover {
-	margin-bottom: -2px !important;
-}
-
-.dogImg {
-	display: block;
-	margin: 18px auto 42px;
-	max-width: 100%;
-	height: auto;
+	padding-top: 100px;
 }
 
 .m-section {
-	margin-top: 55px;
+	margin: 55px 0px;
 }
 
 .m-container {
 	width: 100%;
 	max-width: 530px;
-	/* display: flex; testing testing*/
 	flex-direction: column;
 	margin: auto;
 }
-
-.m-form {
-	margin-bottom: 150px;
-}
-
 .m-heading {
 	color: #172b4d;
 	font-size: 24px;
@@ -363,13 +325,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 .change-pwd {
-	/* margin-top: 40px; */
 	font-size: 15px;
 	padding: 8px 30px;
 	background: #838686;
 	color: #fff;
-	/* width: 100%; */
-	/* padding: 4px; */
 	border: none;
 	border-radius: 3px;
 	font-size: 15px;
@@ -426,7 +385,7 @@ a.boardBox {
 	background-color: #67d77e;
 }
 #card-body-content {
-	max-height: 450px !important;
+	max-height: 100vh !important;
 	overflow-y: scroll !important;
 }
 .commented-box {
@@ -500,25 +459,41 @@ a.boardBox {
 	padding-left: 10px;
 }
 .form-textarea {
-	overflow-y: auto !important;
-	max-height: 450px !important;
+	overflow: hidden !important;
+	overflow-wrap: break-word !important;
+	resize: none !important;
+	height: 54px !important;
 }
 /* Board Area below header ends here */
-.navbarPanel a.nav-link {
-	color: none !important;
+.navbarPanel li a.nav-link1,a.nav-link2 {
+	color: #fff !important;
 	border: none !important;
 }
-.navbarPanel a.btnActivity {
+.navbarPanel li a.btnProfile {
+	background: #ffffff;
+	padding: 8px 20px;
+	color: #2b4949 !important;
+	border-radius: 3px 3px 0 0;
+	font-weight: 600;
+}
+.navbarPanel li a.btnActivity {
 	color: #fff !important;
+}
+.navbarPanel li a.btnActivity:focus,
+.navbarPanel li a.btnProfile:focus {
+	background: #ffffff !important;
+	padding: 8px 20px;
+	color: #2b4949 !important;
+	border-radius: 3px 3px 0 0;
+	font-weight: 600;
 }
 .navbarPanel a.btnActivity:hover,
 .navbarPanel a.btnProfile:hover {
 	border: none !important;
 }
-.btnProfile::after {
-	color: #ffffff !important;
+.nav-tabs .nav-item:focus {
+    margin-bottom: 0px !important;
 }
-
 .card-form {
 	margin-right: 5px;
 	margin-bottom: 10px;
@@ -528,12 +503,12 @@ a.boardBox {
 
 	margin-bottom: 10px;
 }
-ul.drp_adj1 a:visited {
+/* ul.drp_adj1 a:visited {
 	color: #fff !important;
 }
 ul.drp_adj1 a:hover {
 	color: #000000 !important;
-}
+} */
 .f-22 {
 	font-size: 22px;
 }
@@ -549,7 +524,7 @@ ul.drp_adj1 a:hover {
 	box-shadow: none !important;
 	height: 31px !important;
 }
-.list-delete{
+.list-delete {
 	cursor: pointer;
 }
 /* Media Query Here */

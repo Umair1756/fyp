@@ -14,7 +14,7 @@
             <div class="col-lg-12">
                 <div class="recents mb-5 mt-5">
                     <div class="h5 p-2 mb-3">
-                        <i class='far fa-clock pr-2'></i> Recently Viewed
+                        <i class='far fa-clock pr-2'></i> Recently Created
                     </div>
                     <div class="col-lg-12">
                         <div class="row">
@@ -56,8 +56,8 @@
                                     You haven't created any board yet.
                                 </h1>
                             <?php } ?>
-                            <a class="col-lg-2 text-center rounded boardBox text-white text-white" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                Create new board
+                            <a style="display: flex;flex-direction: row;align-items: flex-end;" class=" col-lg-2 text-center rounded boardBox text-white text-white" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                <span>Create new board</span>
                             </a>
                         </div>
                     </div>

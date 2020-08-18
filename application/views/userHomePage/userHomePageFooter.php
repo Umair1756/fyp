@@ -7,7 +7,11 @@
 
 		<!-- custom JS Files -->
 		<script src='<?php echo base_url('assets/auth_files/index.js'); ?>'></script>
-
+		<script>
+			$(".btnActivity").on("click", function(event) {
+				$('a.btnProfile').removeClass('btnProfile');
+			})
+		</script>
 
 
 		</body>

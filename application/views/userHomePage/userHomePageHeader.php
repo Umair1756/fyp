@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ProMag</title>
+    <title>User Profile</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png'); ?>">
     <!-- bootstrap framework -->
@@ -38,8 +38,7 @@
 </head>
 
 <body>
-    <!-- Haeder Section 
-        -->
+    <!-- Haeder Section-->
     <header class="user_header_section fixed-top position-fixed">
         <nav class="navbar navbar-expand-lg nav_res">
             <ul class="navbar-nav text-center w-100 navbar_res">
@@ -67,7 +66,7 @@
                         </li>
                         <div class="dropdown-divider"></div>
                         <li><a class="dropdown-item rounded pt-3 pb-3" href="<?php echo base_url('index.php/userHome/userProfile'); ?>">Manage Profile And Password</a></li>
-                        <li><a class="dropdown-item rounded pt-3 pb-3" href="<?php echo base_url('index.php/userHome/userActivity'); ?>">View Activities</a></li>
+                        <li><a class="dropdown-item rounded pt-3 pb-3" href="<?php echo base_url('index.php/userHome/userProfile'); ?>">View Activities</a></li>
                         <li><a class="dropdown-item rounded pt-3 pb-3" name="logout" href="<?php echo base_url('index.php/welcome/logout'); ?>">Log Out</a></li>
                     </ul>
                 </li>
