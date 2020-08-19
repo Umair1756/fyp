@@ -22,7 +22,7 @@ ul.navbar_res li {
 	cursor: pointer;
 }
 a.nav-link {
-	color: #2b4949 !important;
+	/* color: #2b4949 !important; */
 }
 .nav-item {
 	/* border: 2px solid #2b2b52; */
@@ -104,7 +104,7 @@ input:focus::-webkit-input-placeholder {
 	/* opacity: 0.1; */
 }
 .penal_area {
-	margin-top: 175px;
+	margin-top: 100px;
 }
 .r_tab_content {
 	border-left: 1px dashed #2b2b52;
@@ -458,6 +458,9 @@ a.boardBox {
 	padding-right: 10px;
 	padding-left: 10px;
 }
+.bg-dedede{
+	background: #dedede !important;
+}
 .form-textarea {
 	overflow: hidden !important;
 	overflow-wrap: break-word !important;
@@ -465,50 +468,14 @@ a.boardBox {
 	height: 54px !important;
 }
 /* Board Area below header ends here */
-.navbarPanel li a.nav-link1,a.nav-link2 {
-	color: #fff !important;
-	border: none !important;
-}
-.navbarPanel li a.btnProfile {
-	background: #ffffff;
-	padding: 8px 20px;
-	color: #2b4949 !important;
-	border-radius: 3px 3px 0 0;
-	font-weight: 600;
-}
-.navbarPanel li a.btnActivity {
-	color: #fff !important;
-}
-.navbarPanel li a.btnActivity:focus,
-.navbarPanel li a.btnProfile:focus {
-	background: #ffffff !important;
-	padding: 8px 20px;
-	color: #2b4949 !important;
-	border-radius: 3px 3px 0 0;
-	font-weight: 600;
-}
-.navbarPanel a.btnActivity:hover,
-.navbarPanel a.btnProfile:hover {
-	border: none !important;
-}
-.nav-tabs .nav-item:focus {
-    margin-bottom: 0px !important;
-}
 .card-form {
 	margin-right: 5px;
 	margin-bottom: 10px;
 }
 .form-tarea {
 	margin-top: 10px;
-
 	margin-bottom: 10px;
 }
-/* ul.drp_adj1 a:visited {
-	color: #fff !important;
-}
-ul.drp_adj1 a:hover {
-	color: #000000 !important;
-} */
 .f-22 {
 	font-size: 22px;
 }
@@ -519,13 +486,35 @@ ul.drp_adj1 a:hover {
 .bg-e9ecef {
 	background: #e9ecef;
 }
-.form-control-popover {
+.form-control-modal {
 	border: 1px solid #dedede !important;
 	box-shadow: none !important;
 	height: 31px !important;
 }
 .list-delete {
 	cursor: pointer;
+}
+.overlay {
+    opacity: 0.5;
+    display: none;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: black;
+    z-index:9999;
+    color:white;
+}
+.nav-tabs-adjust a.nav-link{
+	color: white;
+	border: none;
+	font-weight: 600 !important; 
+}
+
+.nav-tabs-adjust .nav-link.active{
+	color: black;
+	font-weight: 600 !important;
 }
 /* Media Query Here */
 

@@ -59,8 +59,9 @@ class Userhome extends CI_Controller
         $data['lists']      = $this->userHomes->getAllLists($boardid);
         $data['cards']      = $this->userHomes->getAllCards($boardid);
         $data['totalTasks'] = $this->userHomes->getTotalTasks();
+        $data['sqlId']      = $this->userHomes->getInviteLink();
 
-        // $this->load->view('userHomePage/userHomePageHeader');
+        // loading view
         $this->load->view('boardHome/boardHomeHeader');
         $this->load->view('boardHome/boardHome', $data);
         $this->load->view('boardHome/boardHomeFooter');
@@ -355,6 +356,20 @@ class Userhome extends CI_Controller
                 $data['msg'] = $this->session->set_flashdata("success", "Password has been updated . . . .");
                 redirect('userhome/userProfile/', $data);
             }
+        }
+    }
+    //change password working
+    public function inviteLink()
+    {
+        if (isset($_POST)) {
+            $data = [
+                "board_id"      => $_POST['board_id'],
+                'uid'           => $_SESSION['uid'],
+            ];
+            $sqlId = $this->userHomes->inviteLink($data);
+            $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode($sqlId));
         }
     }
 }

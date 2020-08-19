@@ -1,3 +1,23 @@
+<!-- modal for list_name -->
+<div id="list-content-modal" aria-hidden="true" tabindex="-1" class="modal fade modal">
+    <div class="modal-dialog modal-lg bg-white  rounded" style="width: 30%;margin-top: 80px!important;box-shadow: 0px 0px 5px 1px #000216;">
+        <div class="modal-content mt-5" style="background-color: transparent !important; border: none;">
+            <div class="modal-header p-0 pl-2 pt-2 pb-2 bg-dedede">
+                <div class="h4 mb-0">Edit List Name</div>
+            </div>
+            <div class="container mt-3">
+                <form class="form-inline mb-3" role="form">
+                    <div class="form-group m-auto">
+                        <input class="form-control mr-1 form-control-modal" id="list-name-modal" name="list-name-modal" type="text" placeholder="List Name" />
+                        <button type="button" class="btn btn-primary mr-1 btn-sm update-list-name"><i class="fa fa-check-circle text-white"></i> Save</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"><i class="far fa-times-circle text-white"></i> Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal for list_name -->
 <!-- modal for list edit description -->
 <div id="card-detail" class="modal fade modal-list-description" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg bg-white  rounded" style="width: 50%;margin-top: 48px!important;box-shadow: 0px 0px 5px 1px #000216;">
@@ -151,6 +171,7 @@
 <!-- datetimepicker -->
 <script src=" <?php echo base_url('assets/sweetalerts/sweetalert.min.js'); ?>"></script>
 <!-- custom JS Files -->
+<script src=" <?php echo base_url('assets/auth_files/ajax-loading.js'); ?>"></script>
 <script src='<?php echo base_url('assets/auth_files/plugins.js'); ?>'></script>
 <script src='<?php echo base_url('assets/auth_files/index.js'); ?>'></script>
 <!-- custom JS Files -->

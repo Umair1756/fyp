@@ -17,12 +17,16 @@
                 <?php endif; ?>
             </div>
         </div>
-        <ul class="nav nav-tabs d-flex justify-content-center border-0 navbarPanel" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link nav-link1 btnProfile" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">User Profile</a>
+        <ul class="nav nav-tabs nav-tabs-adjust list-inline mx-auto justify-content-center">
+            <li class="nav-item active">
+                <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">
+                    User Profile
+                </a>
             </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link nav-link2 btnActivity" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Activity</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#activity" data-toggle="tab" role="tab">
+                    Activity
+                </a>
             </li>
         </ul>
     </div>
@@ -30,7 +34,7 @@
 <div class="m-section">
     <div class="m-container">
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane fade show active" id="profile" role="tabpanel">
                 <!-- alert when user profile updated -->
                 <?php if (isset($_SESSION['success'])) : ?>
                     <div class="col-lg-12">
@@ -69,7 +73,7 @@
                 </form>
             </div>
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="tab-pane fade" id="activity" role="tabpanel">
             <div class="col-lg-12">
                 <h3 class="m-about">Boards Activties from Begining</h3>
                 <hr class="m-hr">

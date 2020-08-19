@@ -1,19 +1,28 @@
+<div class="overlay"></div>
 <div class="main-wrap pb-1 pt-1" style="margin-top: 79px !important">
     <nav class="navbar-adj navbar navbar-expand-lg">
         <ul class="navbar-nav text-center pr-0 board_nav m-auto">
-            <li class="nav-item mr-1">
-                <a class="nav-link text-white rounded"><i class="fas fa-chalkboard-teacher mr-1"></i> <?php echo $boards['name']; ?>
+            <li class="nav-item mr-2">
+                <a class="nav-link text-white rounded p-1 pl-3 pr-3"><i class="fas fa-chalkboard-teacher mr-1"></i> <?php echo $boards['name']; ?>
                     <input type="hidden" value="<?php echo $boards['id']; ?>" id="boardid">
                 </a>
             </li>
-            <li class="nav-item mr-1">
-                <a class="nav-link text-white rounded"><i class="fas fa-share-alt mr-1"></i> Invite</a>
+            <li class="nav-item mr-2">
+                <a class="nav-link text-white rounded p-1 pl-3 pr-3" data-board_id="<?php echo $boards['id']; ?>" id="invite-link"><i class="fas fa-share-alt mr-1"></i> Invite</a>
+                <?php if (!empty($sqlId)) {
+                    if (isset($sqlId)) {
+                        foreach ($sqlId as $id) {
+                            "<input type='hidden' value='" . $id['id'] . "'>";
+                        }
+                    }
+                } ?>
+
             </li>
-            <li class="nav-item mr-1">
-                <a class="nav-link text-white rounded"><i class="fas fa-users m r-1"></i> TeamShow</a>
+            <li class="nav-item mr-2">
+                <a class="nav-link text-white rounded p-1 pl-3 pr-3"><i class="fas fa-users m r-1"></i> TeamShow</a>
             </li>
             <li class="nav-item">
-                <a href="<?php echo base_url('index.php/userHome/') ?>" class="nav-link text-white rounded"><i class="fas fa-chalkboard mr-1"></i> Boards</a>
+                <a href="<?php echo base_url('index.php/userHome/') ?>" class="nav-link text-white rounded p-1 pl-3 pr-3"><i class="fas fa-chalkboard mr-1"></i> Boards</a>
             </li>
 
         </ul>
@@ -36,7 +45,7 @@
                     <div class="box-card bg-57c07e rounded pl-1 pr-1 w-adjust mr-2" style="height: fit-content;" data-list_id="<?php echo $list['id'] ?>" data-board_id="<?php echo $boards['id']; ?>">
                         <div class="row pt-1 pb-1">
                             <div class="col-lg-10">
-                                <div class="list-title-adjust" data-toggle="popover" title="Edit List Name" style="width:215px" data-board_id="<?php echo $boards['id']; ?>" data-list_id="<?php echo $list['id'] ?>">
+                                <div class="list-title-adjust" style="width:215px" data-board_id="<?php echo $boards['id']; ?>" data-list_id="<?php echo $list['id'] ?>">
                                     <?php echo $list['list_name'] ?>
                                 </div>
                             </div>
@@ -142,14 +151,25 @@
         </div>
     </div>
 <?php endif; ?>
-<!-- popover for list_name -->
-<div id="popover-content" class="d-none">
-    <form class="form-inline" role="form">
-        <div class="form-group">
-            <input class="form-control mr-1 form-control-popover" id="list-name-popover" name="list-name-popover" type="text" placeholder="List Name" />
-            <button type="button" class="btn btn-primary mr-1 btn-sm update-list-name"><i class="fa fa-check-circle text-white"></i> Save</button>
-            <button type="button" class="btn btn-secondary btn-sm close-popover"><i class="far fa-times-circle text-white"></i> Close</button>
+<!-- modal for invite members-->
+<div id="invite-content-modal" aria-hidden="true" tabindex="-1" class="modal fade modal">
+    <div class="modal-dialog modal-lg bg-white  rounded" style="width: 30%;margin-top: 250px!important;box-shadow: 0px 0px 5px 1px #000216;">
+        <div class="modal-content mt-5" style="background-color: transparent !important; border: none;">
+            <div class="modal-header p-0 pl-2 pt-2 pb-2 bg-dedede">
+                <div class="h4 mb-0">Invite a member</div>
+            </div>
+            <div class="container mt-3">
+                <form class="form" role="form">
+                    <div class="form-group">
+                        <input class="form-control mr-1 form-control-modal" id="invite link" name="invite-link" type="text" />
+                    </div>
+                    <div class="form-group text-center mb-3">
+                        <button type="button" class="btn btn-success mr-1 btn-sm invite-link"><i class="fas fa-link"></i> Copy Link</button>
+                        <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal"><i class="far fa-times-circle text-white"></i> Close</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
+    </div>
 </div>
-<!-- popover for list_name -->
+<!-- modal for invite members -->

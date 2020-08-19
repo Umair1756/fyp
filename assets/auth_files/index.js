@@ -14,7 +14,7 @@ var IndexJs = function () {
                     `<div class="box-card bg-57c07e rounded pl-1 pr-1 w-adjust mr-2" style="height: fit-content;" data-list_id="${data.id}">
                     <div class="row pt-1 pb-1">
                     <div class="col-lg-10">
-                    <div class="list-title-adjust" data-toggle="popover" title="Edit List Name" data-container="body" style="width:215px" data-list_id="${data.id}">${data.list_name}</div>
+                    <div class="list-title-adjust" style="width:215px" data-list_id="${data.id}">${data.list_name}</div>
                     </div>
                     <div class="col-lg-2 pr-2 pl-1">
                     <div class="btn-delete list-delete text-center pr-1" data-list_id="${data.id}"><i class="fa fa-trash-alt text-white" style="font-size:26px!important;cursor: pointer;"></i>
@@ -71,9 +71,8 @@ var IndexJs = function () {
             success: function (data) {
                 // console.log(data);
                 $(".list-title-adjust").filter("[data-list_id=" + data.list_id + "]").text(data.list_name);
-                $('.popover').hide();
+                $('#list-content-modal').modal('hide');
                 createActivity(data.list_id, "List", "updated List name");
-                jqueryPlugins();
             },
             error: function (data) {
                 // console.log(data);
@@ -230,7 +229,7 @@ var IndexJs = function () {
                 // console.log(data)
             },
             success: function (data) {
-                // console.log(data);
+                console.log(data);
                 var commentedBox = "";
                 commentedBox +=
                     `<div class="row m-0 bg-e9ecef p-2 rounded mb-2">
@@ -240,21 +239,21 @@ var IndexJs = function () {
                     <div class=" col-lg-8 p-0 ">
                     <p class="m-0 f-22 text-dark">${data.uname}</p>
                     <p class="m-0 text-dark">${data.comment_description}</p>
-                    <span class="m-0 text-dark">0 sec ago</span>
+                    <span class="timeago m-0 text-dark">${data.created_at}</span>
                     </div>
                     </div>`
                 $(".commented-box").prepend(commentedBox);
                 $("#comments-input").val('');
                 $("#comments-input").focus();
-                if ($(".list-group-item").filter("[data-card_id=" + data.card_id + "]").find('ul.card-description .list-comment').length == 0) {
-                    $(".list-group-item").filter("[data-card_id=" + card_id + "]").find('ul.card-description').append(
+                if ($(".card-list-des").filter("[data-card_id=" + data.card_id + "]").find('ul.card-description .list-comment').length == 0) {
+                    $(".card-list-des").filter("[data-card_id=" + card_id + "]").find('ul.card-description').append(
                         `<li data-toggle="tooltip" data-totalcomments=1 data-placement="bottom" title="This card has 1 Comment" style="background: transparent !important;display: flex;flex-direction: row;align-items: center;" class="list-comment list-group-item m-0 p-1 border-0 rounded-0"><i class="far fa-comment-dots"></i></li>`
                     );
                 } else {
-                    var totalComments = $(".list-group-item").filter("[data-card_id=" + data.card_id + "]").find('.list-comment').attr("data-totalcomments");
+                    var totalComments = $(".card-list-des").filter("[data-card_id=" + data.card_id + "]").find('.list-comment').attr("data-totalcomments");
                     totalComments++;
-                    $(".list-group-item").filter("[data-card_id=" + data.card_id + "]").find('.list-comment').attr("data-original-title", "This card have " + totalComments + " tasks.");
-                    $(".list-group-item").filter("[data-card_id=" + data.card_id + "]").find('.list-comment').attr("data-totalcomments", totalComments);
+                    $(".card-list-des").filter("[data-card_id=" + data.card_id + "]").find('.list-comment').attr("data-original-title", "This card have " + totalComments + " comments.");
+                    $(".card-list-des").filter("[data-card_id=" + data.card_id + "]").find('.list-comment').attr("data-totalcomments", totalComments);
                 }
                 createActivity(data.id, "Comments", "commented");
             },
@@ -288,15 +287,15 @@ var IndexJs = function () {
                 $(".subtask-body").prepend(subTaskTbody);
                 $("#txtSubtask").val("");
                 $("#txtSubtask").focus();
-                if ($(".list-group-item").filter("[data-card_id=" + card_id + "]").find('ul.card-description .list-task').length == 0) {
-                    $(".list-group-item").filter("[data-card_id=" + card_id + "]").find('ul.card-description').append(
+                if ($(".card-list-des").filter("[data-card_id=" + card_id + "]").find('ul.card-description .list-task').length == 0) {
+                    $(".card-list-des").filter("[data-card_id=" + card_id + "]").find('ul.card-description').append(
                         `<li data-toggle="tooltip" data-placement="bottom" data-totaltask=1 title="This card has 1 Task" style="background: transparent !important;display: flex;flex-direction: row;align-items: center;" class="list-task list-group-item m-0 p-1 border-0 rounded-0  mr-2"><i class="fas fa-network-wired"></i></li>`
                     );
                 } else {
-                    var totalTasks = $(".list-group-item").filter("[data-card_id=" + card_id + "]").find('.list-task').attr("data-totaltask");
+                    var totalTasks = $(".card-list-des").filter("[data-card_id=" + card_id + "]").find('ul.card-description .list-task').attr("data-totaltask");
                     totalTasks++;
-                    $(".list-group-item").filter("[data-card_id=" + card_id + "]").find('.list-task').attr("data-original-title", "This card have " + totalTasks + " tasks.");
-                    $(".list-group-item").filter("[data-card_id=" + card_id + "]").find('.list-task').attr("data-totaltask", totalTasks);
+                    $(".card-list-des").filter("[data-card_id=" + card_id + "]").find('ul.card-description .list-task').attr("data-original-title", "This card have " + totalTasks + " tasks.");
+                    $(".card-list-des").filter("[data-card_id=" + card_id + "]").find('ul.card-description .list-task').attr("data-totaltask", totalTasks);
                 }
                 createActivity(data.subtasks.id, "SubTasks", "created a task");
                 jqueryPlugins();
@@ -379,7 +378,7 @@ var IndexJs = function () {
                     <div class=' col-lg-8 p-0 user-commented'>
                     <p class='m-0 f-22 text-dark'> ${elem.uname} </p>
                     <p class='m-0 text-dark'>${elem.comment_description} </p>
-                    <span class='m-0 text-dark'> 0 sec ago </span>
+                    <span class='m-0 text-dark'>${elem.created_at}</span>
                     </div>
                     </div>`
                 });
@@ -481,6 +480,115 @@ var IndexJs = function () {
             }
         });
     }
+    var timeAgo = function (selector) {
+
+        var templates = {
+            prefix: "",
+            suffix: " ago",
+            seconds: "less than a minute",
+            minute: "about a minute",
+            minutes: "%d minutes",
+            hour: "about an hour",
+            hours: "about %d hours",
+            day: "a day",
+            days: "%d days",
+            month: "about a month",
+            months: "%d months",
+            year: "about a year",
+            years: "%d years"
+        };
+        var template = function (t, n) {
+            return templates[t] && templates[t].replace(/%d/i, Math.abs(Math.round(n)));
+        };
+
+        var timer = function (time) {
+            if (!time)
+                return;
+            time = time.replace(/\.\d+/, ""); // remove milliseconds
+            time = time.replace(/-/, "/").replace(/-/, "/");
+            time = time.replace(/T/, " ").replace(/Z/, " UTC");
+            time = time.replace(/([\+\-]\d\d)\:?(\d\d)/, " $1$2"); // -04:00 -> -0400
+            time = new Date(time * 1000 || time);
+
+            var now = new Date();
+            var seconds = ((now.getTime() - time) * .001) >> 0;
+            var minutes = seconds / 60;
+            var hours = minutes / 60;
+            var days = hours / 24;
+            var years = days / 365;
+
+            return templates.prefix + (
+                seconds < 45 && template('seconds', seconds) ||
+                seconds < 90 && template('minute', 1) ||
+                minutes < 45 && template('minutes', minutes) ||
+                minutes < 90 && template('hour', 1) ||
+                hours < 24 && template('hours', hours) ||
+                hours < 42 && template('day', 1) ||
+                days < 30 && template('days', days) ||
+                days < 45 && template('month', 1) ||
+                days < 365 && template('months', days / 30) ||
+                years < 1.5 && template('year', 1) ||
+                template('years', years)
+            ) + templates.suffix;
+        };
+
+        var elements = document.getElementsByClassName('timeago');
+        for (var i in elements) {
+            var $this = elements[i];
+            if (typeof $this === 'object') {
+                $this.innerHTML = timer($this.getAttribute('title') || $this.getAttribute('datetime'));
+            }
+        }
+        // update time every minute
+        setTimeout(timeAgo, 60000);
+
+    }
+    // times ago
+    var time_ago = function (time) {
+        switch (typeof time) {
+            case 'number': break;
+            case 'string': time = +new Date(time); break;
+            case 'object': if (time.constructor === Date) time = time.getTime(); break;
+            default: time = +new Date();
+        }
+        var time_formats = [
+            [60, 'seconds', 1], // 60
+            [120, '1 minute ago', '1 minute from now'], // 60*2
+            [3600, 'minutes', 60], // 60*60, 60
+            [7200, '1 hour ago', '1 hour from now'], // 60*60*2
+            [86400, 'hours', 3600], // 60*60*24, 60*60
+            [172800, 'Yesterday', 'Tomorrow'], // 60*60*24*2
+            [604800, 'days', 86400], // 60*60*24*7, 60*60*24
+            [1209600, 'Last week', 'Next week'], // 60*60*24*7*4*2
+            [2419200, 'weeks', 604800], // 60*60*24*7*4, 60*60*24*7
+            [4838400, 'Last month', 'Next month'], // 60*60*24*7*4*2
+            [29030400, 'months', 2419200], // 60*60*24*7*4*12, 60*60*24*7*4
+            [58060800, 'Last year', 'Next year'], // 60*60*24*7*4*12*2
+            [2903040000, 'years', 29030400], // 60*60*24*7*4*12*100, 60*60*24*7*4*12
+            [5806080000, 'Last century', 'Next century'], // 60*60*24*7*4*12*100*2
+            [58060800000, 'centuries', 2903040000] // 60*60*24*7*4*12*100*20, 60*60*24*7*4*12*100
+        ];
+        var seconds = (+new Date() - time) / 1000,
+            token = 'ago', list_choice = 1;
+
+        if (seconds == 0) {
+            return 'Just now'
+        }
+        if (seconds < 0) {
+            seconds = Math.abs(seconds);
+            token = 'from now';
+            list_choice = 2;
+        }
+        var i = 0, format;
+        while (format = time_formats[i++])
+            if (seconds < format[0]) {
+                if (typeof format[2] == 'string')
+                    return format[list_choice];
+                else
+                    return Math.floor(seconds / format[2]) + ' ' + format[1] + ' ' + token;
+            }
+        return time;
+    }
     // dateFromat for userInterFace
     var formatDate = function (date) {
         var d = new Date(date),
@@ -521,12 +629,13 @@ var IndexJs = function () {
     // validate update list name when it is empty
     var validateUpdateSaveList = function (currentBtnClicked) {
         var flag = false;
-        var inputListName = $(currentBtnClicked).closest('#popover-content').find("#list-name-popover").val();
+        var inputListName = $(currentBtnClicked).closest('#list-content-modal').find("#list-name-modal").val();
+        console.log(inputListName);
         if (inputListName === "") {
-            $(currentBtnClicked).closest('#popover-content').find("#list-name-popover").attr("style", "border:2px solid red !important");
+            $(currentBtnClicked).closest('#list-content-modal').find("#list-name-modal").attr("style", "border:2px solid red !important");
             return flag = true;
         } else {
-            $(currentBtnClicked).closest('#popover-content').find("#list-name-popover").removeAttr("style", "");
+            $(currentBtnClicked).closest('#list-content-modal').find("#list-name-modal").removeAttr("style", "");
             return flag = false;
         }
     }
@@ -550,6 +659,26 @@ var IndexJs = function () {
             }
         });
     }
+    //get invite link  
+    var inviteLink = function (board_id, currentBtnClicked) {
+        $.ajax({
+            url: base_url + 'index.php/userhome/inviteLink',
+            async: false,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                board_id: board_id,
+            },
+            success: function (sqlId) {
+                console.log(sqlId);
+                $(currentBtnClicked).after(`<input type="hidden" value="${sqlId}">`);
+            },
+            error: function (data) {
+                // console.log(data);
+                alert("Error, Server or Request Issue or Data not properly handled, Try again");
+            }
+        });
+    }
 
     return {
 
@@ -560,28 +689,12 @@ var IndexJs = function () {
 
         bindUI: function () {
             var self = this;
-            // $('[data-toggle="popover"]').on('hidden.bs.popover', function () {
-            //     $("").addClass('d-none')
-            // });
             $('#card-detail').on('hidden.bs.modal', function () {
                 // console.log("here")
                 // $("#card-detail").modal("hide");
                 $(this).find('form').each(function (index, item) {
                     item.reset();
                 });
-            });
-            // $('[data-toggle="popover"]').on('hidden.bs.popover', function () {
-            //     console.log("closed");
-            //     return $('#popover-content').addClass('d-none');
-            // });
-            // $('[data-toggle="popover"]').on('shown.bs.popover', function () {
-            //     console.log("shown");
-            //     return $('#popover-content').removeClass('d-none');
-            // });
-            // closeBtn popover
-            $(document).on('click', '.close-popover', function (e) {
-                e.preventDefault();
-                $('[data-toggle="popover"]').popover('hide');
             });
             // loginBtn landing page
             $('.btnLogIn').on('click', function (e) {
@@ -624,7 +737,7 @@ var IndexJs = function () {
             });
 
             // alert-success-box 
-            // $(".successBox").fadeOut(4000);
+            $(".successBox").fadeOut(4000);
 
             //add-listdBtn 
             $(document).on('click', '#add-list', function (e) {
@@ -661,28 +774,29 @@ var IndexJs = function () {
                 $(this).closest('.box-card').find('#add-card').show();
                 $(this).closest('.box-card').find('.card-form').hide();
             });
-            // list-title into popover
+            // update-list-name working                               --->        Open Modal
             $(document).on('click', '.list-title-adjust', function (e) {
                 e.preventDefault();
-                // console.log('current list_name show in popover input')
+                var list_id = $(this).data('list_id');
+                var board_id = $(this).data('board_id');
+                $('#list-content-modal').attr('data-list_id', list_id);
+                $('#list-content-modal').attr('data-board_id', board_id);
+                $('#list-content-modal').modal('show');
+            });
+            // list-title into modal
+            $(document).on('click', '.list-title-adjust', function (e) {
+                e.preventDefault();
                 var list_id = $(this).data("list_id");
                 var list_name = $.trim($(this).text());
-                $(document).find('#list-name-popover').attr("data-list_id", list_id);
-                $(document).find('#list-name-popover').val(list_name);
-                $(document).find('#list-name-popover').focus();
-            });
-            // list-title-adjust working
-            $(document).on('click', '.list-title-adjust', function (e) {
-                e.preventDefault();
-                var list_id = $(this).data("list_id");
-                $(document).find('#list-name-popover').attr("data-list_id", list_id);
+                $('#list-content-modal').find('#list-name-modal').attr("data-list_id", list_id);
+                $('#list-content-modal').find('#list-name-modal').val(list_name);
             });
             // update-list-name btn working
             $(document).on('click', '.update-list-name', function (e) {
                 e.preventDefault();
-                var list_id = $(document).find('#list-name-popover').data("list_id");
-                var board_id = $(document).find('.list-title-adjust').data("board_id");
-                var txtListName = $(document).find('#list-name-popover').val();
+                var list_id = $('#list-content-modal').attr("data-list_id");
+                var board_id = $('#list-content-modal').attr("data-board_id");
+                var txtListName = $(document).find('#list-name-modal').val();
                 self.initUpdateListName(list_id, board_id, txtListName, this)
             });
             // save-add-list btn working
@@ -714,8 +828,6 @@ var IndexJs = function () {
                 e.preventDefault();
                 var txtSubtask = $(document).find('#txtSubtask').val();
                 var card_id = $(document).find('.modal-list-description').attr('data-card_id');
-                // console.log("Clicked working...");
-                // console.log("This is Subtask " + txtSubtask + "This is card_id from modal " + card_id);
                 if (txtSubtask.length > 0) {
                     self.initSaveSubTask(txtSubtask, card_id);
                 }
@@ -730,13 +842,11 @@ var IndexJs = function () {
                 if (isChecked == true) {
                     isCompleted = 1;
                     $('#is_complete_check').attr("data-checked", 1);
-                    // console.log("Here for input:checked ");
                     self.initUpdateTask(task_id, isCompleted);
                 } else {
                     isCompleted = 0;
                     $('#is_complete_check').attr('data-checked', 0);
                     self.initUpdateTask(task_id, isCompleted);
-                    // console.log("Here if not input:check");
                 }
             });
             // deleteSubTaskRow permanantly
@@ -776,6 +886,13 @@ var IndexJs = function () {
                 // console.log("save-changes btn working properly");
                 // console.log(card_id);
                 self.initUpdateCardData(card_id);
+            });
+            // invite-link working                            --->        Open Modal
+            $(document).on('click', '#invite-link', function (e) {
+                e.preventDefault();
+                $('#invite-content-modal').modal('show');
+                var board_id = $(this).data("board_id");
+                self.initInviteLink(board_id, this);
             });
         },
 
@@ -843,11 +960,17 @@ var IndexJs = function () {
         initCreateActivity: function (activity_in_id, changed_in, description) {
             createActivity(activity_in_id, changed_in, description);
         },
+        // invite-link wokring 
+        initInviteLink: function (board_id, currentBtnClicked) {
+            inviteLink(board_id, currentBtnClicked);
+        },
 
     }
 };
 var indexJs = new IndexJs();
 indexJs.init();
+
+// when page will load, function will call automatically
 // dragable cards working
 function cardDragable() {
     $(".sort-cards-list").each(function (index, el) {
@@ -883,6 +1006,7 @@ function cardDragable() {
         }).disableSelection();
     });
 }
+// this makes work automatically
 $(document).ready(function () {
     cardDragable();
 });

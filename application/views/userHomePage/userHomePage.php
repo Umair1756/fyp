@@ -56,8 +56,10 @@
                                     You haven't created any board yet.
                                 </h1>
                             <?php } ?>
-                            <a style="display: flex;flex-direction: row;align-items: flex-end;" class=" col-lg-2 text-center rounded boardBox text-white text-white" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                <span>Create new board</span>
+                        </div>
+                        <div class="row mt-3">
+                            <a class="col-lg-3 rounded boardBox text-white mr-3 pr-4 pt-2" type="button" data-toggle="modal" data-target=".bd-example-modal-lg" style="padding-bottom: 85px !important;">
+                                <p style="position: absolute;top: 30px;left: 60px;">Create new board</p>
                             </a>
                         </div>
                     </div>

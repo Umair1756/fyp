@@ -227,7 +227,7 @@ class Userhomes extends CI_Model
     {
         $query = $this->db->query("SELECT user_activity.*, users.uname FROM user_activity 
         INNER JOIN users ON user_activity.uid=users.uid 
-        WHERE user_activity.uid='" . $uid . "'");
+        WHERE user_activity.uid='" . $uid . "' ORDER BY user_activity.id DESC");
         return $query->result_array();
     }
     function getCurrentUser($user)
@@ -253,5 +253,18 @@ class Userhomes extends CI_Model
         $this->db->query("UPDATE users SET upassword='" . $data['reTypePwd'] . "',updated_at='" . $data['updated_at'] . "' 
         WHERE uid='" . $data['uid'] . "'");
         return true;
+    }
+    function inviteLink($data)
+    {
+        $this->db->insert("board_permission", $data);
+        $id = $this->db->insert_id();
+        $query = $this->db->get_where('board_permission', array('id' => $id));
+        $qData = $query->row_array();
+        return $qData['id'];
+    }
+    function getInviteLink()
+    {
+        $query = $this->db->query('SELECT * FROM board_permission');
+        return $query->result_array();
     }
 }

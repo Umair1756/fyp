@@ -43,10 +43,31 @@
         }
 
         /* Scrollbar Design */
+
+        /* pageLoader Start */
+
+        .pageLoader {
+            background: url(http://localhost/promag/assets/img/promagSpinner.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #ffff;
+            opacity: 0.9;
+            width: 100%;
+            transition: 10s ease-in-out;
+            position: fixed;
+            height: 100vh;
+            z-index: 9999;
+        }
+
+        /* pageLoader End */
     </style>
 </head>
 
 <body style="background: #67D77E;margin: 0px !important;">
+    <!-- PageLoager div -->
+    <div class="pageLoader d-none">
+    </div>
+    <!-- PageLoager div -->
     <!-- Haeder Section-->
     <header class="user_header_section fixed-top position-fixed">
         <nav class="navbar navbar-expand-lg nav_res">
