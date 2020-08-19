@@ -672,6 +672,8 @@ var IndexJs = function () {
             success: function (sqlId) {
                 console.log(sqlId);
                 $(currentBtnClicked).after(`<input type="hidden" value="${sqlId}">`);
+                url = base_url + `index.php/userHome/boardBegin/${sqlId}`;
+                $("#invite-content-modal").find("#invite-link").val(url);
             },
             error: function (data) {
                 // console.log(data);

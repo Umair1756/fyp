@@ -47,7 +47,7 @@
         /* pageLoader Start */
 
         .pageLoader {
-            background: url(http://localhost/promag/assets/img/promagSpinner.gif);
+            background: url(http://localhost/promag/assets/img/loading-65.gif);
             background-repeat: no-repeat;
             background-position: center;
             background-color: #ffff;

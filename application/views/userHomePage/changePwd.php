@@ -17,9 +17,9 @@
                 <?php endif; ?>
             </div>
         </div>
-        <ul class="nav nav-tabs d-flex justify-content-center border-0 navbarPanel" id="myTab" role="tablist">
+        <ul class="nav nav-tabs nav-tabs-adjust list-inline mx-auto justify-content-center" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <a class="nav-link btnProfile" id="pwd-tab" data-toggle="tab" href="#pwd" role="tab" aria-controls="pwd" aria-selected="true">Change Password</a>
+                <a class="nav-link active" id="pwd-tab" data-toggle="tab" href="#pwd" role="tab" aria-controls="pwd" aria-selected="true">Change Password</a>
             </li>
         </ul>
     </div>

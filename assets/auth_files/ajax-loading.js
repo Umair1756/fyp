@@ -14,7 +14,7 @@ $(document).ready(function() {
             setTimeout(function() {
               $(".overlay").fadeOut('slow');
               $(".pageLoader").addClass('d-none');
-            }, 1000);
+            }, 400);
           }
         });         
       }
