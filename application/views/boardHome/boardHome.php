@@ -161,10 +161,10 @@
             <div class="container mt-3">
                 <form class="form" role="form">
                     <div class="form-group">
-                        <input class="form-control mr-1 form-control-modal" id="invite-link" name="invite-link" type="text" />
+                        <input class="form-control mr-1 form-control-modal" id="link-input" name="link-input" type="text" />
                     </div>
                     <div class="form-group text-center mb-3">
-                        <button type="button" class="btn btn-success mr-1 btn-sm invite-link"><i class="fas fa-link"></i> Copy Link</button>
+                        <button type="button" class="btn btn-success mr-1 btn-sm"><i class="fas fa-link"></i> Copy Link</button>
                         <button type="button" class="btn btn-dark btn-sm" data-dismiss="modal"><i class="far fa-times-circle text-white"></i> Close</button>
                     </div>
                 </form>
