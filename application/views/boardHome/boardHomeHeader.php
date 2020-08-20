@@ -82,7 +82,7 @@
                     <ul class="dropdown-menu slideIn animate dropdown-menu-right text-white drp_adj" role="menu" aria-labelledby="dropdownMenuLink">
                         <li class="text-center dropdown-header p-3 text-white drpHeader_adj">Notifications</li>
                         <div class="dropdown-divider"></div>
-                        <li><a href="#" class="dropdown-item rounded pt-3 pb-3" href="#"></a></li>
+                        <li class="text-center" ><p class="dropdown-item dropdown-item-notif rounded pt-3 pb-3 text-white mb-0">No Unread Notifications</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown pl-1 pr-1">

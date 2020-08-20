@@ -364,7 +364,13 @@ a.boardBox {
 	margin-bottom: -1px;
 	padding-bottom: 9px;
 }
-
+.dropdown-item-notif{
+	margin-top: 20% !important;
+	margin-bottom: 20% !important;
+}
+.dropdown-item-notif:hover{
+	background-color: transparent !important;
+}
 /* Board Area below header starts from here */
 /* To style navbar */
 
