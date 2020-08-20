@@ -11,7 +11,7 @@
                 <a class="nav-link text-white rounded p-1 pl-3 pr-3" data-board_id="<?php echo $boards['id']; ?>" id="invite-link"><i class="fas fa-share-alt mr-1"></i> Invite</a>
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link text-white rounded p-1 pl-3 pr-3" type="button" id="sidebarCollapse"><i class="fas fa-users m r-1"></i> TeamShow</a>
+                <a class="nav-link text-white rounded p-1 pl-3 pr-3" type="button" id="sidebarCollapse"><i class="fas fa-users m r-1"></i> Show Members</a>
             </li>
             <li class="nav-item">
                 <a href="<?php echo base_url('index.php/userHome/') ?>" class="nav-link text-white rounded p-1 pl-3 pr-3"><i class="fas fa-chalkboard mr-1"></i> Boards</a>
