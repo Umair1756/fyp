@@ -267,4 +267,9 @@ class Userhomes extends CI_Model
         $query = $this->db->query('SELECT * FROM board_permission');
         return $query->result_array();
     }
+    function getUserInfo($uid)
+    {
+        $query = $this->db->get_where('users', array('uid' => $uid));
+        return $query->row_array();
+    }
 }

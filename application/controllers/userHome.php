@@ -54,12 +54,13 @@ class Userhome extends CI_Controller
     public function boardBegin($boardid)
     {
         // board detail e.g: boards, lists and cards
+        $uid=$_SESSION['uid'];
         $data['boards']     = $this->userHomes->getBoardNames($boardid);
         $data['allBoards']  = $this->userHomes->getAllBoards($boardid);
         $data['lists']      = $this->userHomes->getAllLists($boardid);
         $data['cards']      = $this->userHomes->getAllCards($boardid);
         $data['totalTasks'] = $this->userHomes->getTotalTasks();
-        $data['sqlId']      = $this->userHomes->getInviteLink();
+        $data['usersInfo']  = $this->userHomes->getUserInfo($uid);
 
         // loading view
         $this->load->view('boardHome/boardHomeHeader');

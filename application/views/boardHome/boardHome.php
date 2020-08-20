@@ -9,17 +9,9 @@
             </li>
             <li class="nav-item mr-2">
                 <a class="nav-link text-white rounded p-1 pl-3 pr-3" data-board_id="<?php echo $boards['id']; ?>" id="invite-link"><i class="fas fa-share-alt mr-1"></i> Invite</a>
-                <?php if (!empty($sqlId)) {
-                    if (isset($sqlId)) {
-                        foreach ($sqlId as $id) {
-                            "<input type='hidden' value='" . $id['id'] . "'>";
-                        }
-                    }
-                } ?>
-
             </li>
             <li class="nav-item mr-2">
-                <a class="nav-link text-white rounded p-1 pl-3 pr-3"><i class="fas fa-users m r-1"></i> TeamShow</a>
+                <a class="nav-link text-white rounded p-1 pl-3 pr-3" type="button" id="sidebarCollapse"><i class="fas fa-users m r-1"></i> TeamShow</a>
             </li>
             <li class="nav-item">
                 <a href="<?php echo base_url('index.php/userHome/') ?>" class="nav-link text-white rounded p-1 pl-3 pr-3"><i class="fas fa-chalkboard mr-1"></i> Boards</a>
@@ -137,6 +129,37 @@
             </div>
         </div>
         <!-- list add section -->
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header mr-3">
+                <h3>Team Members</h3>
+            </div>
+            <div id="dismiss">
+            <i class="fas fa-times"></i>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active m-2 rounded">
+                    <a class="rounded" href="#admin" data-toggle="collapse" aria-expanded="false">Admin</a>
+                    <ul class="collapse list-unstyled" id="admin">
+                        <li>
+                        <p class="bg-none m-0"><span>Name</span> <span style="padding-left: 123px !important;"><?php echo $usersInfo['uname']?></span></p> 
+                        <p class="bg-none m-0"><span>Username</span> <span style="padding-left: 98px !important;"><?php echo $usersInfo['username']?></span></p> 
+                        <p class="bg-none m-0"><span>Status</span> <span style="padding-left: 123px !important;">Admin</span></p> 
+                        <p class="bg-none m-0"><span>Created at</span> <span style="padding-left: 98px !important;"><?php echo $usersInfo['created_at']?></span></p> 
+                        </li>
+                    </ul>
+                </li>
+                <li class="active m-2 rounded">
+                    <a class="rounded" href="#members" data-toggle="collapse" aria-expanded="false">Members</a>
+                    <ul class="collapse list-unstyled" id="members">
+                        <li>
+                           <p>Whoops, Looks like nobody has joined your Board yet. :(</p> 
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 <?php if (isset($_SESSION['success'])) : ?>
